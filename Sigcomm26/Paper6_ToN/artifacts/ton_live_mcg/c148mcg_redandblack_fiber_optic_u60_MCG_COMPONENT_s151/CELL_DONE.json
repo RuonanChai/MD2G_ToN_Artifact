@@ -1,0 +1,257 @@
+{
+  "ts": "2026-09-09T08:52:31.692328+00:00",
+  "key": "c148mcg_redandblack_fiber_optic_u60_MCG_COMPONENT_s151",
+  "rc": 0,
+  "elapsed_s": 257.80252504348755,
+  "audit": {
+    "pass": true,
+    "cases": {
+      "cluster_cell_validity": true,
+      "perf_files": true,
+      "receipts": true,
+      "plan_jsonl": true,
+      "no_unauthorized": true,
+      "no_nan_inf": true,
+      "student_inference": true,
+      "mcg_decision": true,
+      "unicast_namespaced": true,
+      "rtnetlink_clean": true,
+      "loot_unread": true,
+      "quality_not_rerun": true,
+      "physical_pressure_timeseries": true,
+      "finite_headlines": true,
+      "no_placeholder_stall": true,
+      "no_placeholder_rb": true,
+      "rb_lineage": true
+    },
+    "reasons": [],
+    "class": "VALID",
+    "decoded_states": [
+      "Rep3",
+      "Rep3",
+      "Rep9",
+      "Rep9",
+      "Rep3",
+      "Rep3",
+      "Rep2",
+      "Rep9",
+      "Rep3",
+      "Rep1",
+      "Rep3",
+      "Rep9"
+    ],
+    "n_unique_decoded": 4,
+    "rb_lineage": {
+      "pass": true,
+      "class": "RB_PHYSICAL_PRESSURE_COMPUTED",
+      "contract_Rb": "normalized actual bottleneck/network pressure from physical link counters including protocol overhead under one frozen definition",
+      "not_Rb": "not normalized bytes transmitted; not 1-Bu/target; not a function of Ro_component",
+      "situation": "A_UNIMPLEMENTED",
+      "situation_note": "Frozen Rb is bottleneck/network pressure (situation A), not volume cost (situation B). Client reward_R_b remains a placeholder; canonical Rb is P95 physical-utilization pressure from r0-eth1 kernel counters when PHYSICAL_PRESSURE_TIMESERIES.jsonl exists.",
+      "paper_U_is_Rb0_projection": false,
+      "physical_root_link_pressure_computed": true,
+      "perf_reward_R_b_unique": [
+        0.0
+      ],
+      "perf_reward_R_o_unique": [
+        0.0
+      ],
+      "perf_stall_total_sec_unique": [
+        0.0
+      ],
+      "stall_last_also_client_placeholder": true,
+      "last_dump_bytes_sum": 3305042925,
+      "last_rx_bytes_sum": 29026540209.0,
+      "metrics_Rb": 0.10527111858945962,
+      "metrics_Ro_component": 0.9804605974857509,
+      "B_shared": 353889274,
+      "B_unicast": 18111570901,
+      "physical_traffic_present": true,
+      "bandwidth_efficiency_evidence": [
+        "Ro_component",
+        "B_shared_component",
+        "B_unicast_component",
+        "dump_bytes",
+        "eth0_rx_bytes"
+      ]
+    }
+  },
+  "content": "redandblack",
+  "network": "fiber_optic",
+  "users": 60,
+  "seed": 151,
+  "strategy": "MCG_COMPONENT",
+  "stage": "ton_live_mcg",
+  "metrics": {
+    "key": "c148mcg_redandblack_fiber_optic_u60_MCG_COMPONENT_s151",
+    "content": "redandblack",
+    "network": "fiber_optic",
+    "users": 60,
+    "seed": 151,
+    "strategy": "MCG_COMPONENT",
+    "U": 0.631324476514831,
+    "Ro_component": 0.9804605974857509,
+    "Rq": 0.6699999915530205,
+    "Rb": 0.10527111858945962,
+    "weak_user_Rq": 0.29999999749843875,
+    "stall_last": 0.0,
+    "n_decoded": 60,
+    "component_occupancy": {
+      "Rep1": 0.15,
+      "Rep2": 0.23333333333333334,
+      "Rep3": 0.43333333333333335,
+      "Rep4": 0.0,
+      "Rep5": 0.0,
+      "Rep6": 0.0,
+      "Rep7": 0.0,
+      "Rep8": 0.0,
+      "Rep9": 0.18333333333333332
+    },
+    "target_state_occupancy": {
+      "Rep1": 0.15,
+      "Rep2": 0.23333333333333334,
+      "Rep3": 0.43333333333333335,
+      "Rep4": 0.0,
+      "Rep5": 0.0,
+      "Rep6": 0.0,
+      "Rep7": 0.0,
+      "Rep8": 0.0,
+      "Rep9": 0.18333333333333332
+    },
+    "actual_decoded_state_occupancy": {
+      "Rep1": 0.15,
+      "Rep2": 0.23333333333333334,
+      "Rep3": 0.43333333333333335,
+      "Rep4": 0.0,
+      "Rep5": 0.0,
+      "Rep6": 0.0,
+      "Rep7": 0.0,
+      "Rep8": 0.0,
+      "Rep9": 0.18333333333333332
+    },
+    "receiver_set_size": {
+      "b0": 60,
+      "db1": 51,
+      "db2": 37,
+      "e1": 11,
+      "e2": 11
+    },
+    "component_completion_fraction": {
+      "b0": {
+        "n_receivers": 60,
+        "n_complete_dump_gt_64": 60,
+        "fraction": 1.0
+      },
+      "db1": {
+        "n_receivers": 51,
+        "n_complete_dump_gt_64": 51,
+        "fraction": 1.0
+      },
+      "db2": {
+        "n_receivers": 37,
+        "n_complete_dump_gt_64": 37,
+        "fraction": 1.0
+      },
+      "e1": {
+        "n_receivers": 11,
+        "n_complete_dump_gt_64": 11,
+        "fraction": 1.0
+      },
+      "e2": {
+        "n_receivers": 11,
+        "n_complete_dump_gt_64": 11,
+        "fraction": 1.0
+      }
+    },
+    "Q_norm_frozen": {
+      "Rep1": 0.29999999749843875,
+      "Rep2": 0.49999997997823714,
+      "Rep3": 0.7499999921538446,
+      "Rep4": 0.42499971067930387,
+      "Rep5": 0.5500000053445943,
+      "Rep6": 0.624999693159102,
+      "Rep7": 0.7499999878243925,
+      "Rep8": 0.8749997053347104,
+      "Rep9": 1.0
+    },
+    "quality_ranked_by_rep_id": false,
+    "active_components": [
+      "b0",
+      "db1",
+      "db2",
+      "e1",
+      "e2"
+    ],
+    "upgrade_fraction": 0.85,
+    "B_shared": 353889274,
+    "B_unicast": 18111570901,
+    "mean_rx": 483775670.15,
+    "rates_mbps_ref": {
+      "b0": 33.33551166666667,
+      "db1": 25.018272866666667,
+      "db2": 29.503006466666665,
+      "e1": 17.69522633333333,
+      "e2": 17.693915933333333
+    },
+    "paper_U_is_Rb0_projection": false,
+    "Rb_semantics": "physical_bottleneck_pressure_p95_util",
+    "Rb_source": "r0-eth1_tx_kernel_bytes",
+    "bandwidth_efficiency_evidence": [
+      "Ro_component",
+      "B_shared",
+      "B_unicast",
+      "mean_rx"
+    ],
+    "physical_pressure": {
+      "Rb": 0.10527111858945962,
+      "utilization_mean": 0.09798281113435402,
+      "utilization_p95": 0.1231656962176704,
+      "utilization_p99": 0.12609747663985005,
+      "pressure_exceedance_fraction": 0.0,
+      "raw_protocol_inclusive_tx_bytes": 1465109236,
+      "raw_protocol_inclusive_rx_bytes": 4839689,
+      "capacity_bps": 1000000000.0,
+      "n_intervals": 118,
+      "canonical_Rb_formula": "clip(P95((u-idle_floor)/(1-idle_floor)),0,1)",
+      "bottleneck_identity": "shared_regional_root_r0_eth1_tx",
+      "iface": "r0-eth1"
+    },
+    "stall_last_status": "DECODE_GAP_SECONDS_POST_WARMUP",
+    "rb_lineage": {
+      "pass": true,
+      "class": "RB_PHYSICAL_PRESSURE_COMPUTED",
+      "contract_Rb": "normalized actual bottleneck/network pressure from physical link counters including protocol overhead under one frozen definition",
+      "not_Rb": "not normalized bytes transmitted; not 1-Bu/target; not a function of Ro_component",
+      "situation": "A_UNIMPLEMENTED",
+      "situation_note": "Frozen Rb is bottleneck/network pressure (situation A), not volume cost (situation B). Client reward_R_b remains a placeholder; canonical Rb is P95 physical-utilization pressure from r0-eth1 kernel counters when PHYSICAL_PRESSURE_TIMESERIES.jsonl exists.",
+      "paper_U_is_Rb0_projection": false,
+      "physical_root_link_pressure_computed": true,
+      "perf_reward_R_b_unique": [
+        0.0
+      ],
+      "perf_reward_R_o_unique": [
+        0.0
+      ],
+      "perf_stall_total_sec_unique": [
+        0.0
+      ],
+      "stall_last_also_client_placeholder": true,
+      "last_dump_bytes_sum": 3305042925,
+      "last_rx_bytes_sum": 29026540209.0,
+      "metrics_Rb": 0.10527111858945962,
+      "metrics_Ro_component": 0.9804605974857509,
+      "B_shared": 353889274,
+      "B_unicast": 18111570901,
+      "physical_traffic_present": true,
+      "bandwidth_efficiency_evidence": [
+        "Ro_component",
+        "B_shared_component",
+        "B_unicast_component",
+        "dump_bytes",
+        "eth0_rx_bytes"
+      ]
+    }
+  },
+  "valid": true,
+  "epoch_id": "C152_RBV1_88cabc20eb5d"
+}

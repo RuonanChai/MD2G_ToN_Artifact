@@ -1,0 +1,169 @@
+{
+  "key": "c148mcg_redandblack_wifi_u100_MCG_COMPONENT_s153",
+  "content": "redandblack",
+  "network": "wifi",
+  "users": 100,
+  "seed": 153,
+  "strategy": "MCG_COMPONENT",
+  "U": 0.4570342813001367,
+  "Ro_component": 0.9877741485202548,
+  "Rq": 0.3737499927090361,
+  "Rb": 0.0943950097023246,
+  "weak_user_Rq": 0.29999999749843875,
+  "stall_last": 0.0,
+  "n_decoded": 100,
+  "component_occupancy": {
+    "Rep1": 0.8,
+    "Rep2": 0.07,
+    "Rep3": 0.12,
+    "Rep4": 0.0,
+    "Rep5": 0.0,
+    "Rep6": 0.0,
+    "Rep7": 0.0,
+    "Rep8": 0.01,
+    "Rep9": 0.0
+  },
+  "target_state_occupancy": {
+    "Rep1": 0.8,
+    "Rep2": 0.07,
+    "Rep3": 0.12,
+    "Rep4": 0.0,
+    "Rep5": 0.0,
+    "Rep6": 0.0,
+    "Rep7": 0.0,
+    "Rep8": 0.01,
+    "Rep9": 0.0
+  },
+  "actual_decoded_state_occupancy": {
+    "Rep1": 0.8,
+    "Rep2": 0.07,
+    "Rep3": 0.12,
+    "Rep4": 0.0,
+    "Rep5": 0.0,
+    "Rep6": 0.0,
+    "Rep7": 0.0,
+    "Rep8": 0.01,
+    "Rep9": 0.0
+  },
+  "receiver_set_size": {
+    "b0": 100,
+    "db1": 20,
+    "db2": 13,
+    "e1": 1,
+    "e2": 0
+  },
+  "component_completion_fraction": {
+    "b0": {
+      "n_receivers": 100,
+      "n_complete_dump_gt_64": 100,
+      "fraction": 1.0
+    },
+    "db1": {
+      "n_receivers": 20,
+      "n_complete_dump_gt_64": 20,
+      "fraction": 1.0
+    },
+    "db2": {
+      "n_receivers": 13,
+      "n_complete_dump_gt_64": 13,
+      "fraction": 1.0
+    },
+    "e1": {
+      "n_receivers": 1,
+      "n_complete_dump_gt_64": 1,
+      "fraction": 1.0
+    },
+    "e2": {
+      "n_receivers": 0,
+      "n_complete_dump_gt_64": 0,
+      "fraction": null
+    }
+  },
+  "Q_norm_frozen": {
+    "Rep1": 0.29999999749843875,
+    "Rep2": 0.49999997997823714,
+    "Rep3": 0.7499999921538446,
+    "Rep4": 0.42499971067930387,
+    "Rep5": 0.5500000053445943,
+    "Rep6": 0.624999693159102,
+    "Rep7": 0.7499999878243925,
+    "Rep8": 0.8749997053347104,
+    "Rep9": 1.0
+  },
+  "quality_ranked_by_rep_id": false,
+  "active_components": [
+    "b0",
+    "db1",
+    "db2",
+    "e1"
+  ],
+  "upgrade_fraction": 0.2,
+  "B_shared": 145155236,
+  "B_unicast": 11872811987,
+  "mean_rx": 311479876.0,
+  "rates_mbps_ref": {
+    "b0": 33.33551166666667,
+    "db1": 25.018272866666667,
+    "db2": 29.503006466666665,
+    "e1": 17.69522633333333,
+    "e2": 17.693915933333333
+  },
+  "paper_U_is_Rb0_projection": false,
+  "Rb_semantics": "physical_bottleneck_pressure_p95_util",
+  "Rb_source": "r0-eth1_tx_kernel_bytes",
+  "bandwidth_efficiency_evidence": [
+    "Ro_component",
+    "B_shared",
+    "B_unicast",
+    "mean_rx"
+  ],
+  "physical_pressure": {
+    "Rb": 0.0943950097023246,
+    "utilization_mean": 0.10305665279346402,
+    "utilization_p95": 0.11250710950827812,
+    "utilization_p99": 0.11462593745267152,
+    "pressure_exceedance_fraction": 0.0,
+    "raw_protocol_inclusive_tx_bytes": 1537569524,
+    "raw_protocol_inclusive_rx_bytes": 5170014,
+    "capacity_bps": 1000000000.0,
+    "n_intervals": 118,
+    "canonical_Rb_formula": "clip(P95((u-idle_floor)/(1-idle_floor)),0,1)",
+    "bottleneck_identity": "shared_regional_root_r0_eth1_tx",
+    "iface": "r0-eth1"
+  },
+  "stall_last_status": "DECODE_GAP_SECONDS_POST_WARMUP",
+  "rb_lineage": {
+    "pass": true,
+    "class": "RB_PHYSICAL_PRESSURE_COMPUTED",
+    "contract_Rb": "normalized actual bottleneck/network pressure from physical link counters including protocol overhead under one frozen definition",
+    "not_Rb": "not normalized bytes transmitted; not 1-Bu/target; not a function of Ro_component",
+    "situation": "A_UNIMPLEMENTED",
+    "situation_note": "Frozen Rb is bottleneck/network pressure (situation A), not volume cost (situation B). Client reward_R_b remains a placeholder; canonical Rb is P95 physical-utilization pressure from r0-eth1 kernel counters when PHYSICAL_PRESSURE_TIMESERIES.jsonl exists.",
+    "paper_U_is_Rb0_projection": false,
+    "physical_root_link_pressure_computed": true,
+    "perf_reward_R_b_unique": [
+      0.0
+    ],
+    "perf_reward_R_o_unique": [
+      0.0
+    ],
+    "perf_stall_total_sec_unique": [
+      0.0
+    ],
+    "stall_last_also_client_placeholder": true,
+    "last_dump_bytes_sum": 2961531602,
+    "last_rx_bytes_sum": 31147987600.0,
+    "metrics_Rb": 0.0943950097023246,
+    "metrics_Ro_component": 0.9877741485202548,
+    "B_shared": 145155236,
+    "B_unicast": 11872811987,
+    "physical_traffic_present": true,
+    "bandwidth_efficiency_evidence": [
+      "Ro_component",
+      "B_shared_component",
+      "B_unicast_component",
+      "dump_bytes",
+      "eth0_rx_bytes"
+    ]
+  }
+}

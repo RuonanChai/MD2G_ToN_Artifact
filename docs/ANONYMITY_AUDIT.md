@@ -22,3 +22,5 @@ Findings corrected in the export (not in the live working tree):
 - Compile caches (`__pycache__/`) deleted before the first commit
 
 Do not treat this document as a list of the original host names.
+
+| Remote destination | USER OVERRIDE | Published to the repository URL requested by the maintainer |

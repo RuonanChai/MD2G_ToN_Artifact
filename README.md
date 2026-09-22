@@ -1,7 +1,7 @@
 # MD2G-Cast ToN Reproducibility Artifact
 
-Anonymous artifact for the current ToN nested-component implementation.
-It does not identify the authors and is not a fork of any conference-era public repository.
+Reproducibility artifact for the current ToN nested-component implementation.
+This is a new repository with a fresh Git history. It is not a fork of the conference-era public repository.
 
 ## 1. Artifact scope
 
