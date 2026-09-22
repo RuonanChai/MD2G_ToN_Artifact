@@ -1,0 +1,22 @@
+{
+  "method": "Rolling",
+  "paper_citations": {
+    "target_scenario": "DASH-based real-time point cloud video streaming; Sec.III.A System Overview p.3 (PDF page numbering in extract)",
+    "topology": "Client-server (C/S) architecture; server prepares chunks; client downloads tiles (Sec.III.A; Fig.1 Architecture p.4 / IEEE p.7873)",
+    "transport": "Dynamic Adaptive Streaming over HTTP (DASH) over HTTP/TCP (Abstract/Intro; Sec.III.A)",
+    "delivery_semantics": "Per-client HTTP download requests of selected tile representations; unicast request-response (Fig.1 p.4)",
+    "independent_stream": "Yes \u2014 client issues download request for optimal representation of GoF k (Fig.1; Sec.III.A)",
+    "cross_user_fanout": "Not described; C/S DASH per client",
+    "shared_representation_decision": "No multi-user grouping; decisions are per-stream POT/DRL for that client session",
+    "controller_placement": "Client-side rolling POT + DRL solver; decision sent as download request to server (Fig.1 p.4)",
+    "adaptation_inputs": "Predicted bandwidth and FoV; buffer state; QoE model Eq.1\u20138 (Sec.III.B p.4\u20135)",
+    "content_unit": "Tiles within Groups of Frames (GoFs); quality levels l (Eq.2 p.4)",
+    "buffering": "Playback buffer bf with constraints (Eq.9c; Theorem 1 buffer stability p.6)",
+    "quality_bitrate": "Select tile quality levels via binary x_k,c,l (P1/P2)",
+    "prediction_horizon": "Rolling window of N GoFs (Sec.III.A; P2 p.6)",
+    "optimization_drl": "SC-DDQN / DRL solver for real-time POT (paper V.B & evaluation)",
+    "metrics": "QoE with quality, rebuffering, switches (Eq.1)",
+    "limitations_vs_our_media": "Mapped onto layered Rep ladder + SC-DDQN weights in DASH/Rolling"
+  },
+  "authority_verdict_original": "DASH_HTTP_CLIENT_SERVER_UNICAST"
+}

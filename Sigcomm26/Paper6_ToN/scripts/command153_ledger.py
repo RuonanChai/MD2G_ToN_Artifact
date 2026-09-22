@@ -1,0 +1,450 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+import sys
+from pathlib import Path as _ArtifactPath
+_r = _ArtifactPath(__file__).resolve()
+for _c in [_r.parent, *_r.parents]:
+    if (_c / 'artifact_paths.py').is_file():
+        sys.path.insert(0, str(_c))
+        break
+from artifact_paths import artifact_root, ton_root  # portable artifact root
+
+"""Immutable command153 known-failure ledger. Append-only frozen lessons."""
+import json
+import sys
+from pathlib import Path
+
+REPO = artifact_root()
+TON = REPO / "Sigcomm26" / "Paper6_ToN"
+sys.path.insert(0, str(TON / "lib"))
+from command147_io import dump_dual, dump_status, sha256_file, ts  # noqa: E402
+
+LEDGER = REPO / "state" / "COMMAND153_KNOWN_FAILURES_AND_FIXES.json"
+
+
+def _lesson(**kw) -> dict:
+    kw.setdefault("status", "FROZEN_LESSON")
+    return kw
+
+
+def frozen_lessons() -> list[dict]:
+    nested_h = sha256_file(TON / "lib" / "command147_nested_client.py") if (TON / "lib" / "command147_nested_client.py").is_file() else None
+    moq_h = sha256_file(REPO / "moq_sub_with_latency.py") if (REPO / "moq_sub_with_latency.py").is_file() else None
+    metrics_h = sha256_file(TON / "lib" / "command148_canary_metrics.py")
+    rb_h = sha256_file(TON / "lib" / "command151_physical_pressure.py")
+    return [
+        _lesson(
+            failure_id="E001_WRONG_MEDIA_CONTRACT",
+            symptom="Standalone Rep1–Rep9 treated as transport assets",
+            root_cause="command100–145 used independent full representations",
+            evidence_paths=["frozen_codebases/SEPARATION_CONTRACT.md"],
+            repair="Physical media is nested b0/db1/db2/e1/e2; Rep1–9 are decoded compositions",
+            recertification="COMMAND147_COMPONENT_ASSETS_FULLY_SCIENTIFICALLY_CERTIFIED",
+            do_not_repeat="Never put command100–145 numbers in final U/CI/headline",
+            affected_hashes={},
+        ),
+        _lesson(
+            failure_id="E002_TEMPORAL_BITRATE_DURATION_FALLACY",
+            symptom="Bitrate inferred from 120s wall time or unique-clip bytes/120s",
+            root_cause="Wrong temporal contract",
+            evidence_paths=["state/COMMAND147_TEMPORAL_BITRATE_CONTRACT.json"],
+            repair="Use frozen command147 timing/bitrate contract only",
+            recertification="COMMAND147_TEMPORAL_BITRATE_FROZEN",
+            do_not_repeat="Never divide one-pass unique-clip bytes by 120s",
+            affected_hashes={},
+        ),
+        _lesson(
+            failure_id="E003_REP_ID_AS_QUALITY",
+            symptom="Rq ranked by Rep ID",
+            root_cause="Rep ID is not Q",
+            evidence_paths=["state/COMMAND147_COMPONENT_QUALITY_CONTRACT.json"],
+            repair="Rq from actually decoded state + frozen Q_norm",
+            recertification="COMMAND147_COMPONENT_QUALITY_FROZEN",
+            do_not_repeat="Never use Rep ID as quality",
+            affected_hashes={"command148_canary_metrics.py": metrics_h},
+        ),
+        _lesson(
+            failure_id="E004_CUMULATIVE_MARGINAL_COST",
+            symptom="DeltaR counted full target prefix",
+            root_cause="Wrong missing-component cost",
+            evidence_paths=["state/COMMAND149_CANARY_RELEASE.json"] if (REPO / "state" / "COMMAND149_CANARY_RELEASE.json").is_file() else [],
+            repair="DeltaR(target|A_g)=sum rate of missing components only",
+            recertification="command149 missing-component semantics",
+            do_not_repeat="Never charge already-held components again",
+            affected_hashes={},
+        ),
+        _lesson(
+            failure_id="E005_UNAUTHORIZED_OVERDELIVERY",
+            symptom="Clients subscribed outside receiver set / stale dumps after CLOSE",
+            root_cause="Missing component_receivers ∩ closure",
+            evidence_paths=["Sigcomm26/Paper6_ToN/lib/command147_nested_client.py"],
+            repair="Subscribe only closure∩receivers; CLOSE removes stale dump state",
+            recertification="fail-closed unauthorized=0",
+            do_not_repeat="Never leave dumps for components outside current receiver set",
+            affected_hashes={},
+        ),
+        _lesson(
+            failure_id="E006_MISSING_PERF_CSV",
+            symptom="Canonical VALID without expected perf files",
+            root_cause="Incomplete expected-client artifacts",
+            evidence_paths=[],
+            repair="VALID requires complete expected perf.csv set",
+            recertification="command148_canary_audit perf_files",
+            do_not_repeat="Never promote a cell missing expected client perf files",
+            affected_hashes={},
+        ),
+        _lesson(
+            failure_id="E007_MISSING_STUDENT_SIDECAR",
+            symptom="MD2G_COMPONENT without COMMAND148_STUDENT_INFERENCE.jsonl",
+            root_cause="Treatment not actually Student",
+            evidence_paths=[],
+            repair="Preflight must prove sidecar/model loaded; class INVALID_TREATMENT",
+            recertification="command148_canary_audit student_inference",
+            do_not_repeat="Never treat missing Student as a V2 controller problem",
+            affected_hashes={},
+        ),
+        _lesson(
+            failure_id="E008_RB_PLACEHOLDER_ZERO",
+            symptom="U used Rb=0 projection / 1-Ro / B_shared as pressure",
+            root_cause="Placeholder Rb",
+            evidence_paths=["state/COMMAND151_PHYSICAL_PRESSURE_CONTRACT.json"],
+            repair="Rb = clip(P95((u_t-idle_floor)/(1-idle_floor)),0,1) on r0-eth1 TX 1s protocol-inclusive",
+            recertification="COMMAND151_RB_LOWLOAD_NEARCAP_CERT_PASS",
+            do_not_repeat="Never use pre-Rb 56-cell U in final tables; Rb is not volume and not 1-Ro",
+            affected_hashes={"command151_physical_pressure.py": rb_h},
+        ),
+        _lesson(
+            failure_id="E009_NULL_HEADLINE_METRICS",
+            symptom="VALID row with null/nonfinite U/Ro/Rq/Rb/B_shared/B_unicast",
+            root_cause="Missing aggregator or placeholder JSON null",
+            evidence_paths=["Sigcomm26/Paper6_ToN/lib/command148_canary_audit.py"],
+            repair="finite_headlines fail-closed",
+            recertification="INVALID_HEADLINE_NONFINITE",
+            do_not_repeat="Never keep numeric placeholders that look measured",
+            affected_hashes={},
+        ),
+        _lesson(
+            failure_id="E010_STALL_DELAY_PLACEHOLDER",
+            symptom="stall_last=0 UNIMPLEMENTED_PLACEHOLDER read as zero stall; delay tails invented",
+            root_cause="Placeholder scientific fields",
+            evidence_paths=["Sigcomm26/Paper6_ToN/lib/command151_stall_supporting.py", "state/COMMAND152_FINAL_METRIC_COMPLETENESS_PASS.json"],
+            repair="stall=DECODE_GAP_SECONDS_POST_WARMUP supporting not in U; delay NOT_IN_FINAL_CLAIM_CONTRACT",
+            recertification="COMMAND152_FINAL_METRIC_COMPLETENESS_PASS",
+            do_not_repeat="Never claim zero stall or delay tails unless a later frozen contract says so",
+            affected_hashes={},
+        ),
+        _lesson(
+            failure_id="E011_S2_B0_RETRY_STRIPPED_ANON",
+            symptom="c147smoke_S2_B3_E1_E2_4g_s142 decode_validity=false; h1/h2 b0=0 while db1/db2 existed",
+            root_cause="First b0 subscription used /anon/; retry stripped path to / and failed auth",
+            evidence_paths=[
+                "state/COMMAND152_S2_B3_E1_E2_4g_s142_CLASSIFICATION.json",
+                "Sigcomm26/Paper6_ToN/artifacts/command151_24cell_post_rb/c147smoke_S2_B3_E1_E2_4g_s142_attempt1_decode_none_b0_retry",
+                "moq_sub_with_latency.py",
+                "Sigcomm26/Paper6_ToN/tests/test_moq_sub_retry_preserves_anon.py",
+            ],
+            repair="Every retry preserves the complete /anon/ path byte-for-byte via canonical_subscriber_url",
+            recertification="test_moq_sub_retry_preserves_anon; repaired exact key PASS 14/24 then continued S2",
+            do_not_repeat="Never misclassify this known runtime defect as physical/policy B/C; preserve attempt1 forever",
+            affected_hashes={"moq_sub_with_latency.py": moq_h},
+            key="c147smoke_S2_B3_E1_E2_4g_s142",
+            class_abc="A_RUNTIME_INSTRUMENTATION_DEFECT",
+            preserve_as="c147smoke_S2_B3_E1_E2_4g_s142_attempt1_decode_none_b0_retry",
+        ),
+        _lesson(
+            failure_id="E012_EXECUTOR_DUPLICATION",
+            symptom="Second Mininet or command148_orch independent launch after SSH reconnect",
+            root_cause="Multiple orchestrators launching cells",
+            evidence_paths=["state/COMMAND152_ACTIVE.json", "state/SCIENTIFIC_EXECUTOR.lock"],
+            repair="tmux:command152_orch sole launcher; command148_orch yields; atomic SCIENTIFIC_EXECUTOR.lock",
+            recertification="COMMAND152_LAUNCH=1 required when COMMAND152_ACTIVE",
+            do_not_repeat="Never kill a healthy live cell to restart orchestration; never duplicate canonical keys",
+            affected_hashes={},
+        ),
+        _lesson(
+            failure_id="E013_S3_RETRY_KILLS_LIVE_SUBSCRIBE",
+            symptom="c147smoke_S3_mixed_share_4g_s141 decode_validity=false; h2 b0=0/db2=0 while db1/e1 existed; retries kept /anon/",
+            root_cause="5s empty-dump monitor terminated a live connected /anon/ subscribe; wrapper exited; nested client re-OPEN truncated gst log. Not lesson E011 path strip. Not 4g structural (command147 same key decoded Rep8).",
+            evidence_paths=[
+                "Sigcomm26/Paper6_ToN/artifacts/command151_24cell_post_rb/c147smoke_S3_mixed_share_4g_s141",
+                "moq_sub_with_latency.py",
+            ],
+            repair="should_restart_dead_subscriber: never kill a live process; retry only if subscriber already died; retry URL still /anon/ byte-for-byte",
+            recertification="test_moq_sub_retry_preserves_anon.test_never_kill_live_subscriber",
+            do_not_repeat="Do not reuse E011 as if /anon/ were stripped; do not label this B/C; preserve attempt1",
+            affected_hashes={"moq_sub_with_latency.py": moq_h},
+            key="c147smoke_S3_mixed_share_4g_s141",
+            class_abc="A_RUNTIME_INSTRUMENTATION_DEFECT",
+            preserve_as="c147smoke_S3_mixed_share_4g_s141_attempt1_decode_none_live_retry_kill",
+        ),
+        _lesson(
+            failure_id="E014_S3_CONCURRENT_SUBSCRIBE_B0_DUMP_ZERO",
+            symptom="After E013 fix, S3 mixed_share 4g s141 still decode_validity=false; some user b0=0 while incrementals >0; gst subscribe started; RETRY=0; OPEN b0=1. Victim host is not stable (h2 then h1).",
+            root_cause="nested client opened all wanted components in the same tick; concurrent moq-sub burst left a live /anon/ subscribe with dump=0. Not E011 path strip. Not E013 live-kill. Not 4g/policy: peer users decode and incrementals arrive.",
+            evidence_paths=[
+                "Sigcomm26/Paper6_ToN/artifacts/command151_24cell_post_rb/c147smoke_S3_mixed_share_4g_s141_attempt1_decode_none_live_retry_kill_1787198876",
+                "Sigcomm26/Paper6_ToN/lib/command147_nested_client.py",
+                "Sigcomm26/Paper6_ToN/tests/test_nested_client_b0_first.py",
+            ],
+            repair="ordered_open_batches: start b0 first; wait until dump>64 or timeout; then stagger incrementals. Never kill a live b0 subscribe (E013).",
+            recertification="test_nested_client_b0_first; exact-key S3 rerun after E013 exhausted",
+            do_not_repeat="Do not reuse E013 after gst shows subscribe-started and zero RETRY; do not blind-retry a CONSUMED exact-key token; do not label this B/C",
+            affected_hashes={"command147_nested_client.py": nested_h},
+            key="c147smoke_S3_mixed_share_4g_s141",
+            class_abc="A_RUNTIME_INSTRUMENTATION_DEFECT",
+            preserve_as="c147smoke_S3_mixed_share_4g_s141_e014_b0_burst_miss",
+        ),
+        _lesson(
+            failure_id="E015_RQ_AUDIT_TARGET_FALLBACK",
+            symptom="HV3 rbv1 u20 4g s151 fail-closed INVALID_EXECUTION_OR_FIDELITY reason h6 Rq not frozen Q; h6 decoded_state=None all ticks with Rq=0",
+            root_cause="audit compared Rq against Q_norm[target] when decoded was None; nested client correctly sets Rq=0 for undecoded users. Not a controller retune. Weak-user non-decode is science, not execution failure.",
+            evidence_paths=[
+                "Sigcomm26/Paper6_ToN/artifacts/command148_canary120_rbv1/c148can_redandblack_4g_u20_HV3_COMPONENT_s151_INVALID_EXECUTION_OR_FIDELITY_1787200828",
+                "Sigcomm26/Paper6_ToN/lib/command148_canary_audit.py",
+            ],
+            repair="Rq must match Q_norm[decoded] if decoded exists, else 0. Never fall back to target_state for expected Rq.",
+            recertification="audit_canary_cell Rq vs decoded-only; preserved HV3 attempt1",
+            do_not_repeat="Do not fail-close a cell because an undecoded user has Rq=0; do not credit target quality",
+            affected_hashes={},
+            key="c148can_redandblack_4g_u20_HV3_COMPONENT_s151",
+            class_abc="A_RUNTIME_INSTRUMENTATION_DEFECT",
+        ),
+        _lesson(
+            failure_id="E016_FINITE_HEADLINES_SWALLOWED",
+            symptom="CLUSTERING rbv1 u20 4g s151 canary_cell rc=1 NameError finite_headlines at teardown audit",
+            root_cause="E015 expected_rq patch left finite_headlines body unreachable after return inside expected_rq; running process imported the broken module",
+            evidence_paths=[
+                "state/COMMAND153_E016_FINITE_HEADLINES_REPAIR.json",
+                "Sigcomm26/Paper6_ToN/tests/test_expected_rq_decoded_only.py",
+            ],
+            repair="Restore finite_headlines as its own function; unit-test that it is callable",
+            recertification="test_expected_rq_decoded_only.test_finite_headlines_is_a_real_function",
+            do_not_repeat="Never leave helper bodies after a return in expected_rq; recertify finite_headlines after any audit edit",
+            affected_hashes={},
+            key="c148can_redandblack_4g_u20_CLUSTERING_COMPONENT_s151",
+            class_abc="A_RUNTIME_INSTRUMENTATION_DEFECT",
+        ),
+        _lesson(
+            failure_id="E017_SKIP_PING_ALL_WRONG_ENV_NAME",
+            symptom="rbv1 4g u60 MD2G s151 ran full Mininet pingAll despite MM26_SKIP_PING_ALL=1; O(N^2) ping on 60 hosts",
+            root_cause="moq_cluster_Sigcomm.py only read SKIP_PING_ALL; canary_cell set MM26_SKIP_PING_ALL and SIGCOMM_SKIP_PINGALL",
+            evidence_paths=[
+                "state/COMMAND153_E017_SKIP_PING_ALL_ENV.json",
+                "Sigcomm26/Paper6_ToN/tests/test_canary_skip_ping_all.py",
+            ],
+            repair="Set SKIP_PING_ALL=1 in canary_cell; cluster honors MM26/SIGCOMM aliases. Do not kill the in-flight u60 cell.",
+            recertification="test_canary_skip_ping_all; next cell after live boundary must skip pingAll",
+            do_not_repeat="Never assume MM26_SKIP_PING_ALL is read by moq_cluster; command94 already recorded u60 pingAll hanging for days",
+            affected_hashes={},
+            key="c148can_redandblack_4g_u60_MD2G_COMPONENT_s151",
+            class_abc="A_RUNTIME_INSTRUMENTATION_DEFECT",
+        ),
+        _lesson(
+            failure_id="E018_FIVE_CELL_REPORT_READ_PRE_RB_ART",
+            symptom="command148_five_cell_report and canary_block_review still opened artifacts/command148_canary120 after rbv1 epoch, so orch n=25 means mixed pre-Rb diagnostic U",
+            root_cause="maybe_five_report still called command148 reporters whose ART was hardcoded to the pre-physical-pressure directory; overlapping keys exist in both trees",
+            evidence_paths=[
+                "state/COMMAND153_E018_PRE_RB_ART_REPORTER.json",
+                "Sigcomm26/Paper6_ToN/tests/test_canary_rbv1_art.py",
+            ],
+            repair="canary_rbv1_art() after COMMAND151_PHYSICAL_PRESSURE_RELEASE or epoch post_physical_pressure_rbv1; skip paper_U_is_Rb0_projection rows; command152_reports remains paper-facing",
+            recertification="test_canary_rbv1_art; next five-VALID report must include pre_rb_excluded and rbv1 art path",
+            do_not_repeat="Never read command148_canary120 for live rbv1 U/CI/headline or Level-2",
+            affected_hashes={},
+            class_abc="A_RUNTIME_INSTRUMENTATION_DEFECT",
+        ),
+        _lesson(
+            failure_id="E019_GROOT_ROLLING_OMITTED_FROM_PRIMARY_CANARY",
+            symptom="GROOT_DASH and ROLLING_DASH are required secondary cross-stack baselines but were omitted from the command153 five-strategy primary V1/V2 matrix",
+            root_cause="command153 primary canary was frozen to MD2G/HV3/CLUSTERING/RULE/MOQ_UNICAST; DASH unicast baselines were not scheduled as a separate post-V1 branch",
+            evidence_paths=[
+                "Sigcomm26/Paper6_ToN/commands/command153_anti_regression_autonomous_to_final_evidence.txt",
+                "state/COMMAND153_FUTURE_AMENDMENT_CROSS_STACK_DASH.json",
+            ],
+            repair="FUTURE-ONLY H2 CROSS_STACK_DASH_BASELINES after primary V1/V2 candidate freeze and before COMMAND153_FINAL_DEV_FROZEN / Loot unseal; freeze CROSS_STACK_DASH_MANIFEST first; authentic DASH/unicast only",
+            recertification="Do not add GROOT/ROLLING to the live rbv1 120; do not rerun current canary cells; primary claims remain vs strongest HV3/CLUSTERING/RULE",
+            do_not_repeat="Never inject GROOT/ROLLING into the current 120 V1/V2 gate; never treat them as same-substrate; never retrofit component-aware grouping/multicast/MD2G control into DASH; never fabricate DASH component reuse or a non-commensurate canonical U",
+            affected_hashes={},
+            class_abc="A_SCOPE_OMISSION_FUTURE_AMENDMENT",
+            execute_now=False,
+            future_only=True,
+        ),
+        _lesson(
+            failure_id="E020_TEARDOWN_R0_CMD_WAITING_SKIPS_CELL_VALIDITY",
+            symptom="cluster_CELL_VALIDITY.valid!=true / missing CELL_VALIDITY.json after a completed 120s nested window; stdout ends in Mininet AssertionError self.shell and not self.waiting on r0.cmd cat r0.log",
+            root_cause="command151 pressure sampler called r0.cmd from a daemon thread while the main thread also called r0.cmd after duration; Mininet node.cmd is not thread-safe; CELL_VALIDITY write is after post-run log cat so a teardown race skips the validity gate",
+            evidence_paths=[
+                "Sigcomm26/Paper6_ToN/artifacts/command148_canary120_rbv1/c148can_longdress_default_mix_u60_RULE_COMPONENT_s151_INVALID_EXECUTION_OR_FIDELITY_1787225173/cell_stdout.log",
+                "state/COMMAND148_CANARY_FAIL_CLOSED.json",
+            ],
+            repair="Join the pressure thread after stop; use host_cmd_safe for post-run r0/r1/r2 log cat; exact-key retry the failed canary key once; do not skip the key or relabel as B/C",
+            recertification="exact-key retry writes CELL_VALIDITY.json; audit cluster_cell_validity true",
+            do_not_repeat="Never overlap Mininet node.cmd from the pressure thread with main-thread r0.cmd; never skip CELL_VALIDITY write because a post-run log cat asserted",
+            affected_hashes={"moq_cluster_Sigcomm.py": sha256_file(REPO / "moq_cluster_Sigcomm.py") if (REPO / "moq_cluster_Sigcomm.py").is_file() else None},
+        ),
+        _lesson(
+            failure_id="E021_DASH_H2_MISSING_COMMAND151_PRESSURE",
+            symptom="H2 GROOT/ROLLING cell has CELL_VALIDITY but PHYSICAL_PRESSURE_TIMESERIES.jsonl missing or <2 samples",
+            root_cause="DASH experiments had no command151 r0-eth1 sampler; a Python r0.cmd thread would also copy E020",
+            evidence_paths=["DASH/rolling_dash_experiment.py", "Sigcomm26/Paper6_ToN/scripts/command153_cross_stack_dash.py"],
+            repair="In-netns r0.popen sampler writing PHYSICAL_PRESSURE_TIMESERIES.jsonl; H2 valid requires n_press>=2; summarize Rb separately; never r0.cmd from a DASH pressure thread",
+            recertification="H2 cell has >=2 pressure samples and PHYSICAL_PRESSURE_SUMMARY.json; CROSS_STACK stats do not enter primary U",
+            do_not_repeat="Never run H2 without frozen command151 r0-eth1 pressure; never sample DASH pressure via threaded r0.cmd; never treat DASH U as same-substrate",
+            affected_hashes={"rolling_dash_experiment.py": sha256_file(REPO / "DASH" / "rolling_dash_experiment.py") if (REPO / "DASH" / "rolling_dash_experiment.py").is_file() else None},
+        ),
+        _lesson(
+            failure_id="E022_EXACT_KEY_REAUTHORIZE_INFINITE_RETRY",
+            symptom="After CONSUMED exact-key, classify rewrites AUTHORIZED for the same key+failure_id so H2/canary n_try grows past 3 without COMMAND153_SCIENTIFIC_CONTRACT_BLOCKED",
+            root_cause="classify_and_repair dumped a fresh AUTHORIZED token on every failed-key tick; H2 treated auth as a bypass of n_try>=3",
+            evidence_paths=[
+                "Sigcomm26/Paper6_ToN/scripts/command153_classify_and_repair.py",
+                "Sigcomm26/Paper6_ToN/scripts/command153_cross_stack_dash.py",
+            ],
+            repair="Refuse to re-AUTHORIZE the same key+failure_id after CONSUMED; a different failure_id on the same key may still authorize once; missing H2 media/ladder is fail-closed to COMMAND153_SCIENTIFIC_CONTRACT_BLOCKED",
+            recertification="exact_key_already_consumed; n_try>=3 with no AUTHORIZED writes the terminal; H2 media missing writes the terminal",
+            do_not_repeat="Never let classify reset n_applied=0 on a CONSUMED same-key same-failure token; never retry an unchanged H2/canary key after three identical failures",
+            affected_hashes={"command153_classify_and_repair.py": sha256_file(TON / "scripts" / "command153_classify_and_repair.py")},
+        ),
+        _lesson(
+            failure_id="E023_DISK_FILL_FROM_RETAINED_DUMP_BINS",
+            symptom="/srv fills during long DEV/H2/holdout because VALID cells keep dump_*.bin after metrics/audit",
+            root_cause="dump bins are large media captures retained after CELL_METRICS/CELL_AUDIT",
+            evidence_paths=[
+                "state/COMMAND153_RAW_DUMP_RETENTION_CONTRACT.json",
+                "Sigcomm26/Paper6_ToN/scripts/command153_raw_dump_retention.py",
+            ],
+            repair="VALID non-sentinel: after atomic derived evidence + RAW_DUMP_MANIFEST (SHA256+bytes), delete dump_*.bin; INVALID dumps permanent; never delete live-cell files; see E025",
+            recertification="RAW_DUMP_MANIFEST present when dumps deleted; sentinel keys retain dumps; INVALID dirs keep dumps",
+            do_not_repeat="Never delete VALID dumps without hash+derived gate; never delete INVALID/attempt dumps; never kill live for yellow disk",
+            affected_hashes={"command148_canary_cell.py": sha256_file(TON / "scripts" / "command148_canary_cell.py")},
+        ),
+        _lesson(
+            failure_id="E024_MIXED_EPOCH_IN_CANONICAL_MATCHED_BLOCKS",
+            symptom="Final evidence package would mix cells stamped with different post-instrumentation epoch_id",
+            root_cause="No fail-closed check on epoch_id when assembling canary/DEV/scaling/loot rows",
+            evidence_paths=["state/COMMAND152_POST_INSTRUMENTATION_EPOCH_FREEZE.json", "Sigcomm26/Paper6_ToN/scripts/command153_evidence.py"],
+            repair="Stamp CELL_DONE with frozen epoch_id; evidence attaches freeze epoch and fail-closes COMMAND153_SCIENTIFIC_CONTRACT_BLOCKED on conflicts",
+            recertification="PRIMARY_STATS.epoch_id equals freeze; zero epoch_conflicts",
+            do_not_repeat="Never merge pre-Rb/diagnostic cells or foreign-epoch rows into final matched blocks",
+            affected_hashes={"command153_evidence.py": sha256_file(TON / "scripts" / "command153_evidence.py")},
+        ),
+        _lesson(
+            failure_id="E025_RAW_DUMP_RETENTION_CONTRACT",
+            symptom="Ad-hoc dump cleanup (incl. INVALID strip) risks unrecomputable decoded occupancy / component completion / B_shared lineage at final six-review",
+            root_cause="E023 reclaim treated dumps as disposable without a frozen retention contract or sentinel subset",
+            evidence_paths=[
+                "state/COMMAND153_RAW_DUMP_RETENTION_CONTRACT.json",
+                "Sigcomm26/Paper6_ToN/scripts/command153_raw_dump_retention.py",
+                "state/COMMAND153_DISK_RECLAIM_INVALID_AND_DIAGNOSTIC_DUMPS.json",
+            ],
+            repair="Freeze retention contract: INVALID permanent; VALID hash+derived then delete; retain sentinel keys; launch-time free-space pause only (never interrupt live); supersedes E023 INVALID strip",
+            recertification="contract immutable; canary_cell uses reclaim_valid_dumps_if_allowed; main_dev launch_free_space_ok; no INVALID dump deletion scripts",
+            do_not_repeat="Never strip INVALID dumps; never delete VALID dumps without RAW_DUMP_MANIFEST; never interrupt live for yellow disk; never wait until 945 to discover raw dumps are required",
+            affected_hashes={
+                "command153_raw_dump_retention.py": sha256_file(TON / "scripts" / "command153_raw_dump_retention.py"),
+                "COMMAND153_RAW_DUMP_RETENTION_CONTRACT.json": sha256_file(REPO / "state" / "COMMAND153_RAW_DUMP_RETENTION_CONTRACT.json"),
+            },
+        ),
+        _lesson(
+            failure_id="E026_NESTED_CLIENT_FINALLY_WIPES_DUMPS_BEFORE_RETENTION_GATE",
+            symptom="VALID cell finishes with RAW_DUMP_MANIFEST reason=NO_DUMPS even though dump_h*_*.bin existed mid-run; retention cannot hash raw payloads",
+            root_cause="command147_nested_client.stop() always os.remove(dump) and finally calls stop() for all comps, wiping dumps before canary_cell reclaim gate",
+            evidence_paths=[
+                "Sigcomm26/Paper6_ToN/lib/command147_nested_client.py",
+                "Sigcomm26/Paper6_ToN/scripts/command153_raw_dump_retention.py",
+            ],
+            repair="stop(comp, remove_dump=False) on final teardown; mid-run CLOSE still removes unauthorized dumps; canary_cell retention hashes then deletes per E025",
+            recertification="Post-fix VALID non-sentinel cells write RAW_DUMP_MANIFEST with n_dumps>0 when components were subscribed; sentinel keys retain dump_h*_*.bin",
+            do_not_repeat="Never delete end-of-cell dumps in nested_client finally; never weaken mid-run unauthorized CLOSE cleanup",
+            affected_hashes={"command147_nested_client.py": sha256_file(TON / "lib" / "command147_nested_client.py")},
+        ),
+        _lesson(
+            failure_id="E027_SENTINEL_REUSE_WITHOUT_RAW_DUMPS",
+            symptom="Retention sentinel keys land in MAINDEV completed via canary reuse with maindev_dumps=0 and twin also dump-empty",
+            root_cause="command148_main_dev reused CELL_DONE metrics from canary twins whose dump_*.bin were already reclaimed; SENTINEL_KEEP cannot recover absent bytes",
+            evidence_paths=[
+                "state/COMMAND153_SENTINEL_ZERO_DUMP_FORENSICS.json",
+                "state/COMMAND153_RAW_DUMP_RETENTION_CONTRACT.json",
+                "Sigcomm26/Paper6_ToN/scripts/command148_main_dev.py",
+            ],
+            repair="Refuse canary reuse for sentinel keys when twin has no dump_*.bin (force live); copy twin dumps when present; schedule exact-key live rerun for already-reused zero-dump sentinels before FINAL_DEV",
+            recertification="Pending sentinels live-run retain dumps; zero-dump reused sentinels listed in COMMAND153_SENTINEL_RERUN_REQUIRED and cleared only after live dumps exist",
+            do_not_repeat="Never mark a dump-less canary twin as satisfying a retention sentinel",
+            affected_hashes={"command148_main_dev.py": sha256_file(TON / "scripts" / "command148_main_dev.py")},
+        ),
+    ]
+
+
+def write_ledger() -> dict:
+    existing = {}
+    if LEDGER.is_file():
+        try:
+            existing = json.loads(LEDGER.read_text())
+        except Exception:
+            existing = {}
+    by_id = {str(x.get("failure_id")): x for x in (existing.get("lessons") or []) if x.get("status") == "FROZEN_LESSON"}
+    for lesson in frozen_lessons():
+        fid = str(lesson["failure_id"])
+        if fid in by_id:
+            continue
+        by_id[fid] = lesson
+    ordered = []
+    seen = set()
+    for lesson in frozen_lessons():
+        ordered.append(by_id[lesson["failure_id"]])
+        seen.add(lesson["failure_id"])
+    for extra in existing.get("lessons") or []:
+        fid = str(extra.get("failure_id") or "")
+        if fid and fid not in seen:
+            ordered.append(extra)
+            seen.add(fid)
+    body = {
+        "ts": ts(),
+        "token": "COMMAND153_KNOWN_FAILURES_AND_FIXES",
+        "immutable": True,
+        "append_only": True,
+        "supervisor_must_consult_before_every_repair": True,
+        "lessons": ordered,
+        "loot_sealed": True,
+    }
+    dump_dual("COMMAND153_KNOWN_FAILURES_AND_FIXES.json", body)
+    lines = [
+        "# COMMAND153 known failures and certified fixes",
+        "",
+        "Immutable. Supervisor must read this ledger before every repair.",
+        "",
+    ]
+    for L in ordered:
+        lines += [
+            f"## {L['failure_id']}",
+            "",
+            f"- status: `{L.get('status')}`",
+            f"- symptom: {L.get('symptom')}",
+            f"- root_cause: {L.get('root_cause')}",
+            f"- repair: {L.get('repair')}",
+            f"- recertification: {L.get('recertification')}",
+            f"- do_not_repeat: {L.get('do_not_repeat')}",
+            "",
+        ]
+    dump_status("COMMAND153_KNOWN_FAILURES_AND_FIXES.md", "\n".join(lines))
+    (TON / "final").mkdir(parents=True, exist_ok=True)
+    (TON / "final" / "COMMAND153_KNOWN_FAILURES_AND_FIXES.md").write_text("\n".join(lines) + "\n")
+    return body
+
+
+def load_ledger() -> dict:
+    if LEDGER.is_file():
+        return json.loads(LEDGER.read_text())
+    return write_ledger()
+
+
+def match_lesson(failure_id: str) -> dict | None:
+    for L in load_ledger().get("lessons") or []:
+        if L.get("failure_id") == failure_id:
+            return L
+    return None
+
+
+if __name__ == "__main__":
+    body = write_ledger()
+    print(json.dumps({"pass": True, "n_lessons": len(body["lessons"]), "ids": [x["failure_id"] for x in body["lessons"]]}))

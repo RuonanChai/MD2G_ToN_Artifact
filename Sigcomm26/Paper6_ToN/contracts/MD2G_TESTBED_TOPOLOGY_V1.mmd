@@ -1,0 +1,6 @@
+flowchart LR
+  n0[n0 publisher<br/>10.0.1.2] --> r0[r0 root relay<br/>:4443]
+  r0 --> r1[r1 leaf<br/>10.0.2.2 / 10.0.4.1]
+  r0 --> r2[r2 leaf<br/>10.0.3.2 / 10.0.5.1]
+  r1 --> u1[users 10.0.4.x]
+  r2 --> u2[users 10.0.5.x]

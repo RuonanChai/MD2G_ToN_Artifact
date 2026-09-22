@@ -1,0 +1,34 @@
+{
+  "ts": "2026-08-18T08:22:14.309803+00:00",
+  "content": "longdress",
+  "components": [
+    "b0",
+    "db1",
+    "db2",
+    "e1",
+    "e2"
+  ],
+  "media_manifest": "./media/ton_nested_components_v1/longdress/media_manifest.json",
+  "partition_manifest": "./media/ton_nested_components_v1/longdress/partition_manifest.json",
+  "bitrate_bps": {
+    "b0": 38364247,
+    "db1": 28693347,
+    "db2": 33860242,
+    "e1": 20327970,
+    "e2": 20331945
+  },
+  "sha256": {
+    "b0": "4ed2d7cbe0ad921c9745cf502914cd21e797acb3caacf84d934245dc96e19fb4",
+    "db1": "ec37d6331f43fa02a34166d25f874f737b52d1a77899acf3849fd44e3f0fcd15",
+    "db2": "ba6874c120167d8b870a25dade7be94550bfa1b5543e2c1f95f29434c43c0b9b",
+    "e1": "f71aacd4258d3c7c2a51d14686f7dde2e8a168971970391558e464b7ce8e697f",
+    "e2": "1b74bf4c8874f3d00c630fd5e51e1f81f6fbffed1071f17f5f19366ef37bdf7c"
+  },
+  "decode_ok": {
+    "b0": true,
+    "db1": true,
+    "db2": true,
+    "e1": true,
+    "e2": true
+  }
+}

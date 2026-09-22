@@ -1,0 +1,170 @@
+COMMAND94 — CORRECT TON BASELINE SET TO FIVE STRATEGIES WITHOUT DISCARDING COMMAND93 PROGRESS
+
+AUTHORITY
+command90 remains the ToN scientific mainline. command91 parity/reuse PASS remains valid. command93 remains the four-content experiment authority except where this command explicitly corrects the strategy set and matrix sizes.
+
+DO NOT INTERRUPT THE CURRENT ACTIVE CELL OR DISCARD COMPLETED SMOKE CELLS.
+
+FINAL CONTENTS
+Seen:
+- redandblack
+
+Unseen:
+- longdress
+- soldier
+- loot
+
+Thus "3 unseen" means exactly longdress, soldier, and loot.
+
+FINAL FIVE-STRATEGY SET
+MoQ-based:
+1. C28 / MD2G
+2. HV3 / Heuristic
+3. Clustering
+
+DASH/HTTP unicast:
+4. GROOT
+5. Rolling
+
+GROOT and Rolling must be implemented and validated as authentic DASH/HTTP unicast baselines, not emulated through MoQ. Each must have a runtime fingerprint and link/accounting proof.
+
+A. SMOKE CORRECTION
+command93 already launched a 24-cell smoke for:
+3 unseen × {wifi, default_mix} × {20,60} × seed61 × {C28,HV3} = 24.
+
+Preserve and finish those cells.
+
+Then append a supplemental baseline smoke:
+3 unseen × {wifi, default_mix} × {20,60} × seed61 × {Clustering,GROOT,Rolling} = 36 cells.
+
+Combined five-strategy smoke coverage:
+3 × 2 × 2 × 1 × 5 = 60 cells.
+
+Do not rerun the completed C28/HV3 smoke cells.
+
+Smoke PASS is based on execution/media/controller/metric validity, not whether C28 wins.
+
+For GROOT and Rolling additionally require:
+- true unicast proof
+- expected client count
+- payload progression
+- correct DASH/HTTP path
+- no MoQ relay subscription path
+- valid per-client byte accounting
+- valid delay/stall/QoE metrics
+
+Token:
+COMMAND94_FIVE_STRATEGY_SMOKE_PASS
+
+B. PRIMARY UNSEEN-CONTENT CORE
+Replace the command93 378-cell core with:
+
+3 unseen contents
+× 7 network profiles
+× users {20,60}
+× seeds {61,62,63}
+× 5 strategies {C28,HV3,Clustering,GROOT,Rolling}
+= 630 cells.
+
+This is now the primary ToN zero-shot matrix.
+
+Do not additionally run a separate 54-cell Rolling phase for cells already included in the 630-cell core.
+
+Write:
+state/COMMAND94_FIVE_STRATEGY_CORE_FREEZE.json
+state/COMMAND94_CORE_MATRIX_COMPLETE.json
+
+Token:
+COMMAND94_CORE_MATRIX_PASS
+
+C. MATCHING CONTRACT
+Every strategy comparison must use the same:
+- content
+- network profile
+- user count
+- seed
+- duration
+- warmup
+- FoV/device assignment where applicable
+- media source
+- metric implementation
+- expected-client denominator
+
+MoQ strategies share the frozen MoQ testbed contract.
+GROOT and Rolling use their authentic DASH/HTTP unicast execution path while preserving matched access/network conditions.
+
+D. SEEN RED-AND-BLACK EVIDENCE
+Continue using COMMAND91_SEEN_CONTENT_REUSE_PASS where exact compatible MM26 evidence exists.
+
+Do not pretend a missing historical GROOT cell exists.
+If Red-and-Black GROOT evidence is absent or fails the current fingerprint contract, run only the missing matched GROOT cells required by the final paper comparison.
+
+Build:
+state/COMMAND94_SEEN_BASELINE_COVERAGE.json
+
+E. ABLATION
+Ablation remains mechanism attribution for C28 and is not multiplied by all five strategies.
+
+Use:
+A0 Full C28
+A1 No MU rank
+A2 No completion
+A3 No scale normalization
+A4 Base-only/grouping-only
+
+Contents:
+redandblack, longdress, soldier, loot
+
+Networks:
+wifi, default_mix, wifi_dominant
+
+Users:
+20,60
+
+Seed:
+61 initially
+
+Conceptual total:
+4 × 3 × 2 × 1 × 5 = 120.
+Reuse compatible A0 Full-C28 cells; expected new ablation cells <=96.
+
+Do not compare every ablation against all five strategies cell-by-cell unless later analysis requires it.
+
+F. OPTIONAL SCALE EXTENSION
+If time remains:
+3 unseen × {wifi,default_mix,wifi_dominant} × {10,40,100} × {61,62,63} × 5 strategies
+= 405 cells.
+
+This remains optional and does not block the main paper.
+
+G. TIME ESTIMATE
+Using approximately 230 seconds/cell only as an initial estimate:
+- remaining supplemental smoke 36 cells ≈ 2.3 h pure runtime
+- primary five-strategy core 630 cells ≈ 40.3 h pure runtime
+- max new ablation 96 cells ≈ 6.1 h pure runtime
+
+Update ETA from actual observed durations separately for MoQ and DASH baselines, because GROOT/Rolling may have different per-cell wall clock.
+
+H. PAPER CLAIMS
+The final evaluation must describe:
+- four independent contents total
+- one seen Red-and-Black and three unseen contents
+- five baselines/strategies total:
+  C28, HV3, Clustering, GROOT, Rolling
+- three MoQ-based strategies and two DASH/HTTP unicast baselines
+- frozen C28 with no retraining on unseen contents
+
+Do not describe the main matrix as three-strategy after this command.
+
+I. EXECUTION
+Continue automatically:
+finish existing 24-cell smoke
+→ run 36-cell supplemental baseline smoke
+→ COMMAND94_FIVE_STRATEGY_SMOKE_PASS
+→ 630-cell five-strategy core
+→ C28 ablation
+→ statistics
+→ paper
+→ optional scale extension only if time remains.
+
+Preserve single executor, read-only watchdog, supervisor, Git/HANDOFF/skills, no C29 search, no U_eval change, and no baseline weakening.

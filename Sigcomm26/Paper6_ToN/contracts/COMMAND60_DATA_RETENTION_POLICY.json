@@ -1,0 +1,57 @@
+{
+  "name": "COMMAND60_DATA_RETENTION_POLICY",
+  "binding": "command60",
+  "timestamp": "2026-07-27T05:13:00-05:00",
+  "classes": {
+    "FINAL_EVIDENCE": {
+      "delete": false,
+      "notes": "Never delete. Includes final holdout, claim ledgers, freezes, contracts, Git-tracked code."
+    },
+    "DIAGNOSTIC_UNIQUE": {
+      "delete": false,
+      "archive": "archives/diagnostic_failures/",
+      "format": "tar.zst",
+      "require": ["manifest", "sha256", "verified_extract"]
+    },
+    "FAILED_ATTEMPT_UNIQUE": {
+      "delete_expanded_after_archive": true,
+      "retain_in_archive": [
+        "CELL_VALIDITY.json",
+        "exit_code.txt",
+        "environment",
+        "strategy_hash",
+        "seed_trace_mapping",
+        "process_logs",
+        "client_perf",
+        "controller_actions",
+        "failure_root_cause"
+      ]
+    },
+    "DUPLICATE_OR_REGENERABLE": {
+      "delete_after_proof": true,
+      "require_reviewers": ["AgentA", "AgentH"]
+    },
+    "TEMPORARY": {
+      "delete_after_owning_cell_terminates": true,
+      "scope": "campaign_tmp_only"
+    }
+  },
+  "forbidden_deletes": [
+    "git_tracked_code",
+    "contracts",
+    "final_valid_raw_data",
+    "claim_evidence",
+    "quarantine_ledgers",
+    "sole_copy_of_failure_evidence",
+    "shared_/tmp",
+    "other_campaigns",
+    "ToN_data",
+    "active_cell_artifacts"
+  ],
+  "pre_delete": {
+    "dry_run_plan_required": true,
+    "agent_pass_required": ["A", "H"],
+    "exact_paths_only": true,
+    "no_wildcard_outside_campaign_root": true
+  }
+}

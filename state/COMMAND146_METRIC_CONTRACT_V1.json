@@ -1,0 +1,21 @@
+{
+  "ts": "2026-08-18T07:12:00+00:00",
+  "token": "COMMAND146_METRIC_CONTRACT_V1",
+  "U": "clip(0.25*Ro_component + 0.60*Rq - 0.15*Rb, 0, 1)",
+  "weights_frozen": {"Ro": 0.25, "Rq": 0.60, "Rb": 0.15},
+  "Ro_component": "clip(1 - B_shared_component / B_unicast_component, 0, 1)",
+  "B_unicast_component": "sum_u sum_{c in C(r_u)} payload_bytes(c)",
+  "B_shared_component": "sum over actual shared group/branch component transmissions, counted once per physical shared copy",
+  "Rb": "normalized actual bottleneck/network pressure from physical link counters including protocol overhead under one frozen definition",
+  "Rq": "objective QoE proxy from highest ACTUALLY DECODABLE composition at the receiver, never MOS, never controller intent",
+  "do_not_reuse": "command116 per-representation B_shared",
+  "invariance_tests": [
+    "renaming Rep IDs cannot change Ro",
+    "two users sharing prerequisites yields one shared prerequisite cost",
+    "upgrading one user by an already-active component has zero incremental shared cost",
+    "upgrading by a missing component adds exactly that component",
+    "full unicast produces Ro≈0 under equivalent accounting",
+    "perfect all-user sharing produces expected high Ro",
+    "accounting matches physical component payload within tolerance"
+  ]
+}

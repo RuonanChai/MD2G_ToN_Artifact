@@ -1,0 +1,81 @@
+{
+  "ts": "2026-08-18T10:05:25.843399+00:00",
+  "token": "COMMAND147_COMPONENT_QUALITY_CONTRACT",
+  "pass": true,
+  "normalization_rule": {
+    "canonical_metric_id": "nested_component_point_coverage_v1",
+    "Q_raw": "mean over all membership frames of |union_{c in C(state)} point_ids(c)| / n_source_points",
+    "Q_norm": "clip(Q_raw, 0, 1) identity; no min-max across Rep IDs; no native-9 paper_quality_score",
+    "pre_existing_source": "COMMAND135/146 nested index-stride membership completeness (command135 gate D monotonic-depth used the same point-coverage geometry)",
+    "forbidden": [
+      "Rep ID as quality",
+      "native-9 Table-1 paper_quality_score",
+      "force monotonicity"
+    ],
+    "loot": "mechanical media characterization only; never for controller/model/hyperparameter selection",
+    "frozen_before_controller_result": true
+  },
+  "Q_norm": {
+    "redandblack": {
+      "Rep1": 0.29999999749843875,
+      "Rep2": 0.49999997997823714,
+      "Rep3": 0.7499999921538446,
+      "Rep4": 0.42499971067930387,
+      "Rep5": 0.5500000053445943,
+      "Rep6": 0.624999693159102,
+      "Rep7": 0.7499999878243925,
+      "Rep8": 0.8749997053347104,
+      "Rep9": 1.0
+    },
+    "longdress": {
+      "Rep1": 0.3000000072119473,
+      "Rep2": 0.4999999614377176,
+      "Rep3": 0.7500000435222223,
+      "Rep4": 0.4249997507446209,
+      "Rep5": 0.5499999636897249,
+      "Rep6": 0.6249997049703913,
+      "Rep7": 0.7499999179154954,
+      "Rep8": 0.8749997870548963,
+      "Rep9": 1.0
+    },
+    "soldier": {
+      "Rep1": 0.29999999621134055,
+      "Rep2": 0.5000000061313918,
+      "Rep3": 0.7500000154037976,
+      "Rep4": 0.42499985683512853,
+      "Rep5": 0.549999980807543,
+      "Rep6": 0.6249998667551798,
+      "Rep7": 0.7499999907275944,
+      "Rep8": 0.8749998760275861,
+      "Rep9": 1.0
+    },
+    "loot": {
+      "Rep1": 0.30000003270544007,
+      "Rep2": 0.5000000021599617,
+      "Rep3": 0.7500000028255726,
+      "Rep4": 0.4249998112388588,
+      "Rep5": 0.550000029879868,
+      "Rep6": 0.6249997806933806,
+      "Rep7": 0.7499999993343898,
+      "Rep8": 0.8749997813589908,
+      "Rep9": 1.0
+    }
+  },
+  "controller_may_use_contents": [
+    "redandblack",
+    "longdress",
+    "soldier"
+  ],
+  "controller_must_not_use_contents": [
+    "loot"
+  ],
+  "loot_mechanical_only": true,
+  "rep_id_is_not_quality": true,
+  "monotonicity_not_forced": true,
+  "notes": [
+    "redandblack: quality order ['Rep1', 'Rep4', 'Rep2', 'Rep5', 'Rep6', 'Rep7', 'Rep3', 'Rep8', 'Rep9'] != Rep ID order (preserved, not forced)",
+    "longdress: quality order ['Rep1', 'Rep4', 'Rep2', 'Rep5', 'Rep6', 'Rep7', 'Rep3', 'Rep8', 'Rep9'] != Rep ID order (preserved, not forced)",
+    "soldier: quality order ['Rep1', 'Rep4', 'Rep2', 'Rep5', 'Rep6', 'Rep7', 'Rep3', 'Rep8', 'Rep9'] != Rep ID order (preserved, not forced)",
+    "loot: quality order ['Rep1', 'Rep4', 'Rep2', 'Rep5', 'Rep6', 'Rep7', 'Rep3', 'Rep8', 'Rep9'] != Rep ID order (preserved, not forced)"
+  ]
+}

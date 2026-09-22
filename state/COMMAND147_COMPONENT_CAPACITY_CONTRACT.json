@@ -1,0 +1,40 @@
+{
+  "ts": "2026-08-18T18:24:19.439859+00:00",
+  "token": "COMMAND147_COMPONENT_CAPACITY_CONTRACT",
+  "status": "CERTIFIED",
+  "DeltaR": "sum rate(c) for c in C(r) \\ A_g",
+  "forbid_mininet_configured_bandwidth_as_policy_input": true,
+  "retired_full_representation_threshold_mbps": 1.5,
+  "marginal_component_thresholds_mbps": {
+    "redandblack": {
+      "b0": 33.33551166666667,
+      "db1": 25.018272866666667,
+      "db2": 29.503006466666665,
+      "e1": 17.69522633333333,
+      "e2": 17.693915933333333
+    },
+    "longdress": {
+      "b0": 38.364247,
+      "db1": 28.693347933333335,
+      "db2": 33.86024233333334,
+      "e1": 20.3279702,
+      "e2": 20.3319454
+    },
+    "soldier": {
+      "b0": 44.95054053333333,
+      "db1": 33.72434106666667,
+      "db2": 39.8292274,
+      "e1": 23.865653666666667,
+      "e2": 23.869836533333334
+    },
+    "loot": {
+      "b0": 34.841082799999995,
+      "db1": 26.098450466666666,
+      "db2": 30.818014466666664,
+      "e1": 18.541156066666666,
+      "e2": 18.548413866666667
+    }
+  },
+  "loot_network_holdout_sealed": true,
+  "live_estimator_certified": true
+}

@@ -1,0 +1,23 @@
+{
+  "name": "BASELINE_HEURISTIC_V1",
+  "created_ts": "2026-07-26T06:58:55.825442-05:00",
+  "binding": "command57",
+  "source_method_citation": "TwoStageHeuristic / Zhang et al., TCOM 2021 (as cited in moq_cluster_Sigcomm.py strategy banner)",
+  "paper_campaign_wording": "rule-based multicast design (old paper baseline list)",
+  "expected_taxonomy": "relay-coordinated shared delivery over the same MoQ substrate as MD2G",
+  "campaign_implementation": {
+    "entry": "moq_cluster_Sigcomm.py --strategy heuristic",
+    "controller": "heuristic_controller_v2_refined.py \u2192 /tmp/r0_decisions.json (layers format)",
+    "transport": "MoQ (hang/moq-relay)",
+    "session_model": "users attach to leaf relays r1/r2; shared broadcasts",
+    "cross_user_fanout": "expected (shared delivery)",
+    "shared_representation_decision": "group-level version selection / bandwidth thresholds",
+    "classification_target": "TRANSPORT_ADAPTED_AUTHENTIC (controlled same-substrate baseline)"
+  },
+  "required_proofs": [
+    "same MoQ topology as MD2G",
+    "shared-track fan-out present",
+    "no silent unicast path",
+    "matched seeds/traces"
+  ]
+}

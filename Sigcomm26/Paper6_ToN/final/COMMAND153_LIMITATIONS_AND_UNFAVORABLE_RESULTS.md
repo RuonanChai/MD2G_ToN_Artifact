@@ -1,0 +1,50 @@
+# COMMAND153 limitations and unfavorable results
+
+- Never claim zero stall.
+- Delay is NOT_IN_FINAL_CLAIM_CONTRACT.
+- Rb is physical bottleneck pressure, not bandwidth saving; use Ro/B_shared/B_unicast separately.
+- Pre-Rb 56/120 cells are DIAGNOSTIC_ONLY and excluded from final U/CI.
+- MOQ_UNICAST is a delivery-mode comparison, not same-substrate.
+- NOT_APPLICABLE (A1–A5/A7, FoV 20/40/60/80) is never experimental validation; command146 F8/F9 cannot be filled from NA tokens.
+- Scaling is a 150-key logical matrix: 90 exact DEV reuses + 60 newly launched cells, not 150 new executions.
+- Unfavorable matched blocks (MD2G delta_U < 0): 64 / 189
+- `longdress_4g_u20_s151` delta_U=-0.0845 vs CLUSTERING_COMPONENT
+- `longdress_4g_u20_s152` delta_U=-0.0886 vs CLUSTERING_COMPONENT
+- `longdress_4g_u20_s153` delta_U=-0.0996 vs RULE_COMPONENT
+- `longdress_5g_dominant_u20_s151` delta_U=-0.1653 vs RULE_COMPONENT
+- `longdress_5g_dominant_u20_s152` delta_U=-0.1617 vs RULE_COMPONENT
+- `longdress_5g_dominant_u20_s153` delta_U=-0.1588 vs RULE_COMPONENT
+- `longdress_5g_u20_s151` delta_U=-0.2137 vs RULE_COMPONENT
+- `longdress_5g_u20_s152` delta_U=-0.2051 vs CLUSTERING_COMPONENT
+- `longdress_5g_u20_s153` delta_U=-0.1724 vs RULE_COMPONENT
+- `longdress_default_mix_u20_s151` delta_U=-0.1398 vs RULE_COMPONENT
+- `longdress_default_mix_u20_s152` delta_U=-0.1543 vs CLUSTERING_COMPONENT
+- `longdress_default_mix_u20_s153` delta_U=-0.1177 vs RULE_COMPONENT
+- `longdress_fiber_optic_u20_s151` delta_U=-0.1802 vs RULE_COMPONENT
+- `longdress_fiber_optic_u20_s152` delta_U=-0.1977 vs RULE_COMPONENT
+- `longdress_fiber_optic_u20_s153` delta_U=-0.2111 vs RULE_COMPONENT
+- `longdress_wifi_dominant_u20_s151` delta_U=-0.1648 vs CLUSTERING_COMPONENT
+- `longdress_wifi_dominant_u20_s152` delta_U=-0.1152 vs RULE_COMPONENT
+- `longdress_wifi_dominant_u20_s153` delta_U=-0.1369 vs RULE_COMPONENT
+- `longdress_wifi_u20_s151` delta_U=-0.2159 vs RULE_COMPONENT
+- `longdress_wifi_u20_s152` delta_U=-0.1595 vs RULE_COMPONENT
+- `longdress_wifi_u20_s153` delta_U=-0.1587 vs RULE_COMPONENT
+- `redandblack_4g_u20_s151` delta_U=-0.1500 vs RULE_COMPONENT
+- `redandblack_4g_u20_s152` delta_U=-0.0598 vs CLUSTERING_COMPONENT
+- `redandblack_4g_u20_s153` delta_U=-0.1184 vs CLUSTERING_COMPONENT
+- `redandblack_5g_dominant_u20_s152` delta_U=-0.1387 vs RULE_COMPONENT
+- `redandblack_5g_u20_s151` delta_U=-0.1800 vs RULE_COMPONENT
+- `redandblack_5g_u20_s152` delta_U=-0.2119 vs RULE_COMPONENT
+- `redandblack_5g_u20_s153` delta_U=-0.1600 vs RULE_COMPONENT
+- `redandblack_default_mix_u20_s151` delta_U=-0.1674 vs RULE_COMPONENT
+- `redandblack_default_mix_u20_s152` delta_U=-0.1693 vs RULE_COMPONENT
+- `redandblack_fiber_optic_u20_s151` delta_U=-0.1858 vs CLUSTERING_COMPONENT
+- `redandblack_fiber_optic_u20_s152` delta_U=-0.1801 vs RULE_COMPONENT
+- `redandblack_fiber_optic_u20_s153` delta_U=-0.2070 vs RULE_COMPONENT
+- `redandblack_wifi_dominant_u20_s153` delta_U=-0.1344 vs RULE_COMPONENT
+- `redandblack_wifi_u20_s151` delta_U=-0.1728 vs RULE_COMPONENT
+- `redandblack_wifi_u20_s152` delta_U=-0.1689 vs RULE_COMPONENT
+- `redandblack_wifi_u20_s153` delta_U=-0.1841 vs RULE_COMPONENT
+- `soldier_4g_u100_s151` delta_U=-0.0794 vs CLUSTERING_COMPONENT
+- `soldier_4g_u100_s152` delta_U=-0.0636 vs CLUSTERING_COMPONENT
+- `soldier_4g_u100_s153` delta_U=-0.0524 vs CLUSTERING_COMPONENT

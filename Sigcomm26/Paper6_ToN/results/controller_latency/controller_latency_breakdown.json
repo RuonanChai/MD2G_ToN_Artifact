@@ -1,0 +1,63 @@
+{
+  "n_iters": 1000,
+  "n_users": 60,
+  "sidecar": "./Sigcomm26/Paper6_ToN/artifacts/command148_maindev/c148dev_redandblack_4g_u60_MD2G_COMPONENT_s153/COMMAND148_STUDENT_INFERENCE.jsonl",
+  "stages": [
+    {
+      "mean_ms": 0.0008630305528640747,
+      "median_ms": 0.0008610077202320099,
+      "p95_ms": 0.0010021030902862549,
+      "p99_ms": 0.0010431697592139244,
+      "n": 1000,
+      "stage": "state_collection"
+    },
+    {
+      "mean_ms": 0.8704252759926021,
+      "median_ms": 0.8671139366924763,
+      "p95_ms": 0.8803857723250985,
+      "p99_ms": 0.9427449340000749,
+      "n": 1000,
+      "stage": "feature_preprocessing"
+    },
+    {
+      "mean_ms": 23.49175388040021,
+      "median_ms": 29.854163993149996,
+      "p95_ms": 57.98163691069931,
+      "p99_ms": 59.77485231589526,
+      "n": 1000,
+      "stage": "student_policy_inference"
+    },
+    {
+      "mean_ms": 0.0243407329544425,
+      "median_ms": 0.020840438082814217,
+      "p95_ms": 0.022525549866259095,
+      "p99_ms": 0.025846520438790318,
+      "n": 1000,
+      "stage": "grouping_decision"
+    },
+    {
+      "mean_ms": 0.7010795255191624,
+      "median_ms": 0.7331033702939749,
+      "p95_ms": 0.7552435621619225,
+      "p99_ms": 0.7850378146395085,
+      "n": 1000,
+      "stage": "action_generation"
+    },
+    {
+      "mean_ms": 0.3545686644501984,
+      "median_ms": 0.3578669857233763,
+      "p95_ms": 0.40725746657699347,
+      "p99_ms": 0.41348638013005257,
+      "n": 1000,
+      "stage": "relay_update"
+    },
+    {
+      "mean_ms": 25.44303110986948,
+      "median_ms": 31.905243871733546,
+      "p95_ms": 60.009632585570216,
+      "p99_ms": 61.800256413407624,
+      "n": 1000,
+      "stage": "total_pipeline"
+    }
+  ]
+}

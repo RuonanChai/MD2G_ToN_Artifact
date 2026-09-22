@@ -1,0 +1,82 @@
+{
+  "paper": "Sigcomm26/MD2G_Sigcomm_submit version4.pdf",
+  "binding": "command36",
+  "baselines": {
+    "moq_multicast": [
+      "MD2G",
+      "Heuristic",
+      "Clustering"
+    ],
+    "unicast_references": [
+      "Rolling",
+      "GROOT"
+    ],
+    "removed": [
+      "DASH-PC",
+      "PCC-DASH"
+    ]
+  },
+  "claims_pending_evidence": [
+    {
+      "id": "C_fig5",
+      "artifact": "Fig.5",
+      "status": "AWAIT_EXPERIMENT"
+    },
+    {
+      "id": "C_fig6",
+      "artifact": "Fig.6",
+      "status": "AWAIT_EXPERIMENT"
+    },
+    {
+      "id": "C_fig7",
+      "artifact": "Fig.7",
+      "status": "AWAIT_EXPERIMENT"
+    },
+    {
+      "id": "C_fig8",
+      "artifact": "Fig.8",
+      "status": "AWAIT_EXPERIMENT"
+    },
+    {
+      "id": "C_fig9",
+      "artifact": "Fig.9",
+      "status": "AWAIT_EXPERIMENT"
+    },
+    {
+      "id": "C_fig10",
+      "artifact": "Fig.10",
+      "status": "AWAIT_EXPERIMENT"
+    },
+    {
+      "id": "C_fig11",
+      "artifact": "Fig.11/Table4",
+      "status": "AWAIT_EXPERIMENT"
+    },
+    {
+      "id": "C_fig12",
+      "artifact": "Fig.12",
+      "status": "AWAIT_EXPERIMENT"
+    },
+    {
+      "id": "C_fig13",
+      "artifact": "Fig.13",
+      "status": "AWAIT_EXPERIMENT"
+    },
+    {
+      "id": "C_fig14",
+      "artifact": "Fig.14",
+      "status": "AWAIT_EXPERIMENT"
+    },
+    {
+      "id": "C_tab1",
+      "artifact": "Table1",
+      "status": "REP_LADDER_MEASURED"
+    },
+    {
+      "id": "C_taxonomy",
+      "artifact": "baseline_wording",
+      "status": "CONTRACT_WRITTEN"
+    }
+  ],
+  "note": "Numerical claims must be recomputed after GROOT replaces DASH-PC; never copy MM26/rebuttal numbers."
+}

@@ -1,0 +1,17 @@
+{
+  "ts": "2026-08-28T09:20:00Z",
+  "token": "PAPER_FINALIZATION_FIGURES_READY",
+  "audit": "FINAL_FIGURE_AUDIT.md",
+  "skipped": "SKIPPED_FIGURES.md",
+  "manifest": "FINAL_FIGURE_MANIFEST.json",
+  "latex_numbers": "FINAL_LATEX_NUMBERS.tex",
+  "include_tex": "FIGURE_INCLUDE_SUGGESTION.tex",
+  "fail_closed_families": [
+    "Fig.4 fluidity-QoE trade-off",
+    "Fig.5 TTFB CDF",
+    "Fig.7 Continuity vs Recovery timeseries",
+    "True Buffer Level buffer_level_sec"
+  ],
+  "new_experiment_required": false,
+  "note": "Gaps are unimplemented zero fields in frozen VALID perf.csv; no truthful reconstruction without new instrumentation epoch."
+}

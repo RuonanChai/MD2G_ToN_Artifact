@@ -1,0 +1,663 @@
+{
+  "SIGCOMM_SUBMISSION_READY": false,
+  "baseline_taxonomy": {
+    "clustering": "relay-coordinated shared delivery over same MoQ substrate",
+    "groot": "GROOT-inspired per-user DASH/HTTP unicast \u2014 MoQ shared path INVALID",
+    "heuristic": "relay-coordinated shared delivery over same MoQ substrate",
+    "md2g": "relay-coordinated shared delivery over MoQ",
+    "rolling": "per-user DASH/HTTP unicast (TRANSPORT_ADAPTED / Rolling-inspired) \u2014 MoQ shared path INVALID"
+  },
+  "binding_command": "command57.txt",
+  "cell_validity": {
+    "exit_zero_insufficient": true,
+    "requires": [
+      "strategy_fingerprint",
+      "expected_processes",
+      "launched_user_count",
+      "per_user_perf_logs",
+      "sustained_payload",
+      "duration_coverage",
+      "denominator_completeness",
+      "no_cross_cell_reuse",
+      "scoped_cleanup",
+      "raw_summary_reproducibility",
+      "correct_hashes"
+    ]
+  },
+  "cleanup_rules": {
+    "after_cell": "chown artifacts to campaign user; never leave root-owned exit_code blocking matrix",
+    "prohibited_global": [
+      "mn -c while other campaign cells live",
+      "broad pkill/killall across unrelated moq/ton processes",
+      "global OVS reset mid-cell",
+      "deleting shared /tmp across cells"
+    ],
+    "scoped": "cell TMP_PREFIX and recorded PIDs only"
+  },
+  "contract_sha256": "c918673b29bc1a3f9db8717b5950bab48c878b578680e4a35dd98ac0566259da",
+  "created_ts": "2026-07-26T06:57:22.955610-05:00",
+  "drift_enforcement": {
+    "freeze_file": "state/MD2G_TESTBED_FREEZE.json",
+    "hash_file": "state/MD2G_TESTBED_CONTRACT_SHA256.txt",
+    "rule": "No scientific cell may launch when computed runtime fingerprint differs from frozen hash without new contract version",
+    "test": "tests/test_md2g_testbed_contract.py"
+  },
+  "environment": {
+    "certs": {
+      "cert_pem": "cert.pem",
+      "cert_sha256": "f801cdf074c13a2acc386703d069e9e1521e11a991bf6d9a5539069a4872ebf8",
+      "key_pem": "key.pem",
+      "note": "paths only; do not embed secret material"
+    },
+    "cpu_count": "128",
+    "cpu_model": "AMD EPYC 7773X 64-Core Processor",
+    "env_required": {
+      "SIGCOMM_DATASET_DIR": "./datasets",
+      "SIGCOMM_MOQ_BIN_DIR": "${SIGCOMM_MOQ_BIN_DIR}",
+      "SIGCOMM_PYTHON": "./Sigcomm26/.venv_sigcomm/bin/python3",
+      "SIGCOMM_QOE_EQ9": "1",
+      "SIGCOMM_REP_LADDER": "1",
+      "SIGCOMM_VIDEO_DIR": "./video"
+    },
+    "ffmpeg": "ffmpeg version 7.1.5-0+deb13u1 Copyright (c) 2000-2026 the FFmpeg developers",
+    "git_head": "e7e27889e9e0279b1725c7eb9cf91be4fdb26861",
+    "gstreamer": "gst-launch-1.0 version 1.26.2",
+    "hostname": "dd",
+    "kernel": "6.12.95+deb13-amd64",
+    "mininet": "2.3.0",
+    "moq_bins": {
+      "hang": {
+        "mtime": 1766898464.0,
+        "path": "${SIGCOMM_MOQ_BIN_DIR}",
+        "sha256": "ca4aed9e8abd6b47b9ac2c5bd8a6b49cc229624e9fbac304cc03cdfa0ea1180c"
+      },
+      "moq_relay": {
+        "mtime": 1766898467.0,
+        "path": "${SIGCOMM_MOQ_BIN_DIR}",
+        "sha256": "2bc17a143879009d10834532c0c42ef37c76d22f6bafeb9316fb0d713d570445"
+      }
+    },
+    "namespace_naming": {
+      "mininet_hosts": "n0,r0,r1,r2,h1..hN",
+      "moq_broadcast": "base1|base2|base3|base*_enhanced*",
+      "moq_track": "video0 (shared-delivery path)"
+    },
+    "nics": "lo               UNKNOWN        00:00:00:00:00:00 <LOOPBACK,UP,LOWER_UP> \nenp33s0f0        UP             90:e2:ba:19:c7:94 <BROADCAST,MULTICAST,UP,LOWER_UP> \nenp33s0f1        DOWN           90:e2:ba:19:c7:95 <BROADCAST,MULTICAST> \nenp33s0f2        DOWN           90:e2:ba:19:c7:96 <BROADCAST,MULTICAST> \nenp33s0f3        DOWN           90:e2:ba:19:c7:97 <BROADCAST,MULTICAST> \nutun             UNKNOWN        <POINTOPOINT,MULTICAST,NOARP,UP,LOWER_UP> \nbr-8fd93c69ec10  DOWN           02:42:b0:98:e6:8c <NO-CARRIER,BROADCAST,MULTICAST,UP> \nbr-c3f548bfac18  DOWN           02:42:0f:db:c8:0c <NO-CARRIER,BROADCAST,MULTICAST,UP> \ndocker0          DOWN           02:42:21:7f:13:ab <NO-CARRIER,BROADCAST,MULTICAST,UP>",
+    "node": "v24.18.0",
+    "os_pretty": "Debian GNU/Linux 13 (trixie)",
+    "ovs": "ovs-vsctl (Open vSwitch) 3.5.0",
+    "packages_snapshot": {
+      "numpy": {
+        "file": "./Sigcomm26/.venv_sigcomm/lib/python3.13/site-packages/numpy/__init__.py",
+        "version": "2.1.3"
+      },
+      "pandas": {
+        "file": "./Sigcomm26/.venv_sigcomm/lib/python3.13/site-packages/pandas/__init__.py",
+        "version": "2.2.3"
+      },
+      "psutil": {
+        "file": "./Sigcomm26/.venv_sigcomm/lib/python3.13/site-packages/psutil/__init__.py",
+        "version": "6.1.1"
+      },
+      "sklearn": {
+        "file": "./Sigcomm26/.venv_sigcomm/lib/python3.13/site-packages/sklearn/__init__.py",
+        "version": "1.5.2"
+      },
+      "torch": {
+        "file": "./Sigcomm26/.venv_sigcomm/lib/python3.13/site-packages/torch/__init__.py",
+        "version": "2.5.1+cpu"
+      }
+    },
+    "ports": {
+      "dash_http": 8080,
+      "moq_relay": 4443
+    },
+    "process_user": "the-authors",
+    "python_system": "Python 3.13.5",
+    "python_venv": "./Sigcomm26/.venv_sigcomm/bin/python3",
+    "python_venv_version": "Python 3.13.5",
+    "ram_kb": "1056660484",
+    "repo_path": ".",
+    "runtime_env_contract": "contracts/SIGCOMM_RUNTIME_ENVIRONMENT.json",
+    "rustc": "/bin/sh: 1: rustc: not found",
+    "seed_generator": {
+      "matched_trial_rule": "same (network, users, trial) across strategies",
+      "module": "random / numpy (campaign cell seeds)"
+    },
+    "storage_srv": "3.6T 2.8T 828G 78%",
+    "timezone": "-0500",
+    "uname": "Linux dd 6.12.95+deb13-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.12.95-1 (2026-07-04) x86_64 GNU/Linux",
+    "venv_lock": "contracts/SIGCOMM_venv_requirements_lock.txt",
+    "venv_lock_sha256": "3e0dc7ebdc5d0659569757f6e00fc6f44bd552de3e8a01dbcb6e9fa19b2b4565"
+  },
+  "matrix_reference": {
+    "duration_s": 120,
+    "interval_s": 1.0,
+    "networks": [
+      "4g",
+      "5g",
+      "wifi",
+      "fiber_optic",
+      "default_mix"
+    ],
+    "strategies": [
+      "md2g",
+      "heuristic",
+      "clustering",
+      "rolling",
+      "groot"
+    ],
+    "users": [
+      10,
+      20,
+      50,
+      70,
+      100
+    ]
+  },
+  "measurement": {
+    "delay_separation_required": [
+      "startup_TTFB",
+      "steady_state_delivery_interval",
+      "controller_latency",
+      "relay_queue_latency"
+    ],
+    "prohibited_proxy_claims": [
+      "0.7\u00d7RX as useful-byte efficiency",
+      "steady-state interval as glass-to-glass",
+      "objective QoE as MOS"
+    ],
+    "qoe_canonical_until_v3": "QOE_ABSOLUTE_V2 / Eq.9 when SIGCOMM_QOE_EQ9=1 (objective proxy QoE, not MOS)",
+    "sources": {
+      "byte_counters": "leaf/root iface counters + UNICAST_AUTHENTICITY_PROOF.json for unicast",
+      "client_perf": "per-user *.csv / perf logs under cell root",
+      "controller": "controller latency logs when enabled"
+    },
+    "u_sys_note": "U_sys must not use 0.7\u00d7RX as useful-byte efficiency; direct instrumentation required before headline efficiency claims"
+  },
+  "media": {
+    "control_interval_s": 1.0,
+    "dir_bitrate_reference": "video/redandblack_6",
+    "dir_live": "video/redandblack_6_live",
+    "full_decode_required": true,
+    "measurement_window_s": 120,
+    "no_nb_frames_alone": true,
+    "quality_map": {
+      "Q1": [
+        3,
+        8,
+        9
+      ],
+      "Q2": [
+        2,
+        6
+      ],
+      "Q3": [
+        1,
+        7
+      ],
+      "Q4": [
+        4,
+        5
+      ]
+    },
+    "reps": {
+      "1": {
+        "bitrate_mbps_meas": 3.066,
+        "bitrate_mbps_table1": 3.07,
+        "bitrate_source_path": "video/redandblack_6/rep1_base1_h264.mp4",
+        "broadcast_name_moq": "base1",
+        "bytes": 46136253,
+        "codec": "H.264",
+        "container": "mp4",
+        "duration_s_meas_clip": 1.28,
+        "file": "rep1_base1_h264.mp4",
+        "fps": "25/1",
+        "nominal_run_duration_s": 120,
+        "quality_class_Q": 3,
+        "rep_id": 1,
+        "runtime_path": "video/redandblack_6_live/rep1_base1_h264.mp4",
+        "sha256": "099fcc07eb746dd700fa796be209fd902c8c5ca07ecbe49b38b22def74c1ef2a",
+        "source_sequence": "Red and Black"
+      },
+      "2": {
+        "bitrate_mbps_meas": 1.791,
+        "bitrate_mbps_table1": 1.79,
+        "bitrate_source_path": "video/redandblack_6/rep2_base2_h264.mp4",
+        "broadcast_name_moq": "base2",
+        "bytes": 26961965,
+        "codec": "H.264",
+        "container": "mp4",
+        "duration_s_meas_clip": 1.28,
+        "file": "rep2_base2_h264.mp4",
+        "fps": "25/1",
+        "nominal_run_duration_s": 120,
+        "quality_class_Q": 2,
+        "rep_id": 2,
+        "runtime_path": "video/redandblack_6_live/rep2_base2_h264.mp4",
+        "sha256": "a022adf1ecc3aa19ba5c28f57adf4b397f24411bdcaaead6a27a78194e13c1e5",
+        "source_sequence": "Red and Black"
+      },
+      "3": {
+        "bitrate_mbps_meas": 0.867,
+        "bitrate_mbps_table1": 0.87,
+        "bitrate_source_path": "video/redandblack_6/rep3_base3_h264.mp4",
+        "broadcast_name_moq": "base3",
+        "bytes": 13062131,
+        "codec": "H.264",
+        "container": "mp4",
+        "duration_s_meas_clip": 1.28,
+        "file": "rep3_base3_h264.mp4",
+        "fps": "25/1",
+        "nominal_run_duration_s": 120,
+        "quality_class_Q": 1,
+        "rep_id": 3,
+        "runtime_path": "video/redandblack_6_live/rep3_base3_h264.mp4",
+        "sha256": "72ef1b6dfa845f2c26c8d735337463db08328ceafd4eed1653e9ef670538936a",
+        "source_sequence": "Red and Black"
+      },
+      "4": {
+        "bitrate_mbps_meas": 4.538,
+        "bitrate_mbps_table1": 4.54,
+        "bitrate_source_path": "video/redandblack_6/rep4_base1_enhanced1_h264.mp4",
+        "broadcast_name_moq": "base1_enhanced1",
+        "bytes": 68404758,
+        "codec": "H.264",
+        "container": "mp4",
+        "duration_s_meas_clip": 1.067,
+        "file": "rep4_base1_enhanced1_h264.mp4",
+        "fps": "30/1",
+        "nominal_run_duration_s": 120,
+        "quality_class_Q": 4,
+        "rep_id": 4,
+        "runtime_path": "video/redandblack_6_live/rep4_base1_enhanced1_h264.mp4",
+        "sha256": "bfcab6908388dcbf4065691006eb86908604fabc10282c596e538c39918ba2e3",
+        "source_sequence": "Red and Black"
+      },
+      "5": {
+        "bitrate_mbps_meas": 6.416,
+        "bitrate_mbps_table1": 6.42,
+        "bitrate_source_path": "video/redandblack_6/rep5_base1_enhanced1_enhanced2_h264.mp4",
+        "broadcast_name_moq": "base1_enhanced2",
+        "bytes": 96686735,
+        "codec": "H.264",
+        "container": "mp4",
+        "duration_s_meas_clip": 1.067,
+        "file": "rep5_base1_enhanced1_enhanced2_h264.mp4",
+        "fps": "30/1",
+        "nominal_run_duration_s": 120,
+        "quality_class_Q": 4,
+        "rep_id": 5,
+        "runtime_path": "video/redandblack_6_live/rep5_base1_enhanced1_enhanced2_h264.mp4",
+        "sha256": "5c117df26c96fa67a56f67be27dec211dde34653e13fad7c2e2b28abb8e2a6a4",
+        "source_sequence": "Red and Black"
+      },
+      "6": {
+        "bitrate_mbps_meas": 2.801,
+        "bitrate_mbps_table1": 2.8,
+        "bitrate_source_path": "video/redandblack_6/rep6_base2_enhanced1_h264.mp4",
+        "broadcast_name_moq": "base2_enhanced1",
+        "bytes": 42229670,
+        "codec": "H.264",
+        "container": "mp4",
+        "duration_s_meas_clip": 1.067,
+        "file": "rep6_base2_enhanced1_h264.mp4",
+        "fps": "30/1",
+        "nominal_run_duration_s": 120,
+        "quality_class_Q": 2,
+        "rep_id": 6,
+        "runtime_path": "video/redandblack_6_live/rep6_base2_enhanced1_h264.mp4",
+        "sha256": "da800273bb957b2e8cfc4b6b0866aeb1e5ab234c0771e19eabe15e06f7421633",
+        "source_sequence": "Red and Black"
+      },
+      "7": {
+        "bitrate_mbps_meas": 3.911,
+        "bitrate_mbps_table1": 3.91,
+        "bitrate_source_path": "video/redandblack_6/rep7_base2_enhanced1_enhanced2_h264.mp4",
+        "broadcast_name_moq": "base2_enhanced2",
+        "bytes": 58945733,
+        "codec": "H.264",
+        "container": "mp4",
+        "duration_s_meas_clip": 1.067,
+        "file": "rep7_base2_enhanced1_enhanced2_h264.mp4",
+        "fps": "30/1",
+        "nominal_run_duration_s": 120,
+        "quality_class_Q": 3,
+        "rep_id": 7,
+        "runtime_path": "video/redandblack_6_live/rep7_base2_enhanced1_enhanced2_h264.mp4",
+        "sha256": "4e62982ad9720d9f6e0a88ebd779b9e00a7a525814e445a56dca5600bcef57f0",
+        "source_sequence": "Red and Black"
+      },
+      "8": {
+        "bitrate_mbps_meas": 1.428,
+        "bitrate_mbps_table1": 1.43,
+        "bitrate_source_path": "video/redandblack_6/rep8_base3_enhanced1_h264.mp4",
+        "broadcast_name_moq": "base3_enhanced1",
+        "bytes": 21533099,
+        "codec": "H.264",
+        "container": "mp4",
+        "duration_s_meas_clip": 1.067,
+        "file": "rep8_base3_enhanced1_h264.mp4",
+        "fps": "30/1",
+        "nominal_run_duration_s": 120,
+        "quality_class_Q": 1,
+        "rep_id": 8,
+        "runtime_path": "video/redandblack_6_live/rep8_base3_enhanced1_h264.mp4",
+        "sha256": "a82821647203b43161987243167919a1c7bfa7c858e3eb18d40f9d5b4e89c532",
+        "source_sequence": "Red and Black"
+      },
+      "9": {
+        "bitrate_mbps_meas": 1.971,
+        "bitrate_mbps_table1": 1.97,
+        "bitrate_source_path": "video/redandblack_6/rep9_base3_enhanced1_enhanced2_h264.mp4",
+        "broadcast_name_moq": "base3_enhanced2",
+        "bytes": 29725410,
+        "codec": "H.264",
+        "container": "mp4",
+        "duration_s_meas_clip": 1.067,
+        "file": "rep9_base3_enhanced1_enhanced2_h264.mp4",
+        "fps": "30/1",
+        "nominal_run_duration_s": 120,
+        "quality_class_Q": 1,
+        "rep_id": 9,
+        "runtime_path": "video/redandblack_6_live/rep9_base3_enhanced1_enhanced2_h264.mp4",
+        "sha256": "f1d877d1af2b47af512dbd9ae3653a603ec6ff67b2096971850d417a9b9b7f8a",
+        "source_sequence": "Red and Black"
+      }
+    },
+    "run_duration_s": 120,
+    "sequence": "Red and Black",
+    "warmup_window_s": 0
+  },
+  "name": "MD2G_TESTBED_CONTRACT_V1",
+  "prohibited_operations": [
+    "mn -c while other campaign cells live",
+    "broad pkill/killall across unrelated moq/ton processes",
+    "global OVS reset mid-cell",
+    "deleting shared /tmp across cells",
+    "changing trace/seed mid-campaign",
+    "editing completed cell summaries",
+    "excluding failed users from denominators",
+    "changing metric weights after seeing holdout",
+    "relabeling baseline without source evidence",
+    "reusing contaminated holdout for final claims",
+    "launching Rolling/GROOT via moq_cluster without SIGCOMM_ALLOW_MOQ_SHARED_BASELINES diagnostic override",
+    "proceeding with runtime that differs from frozen testbed hash without new contract version"
+  ],
+  "runtime_fingerprint": {
+    "contract_sha256": "c918673b29bc1a3f9db8717b5950bab48c878b578680e4a35dd98ac0566259da",
+    "dataset_sha256": {
+      "4g": "75035461c37b65982a66a491b1f5002817e3f001f8163a7b8cd21cfd9702816a",
+      "5g": "a04b72b7ca1c531be90d6ebf25cbbb197cbc360be144694d6449a1c08911938c",
+      "device_performance": "dce339120e5d9972f562ec344a6e9cc919b2fcf73777955177416e11015674c1",
+      "fiber_optic": "c86a753bb2fb934bf7d38a1ed0b67ceb4dff55caba138a506347f4eab3a5b791",
+      "fov_head_movement": "c16e4360924b272e4674d77e6279ab7381da5fc79e1d84cdd581929d93445cd3",
+      "wifi": "0c11ad42b4b71bd42c38b52804aaaf6dc5ffcb5ff4f2b4bf4e4434fea0df02b4"
+    },
+    "hang_sha256": "ca4aed9e8abd6b47b9ac2c5bd8a6b49cc229624e9fbac304cc03cdfa0ea1180c",
+    "kernel": "6.12.95+deb13-amd64",
+    "moq_relay_sha256": "2bc17a143879009d10834532c0c42ef37c76d22f6bafeb9316fb0d713d570445",
+    "python_venv_version": "Python 3.13.5",
+    "rep_sha256": {
+      "1": "099fcc07eb746dd700fa796be209fd902c8c5ca07ecbe49b38b22def74c1ef2a",
+      "2": "a022adf1ecc3aa19ba5c28f57adf4b397f24411bdcaaead6a27a78194e13c1e5",
+      "3": "72ef1b6dfa845f2c26c8d735337463db08328ceafd4eed1653e9ef670538936a",
+      "4": "bfcab6908388dcbf4065691006eb86908604fabc10282c596e538c39918ba2e3",
+      "5": "5c117df26c96fa67a56f67be27dec211dde34653e13fad7c2e2b28abb8e2a6a4",
+      "6": "da800273bb957b2e8cfc4b6b0866aeb1e5ab234c0771e19eabe15e06f7421633",
+      "7": "4e62982ad9720d9f6e0a88ebd779b9e00a7a525814e445a56dca5600bcef57f0",
+      "8": "a82821647203b43161987243167919a1c7bfa7c858e3eb18d40f9d5b4e89c532",
+      "9": "f1d877d1af2b47af512dbd9ae3653a603ec6ff67b2096971850d417a9b9b7f8a"
+    },
+    "venv_lock_sha256": "3e0dc7ebdc5d0659569757f6e00fc6f44bd552de3e8a01dbcb6e9fa19b2b4565"
+  },
+  "runtime_fingerprint_sha256": "2723b33f9519d31158812ec348a9304860936598da4d78fe1cd91f64c91c63de",
+  "source_of_truth_paths": {
+    "controller": "MM26/regional_relay_controller.py",
+    "dispatch": "dispatch_strategy_enhanced_unified_Sigcomm.py",
+    "matrix": "Sigcomm26/Paper6_ToN/contracts/EXPERIMENT_MATRIX_REQUIRED.json",
+    "moq_cluster": "moq_cluster_Sigcomm.py",
+    "qoe_v2": "Sigcomm26/Paper6_ToN/contracts/QOE_ABSOLUTE_V2.json",
+    "rep_ladder": "Sigcomm26/Paper6_ToN/contracts/REP_LADDER_MEASUREMENT.json",
+    "runtime": "Sigcomm26/Paper6_ToN/contracts/SIGCOMM_RUNTIME_ENVIRONMENT.json",
+    "unicast_fairness": "Sigcomm26/Paper6_ToN/contracts/UNICAST_BASELINE_FAIRNESS_CONTRACT.json"
+  },
+  "terminal_token_only": "SIGCOMM_SUBMISSION_READY_TRUE",
+  "topology_dash_unicast": {
+    "access_profiles": {
+      "4g": {
+        "bw_mbps_cap": 40,
+        "delay": "10ms",
+        "loss": 0
+      },
+      "5g": {
+        "bw_mbps_cap": 800,
+        "delay": "5ms",
+        "loss": 0
+      },
+      "fiber_optic": {
+        "bw_mbps_cap": 800,
+        "delay": "5ms",
+        "loss": 0
+      },
+      "wifi": {
+        "bw_mbps_cap": 300,
+        "delay": "5ms",
+        "loss": 0
+      }
+    },
+    "authority_code": [
+      "DASH/rolling_dash_experiment.py",
+      "DASH/groot_dash_experiment.py",
+      "DASH/Rolling",
+      "DASH/GROOT"
+    ],
+    "description": "n0 content -> r0 HTTP DASH server -> s1 -> clients",
+    "diagnostic_override_env": "SIGCOMM_ALLOW_MOQ_SHARED_BASELINES=1",
+    "moq_shared_path_forbidden_for_rolling_groot": true,
+    "runner": "Sigcomm26/Paper6_ToN/scripts/run_authentic_unicast_baseline_cell.py",
+    "server_url": "http://10.0.4.1:8080"
+  },
+  "topology_moq_shared": {
+    "edges": [
+      {
+        "bw_mbps": 1000,
+        "delay": "1ms",
+        "dst": "r0",
+        "loss": 0,
+        "max_queue_size": 2000,
+        "src": "n0"
+      },
+      {
+        "bw_mbps": "capacity_limited_by_workload",
+        "delay": "5ms",
+        "dst": "r1",
+        "loss": 0,
+        "max_queue_size": 1000,
+        "src": "r0"
+      },
+      {
+        "bw_mbps": "capacity_limited_by_workload",
+        "delay": "5ms",
+        "dst": "r2",
+        "loss": 0,
+        "max_queue_size": 1000,
+        "src": "r0"
+      },
+      {
+        "bw_mbps": "per_user_access",
+        "dst": "users_r1",
+        "max_queue_size": 1000,
+        "src": "r1"
+      },
+      {
+        "bw_mbps": "per_user_access",
+        "dst": "users_r2",
+        "max_queue_size": 1000,
+        "src": "r2"
+      }
+    ],
+    "mtu": {
+      "quic_max_udp_payload": 1200,
+      "quic_mtu": 1200
+    },
+    "nodes": [
+      {
+        "addrs": [
+          "10.0.1.2/24"
+        ],
+        "id": "n0",
+        "role": "publisher"
+      },
+      {
+        "addrs": [
+          "10.0.1.1/24",
+          "10.0.2.1/24",
+          "10.0.3.1/24"
+        ],
+        "id": "r0",
+        "port": 4443,
+        "role": "root_relay"
+      },
+      {
+        "addrs": [
+          "10.0.2.2/24",
+          "10.0.4.1/24"
+        ],
+        "id": "r1",
+        "role": "leaf_relay"
+      },
+      {
+        "addrs": [
+          "10.0.3.2/24",
+          "10.0.5.1/24"
+        ],
+        "id": "r2",
+        "role": "leaf_relay"
+      },
+      {
+        "id": "users_r1",
+        "lan": "10.0.4.0/24",
+        "role": "clients"
+      },
+      {
+        "id": "users_r2",
+        "lan": "10.0.5.0/24",
+        "role": "clients"
+      }
+    ],
+    "queueing": "Linux HTB via Mininet TCLink",
+    "source_file": "moq_cluster_Sigcomm.py",
+    "user_split": "ceil(N/2) on r1, floor(N/2) on r2 (see moq_cluster_Sigcomm.py)"
+  },
+  "venue": "SIGCOMM (ToN-level scientific rigor)",
+  "version": "V1",
+  "workload": {
+    "access_link_caps": {
+      "4g": {
+        "bw_mbps_cap": 40,
+        "delay": "10ms",
+        "loss": 0
+      },
+      "5g": {
+        "bw_mbps_cap": 800,
+        "delay": "5ms",
+        "loss": 0
+      },
+      "fiber_optic": {
+        "bw_mbps_cap": 800,
+        "delay": "5ms",
+        "loss": 0
+      },
+      "wifi": {
+        "bw_mbps_cap": 300,
+        "delay": "5ms",
+        "loss": 0
+      }
+    },
+    "client_launch_stagger_s": "as implemented in moq_cluster_Sigcomm.py / DASH runner",
+    "datasets": {
+      "4g": {
+        "bytes": 6712,
+        "exists": true,
+        "path": "datasets/4G-network-data_clean.csv",
+        "sha256": "75035461c37b65982a66a491b1f5002817e3f001f8163a7b8cd21cfd9702816a"
+      },
+      "5g": {
+        "bytes": 3211,
+        "exists": true,
+        "path": "datasets/5g_final_trace.csv",
+        "sha256": "a04b72b7ca1c531be90d6ebf25cbbb197cbc360be144694d6449a1c08911938c"
+      },
+      "6dof": {
+        "bytes": 562007,
+        "exists": true,
+        "path": "datasets/6DoF_clean.xlsx",
+        "sha256": "8a437c32583a99a8b71a731b53f985207516a8e0982a63aa4ea3048cb126cd3b"
+      },
+      "device_performance": {
+        "bytes": 383,
+        "exists": true,
+        "path": "datasets/Headset device performance.csv",
+        "sha256": "dce339120e5d9972f562ec344a6e9cc919b2fcf73777955177416e11015674c1"
+      },
+      "fiber_optic": {
+        "bytes": 2404767,
+        "exists": true,
+        "path": "datasets/Optic_Bandwidth_clean_2.csv",
+        "sha256": "c86a753bb2fb934bf7d38a1ed0b67ceb4dff55caba138a506347f4eab3a5b791"
+      },
+      "fov_head_movement": {
+        "bytes": 462729,
+        "exists": true,
+        "path": "datasets/Head_movement_clean_1.csv",
+        "sha256": "c16e4360924b272e4674d77e6279ab7381da5fc79e1d84cdd581929d93445cd3"
+      },
+      "wifi": {
+        "bytes": 233917,
+        "exists": true,
+        "path": "datasets/wifi_clean.csv",
+        "sha256": "0c11ad42b4b71bd42c38b52804aaaf6dc5ffcb5ff4f2b4bf4e4434fea0df02b4"
+      }
+    },
+    "device_profiles": {
+      "bytes": 383,
+      "exists": true,
+      "path": "datasets/Headset device performance.csv",
+      "sha256": "dce339120e5d9972f562ec344a6e9cc919b2fcf73777955177416e11015674c1"
+    },
+    "failure_denominator": "all launched clients retained; short/incomplete/header-only/failed remain in denominators",
+    "fov_overlap_threshold_default": 0.5,
+    "fov_trace": {
+      "bytes": 462729,
+      "exists": true,
+      "path": "datasets/Head_movement_clean_1.csv",
+      "sha256": "c16e4360924b272e4674d77e6279ab7381da5fc79e1d84cdd581929d93445cd3"
+    },
+    "matched_seed_rule": "matched trials across strategies for same (net,users,trial)",
+    "matrix_contract": "contracts/EXPERIMENT_MATRIX_REQUIRED.json",
+    "networks": [
+      "4g",
+      "5g",
+      "wifi",
+      "fiber_optic",
+      "default_mix"
+    ],
+    "strategies_matrix": [
+      "md2g",
+      "heuristic",
+      "clustering",
+      "rolling",
+      "groot"
+    ],
+    "trials_ordinary": 3,
+    "trials_sensitive": 5,
+    "users": [
+      10,
+      20,
+      50,
+      70,
+      100
+    ]
+  }
+}

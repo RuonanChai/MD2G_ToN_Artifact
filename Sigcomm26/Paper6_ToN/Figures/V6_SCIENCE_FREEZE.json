@@ -1,0 +1,387 @@
+{
+  "created_utc": "2026-08-31T15:13:00.259301+00:00",
+  "authority": "V6 Phase0 SCIENCE FREEZE \u2014 no value changes allowed",
+  "metric_contract": {
+    "U": "clip(0.25*Ro_component + 0.60*Rq - 0.15*Rb, 0, 1)",
+    "weights": {
+      "Ro": 0.25,
+      "Rq": 0.6,
+      "Rb": 0.15
+    }
+  },
+  "evidence_module_paths": {
+    "ART_DASH": "./Sigcomm26/Paper6_ToN/artifacts/command153_cross_stack_dash",
+    "FIG": "./Sigcomm26/Paper6_ToN/Figures",
+    "FINAL": "./Sigcomm26/Paper6_ToN/final",
+    "REPO": ".",
+    "TON": "./Sigcomm26/Paper6_ToN"
+  },
+  "paper_rewrite_input_pack_sha256": "880668c1d4ebbd367b33a7b96f68b558effd8651f7ba71069286db1b1f54edb4",
+  "source_data": [
+    {
+      "path": "final/COMMAND153_FIGURE_SOURCE_DATA/canary_rbv1.json",
+      "sha256": "3ab440d8ce110f52c56149811f316e85847086d5303b377aa952883a88fcc5c0",
+      "bytes": 654476
+    },
+    {
+      "path": "final/COMMAND153_FIGURE_SOURCE_DATA/cross_stack_dash.json",
+      "sha256": "dd79d2a0e54333288d04f4f78af2dd7acf340112a455fb37e07dcb2391332318",
+      "bytes": 15945
+    },
+    {
+      "path": "final/COMMAND153_FIGURE_SOURCE_DATA/dev.json",
+      "sha256": "fde0b1f438887e2dcb5cf90774bd174c4e4332d3aa1057aa7315b02818840c47",
+      "bytes": 5253880
+    },
+    {
+      "path": "final/COMMAND153_FIGURE_SOURCE_DATA/loot.json",
+      "sha256": "787f76a6898417412c3ad39ae196194ffce795943c1e6dcb0988451b11fa6f65",
+      "bytes": 1702859
+    },
+    {
+      "path": "final/COMMAND153_FIGURE_SOURCE_DATA/matched_blocks.json",
+      "sha256": "ffde7e48de0f8feeb2b9153e9e4554efd21cd064089aa57476ca530b221cfbed",
+      "bytes": 91185
+    },
+    {
+      "path": "final/COMMAND153_FIGURE_SOURCE_DATA/scaling.json",
+      "sha256": "5d399cb2ec770555d0d49bb5b24d97fdccdbaf9bf27ce754dfa95b650b7e30bd",
+      "bytes": 806075
+    }
+  ],
+  "figure_scripts_before_v6": [
+    {
+      "path": "Buffer Level/plot_buffer_level_by_strategy.py",
+      "sha256": "8f4858fcac0c81b00ba56a368f631ff9b2e220ca4cdc875cf2225566d28ce871",
+      "bytes": 2097
+    },
+    {
+      "path": "Buffer Level/plot_buffer_level_by_users.py",
+      "sha256": "297ecaf356f68f49f8b23b598f582995cbbe4777a6b3ce1fd439ff25f4809dbe",
+      "bytes": 1913
+    },
+    {
+      "path": "Buffer Level/plot_maindev_utility_by_users.py",
+      "sha256": "549ea642fc65ced25bd1b44c6b0398819c3965bdeeb40e3477ed008e7c3f00b5",
+      "bytes": 2419
+    },
+    {
+      "path": "QoE/plot_loot_holdout_delta_u.py",
+      "sha256": "106f312855b6ae1beb9bcf00a756fa979250ede2635a4a449a8a34b90f03184d",
+      "bytes": 1732
+    },
+    {
+      "path": "QoE/plot_mechanism_decomposition_loot.py",
+      "sha256": "ec69f3ac6115259c9ca26033854c6be804376c1358539c4f9c6be60b5fb43f84",
+      "bytes": 4566
+    },
+    {
+      "path": "QoE/plot_moq_shared_vs_unicast.py",
+      "sha256": "f0b10d65c9a26bbc7261e14126c4b3b9a7fdf2d27a220438c2297bbe6ebad57e",
+      "bytes": 2335
+    },
+    {
+      "path": "QoE/plot_qoe_by_content_delta.py",
+      "sha256": "660bf151cdcf72ddc41975683c03ce36e119621c87806d31a57520307fe73fe1",
+      "bytes": 3070
+    },
+    {
+      "path": "QoE/plot_qoe_by_network.py",
+      "sha256": "c5d330054b11048b725c99a8162bf7374da75c9d8e44e81016c067c1df28f1ea",
+      "bytes": 2100
+    },
+    {
+      "path": "QoE/plot_qoe_by_strategy.py",
+      "sha256": "bece06a2e7cb2fa1b6c67c4ef93a3465d0f33c54dcdb4dd3bc8f5a94272e3d14",
+      "bytes": 944
+    },
+    {
+      "path": "QoE/plot_weak_user_rq_loot.py",
+      "sha256": "12d8f435d0a3d51fae10967e81160d552447fb6197c1b315ecf5faae6b5a8be0",
+      "bytes": 2577
+    },
+    {
+      "path": "Stall Time/plot_stall_continuity_timeseries_failclosed_audit.py",
+      "sha256": "8ed992d95ffc781207472086f27f31dcc9d7e3bc44013a292a7676a49e161b31",
+      "bytes": 3037
+    },
+    {
+      "path": "Stall Time/plot_stall_time_by_network.py",
+      "sha256": "2478a0b5ddc2da5dbde0d400050f083f0ceb8bb1d6ab2e24e8190c4c3e8191d9",
+      "bytes": 2248
+    },
+    {
+      "path": "Stall Time/plot_stall_time_by_strategy.py",
+      "sha256": "21171103f3f4a5a607895a056ff7d21f600d75af104734fbbe3f2cc6b673a50a",
+      "bytes": 1684
+    },
+    {
+      "path": "Stall Time/plot_stall_time_by_users.py",
+      "sha256": "d6c67de1c93e9685e597c814218a6979e2b7386d2209587d995c486c7aeba200",
+      "bytes": 1881
+    },
+    {
+      "path": "TTFB/plot_ttfb_cdf_failclosed_audit.py",
+      "sha256": "6fb53a4232bf95ba1b3180d24c80d47a13f14ba51d0c2e2d5927ce1ea72b0f23",
+      "bytes": 3614
+    },
+    {
+      "path": "Throughput/plot_throughput_4g.py",
+      "sha256": "bedab623e57aef4334c50d13bc297d899c9c9c98d8fbd4e6085d5b81fa6b41c1",
+      "bytes": 559
+    },
+    {
+      "path": "Throughput/plot_throughput_5g.py",
+      "sha256": "772065f1d604804b3809a1456c2c581dae78672851bdbfc2e68b75aab649a500",
+      "bytes": 559
+    },
+    {
+      "path": "Throughput/plot_throughput_5g_dominant.py",
+      "sha256": "25db0b662cb449ecbe64e9051ec6db0a61172e904acac7b5235a8f8f393f7a08",
+      "bytes": 586
+    },
+    {
+      "path": "Throughput/plot_throughput_default_mix.py",
+      "sha256": "a508251ba56ed832d327495a739d556d92b4a14abf42701d890257d0412b3166",
+      "bytes": 586
+    },
+    {
+      "path": "Throughput/plot_throughput_fiber_optic.py",
+      "sha256": "e5f08d82b83ab9f18bc8894219b2f5bcd5921a96d42cdacf109d0fa2358829ee",
+      "bytes": 586
+    },
+    {
+      "path": "Throughput/plot_throughput_wifi.py",
+      "sha256": "572e1f065cc9891c0a29624e266128903332ec5bb52cf156cbec08bfed29919e",
+      "bytes": 565
+    },
+    {
+      "path": "Throughput/plot_throughput_wifi_dominant.py",
+      "sha256": "a79e230eb814f0f66a0d6da0e8b9d919e3c25696a60921fadc0b67bb92365e67",
+      "bytes": 592
+    },
+    {
+      "path": "User_Experience_Trade-off/plot_fig4_fluidity_qoe_failclosed_audit.py",
+      "sha256": "1a4802da1b0f153faf4548b07f2fd44a704c3a35fafdc7b36adb918ccbba56bf",
+      "bytes": 3270
+    },
+    {
+      "path": "User_Experience_Trade-off/plot_h2_cross_stack_dash.py",
+      "sha256": "e0368f87d2ebbe5f1f8d16f0302459edc43c8034e1692c965c446bc71bddc197",
+      "bytes": 3049
+    },
+    {
+      "path": "User_Experience_Trade-off/plot_tradeoff_4g.py",
+      "sha256": "9a03883c374e4daa270f2b6b888b6fffc7451ebc932a7b2d4d7d0e0aba32b494",
+      "bytes": 522
+    },
+    {
+      "path": "User_Experience_Trade-off/plot_tradeoff_5g.py",
+      "sha256": "00e3cca9d162cee61d94bd0e7e135557ce09074b51db8a8f15ca0c6ff7baf6a8",
+      "bytes": 522
+    },
+    {
+      "path": "User_Experience_Trade-off/plot_tradeoff_default_mix.py",
+      "sha256": "dbdd398f5f4c802c95f4183c4f707627e2cd0616068267af870ad0f09bb0b1c6",
+      "bytes": 549
+    },
+    {
+      "path": "User_Experience_Trade-off/plot_tradeoff_fiber_optic.py",
+      "sha256": "830525423bfc87fdac384375012e072966ecd18096c7c448108b497bbd0c2682",
+      "bytes": 549
+    },
+    {
+      "path": "User_Experience_Trade-off/plot_tradeoff_wifi.py",
+      "sha256": "3ba311ea2ef21b2b84b4b7e8d24bfbba94da61b32c00ecf42a7828a99733a5d8",
+      "bytes": 529
+    },
+    {
+      "path": "_fig_evidence.py",
+      "sha256": "4cd50f57b0bdd7dc305e5f17ae079ccfe29953329c645a90bf3b5f9041de3e0b",
+      "bytes": 14757
+    },
+    {
+      "path": "_fig_style.py",
+      "sha256": "ef9794ab281c1295a735ac4e656524f108cc5e538bc7a6d1d0ba15755d695ba2",
+      "bytes": 11751
+    },
+    {
+      "path": "_fig_v2.py",
+      "sha256": "91c15fea89d5eba588d038e9f999f1a4ec7439ad632bef1035f398c8293d85e9",
+      "bytes": 5470
+    },
+    {
+      "path": "_fig_v3.py",
+      "sha256": "ef462a598d76357d94dcbd04ff5bc1c0d2316e2ba35ff69d9033114034ba9064",
+      "bytes": 5904
+    }
+  ],
+  "final_figure_filenames": [
+    {
+      "path": "QoE/Loot_Holdout_DeltaU_By_Users.pdf",
+      "sha256": "bf3dce6590b809d31636ad1c4fd1452c60641127c39a0b75f67730f7a5cd63cb",
+      "bytes": 10977
+    },
+    {
+      "path": "QoE/Mechanism_Decomposition_Loot.pdf",
+      "sha256": "29a566eb1a147fb4d266ee6897a3cb9e17a7ae9bedeb34895889a212fc2c6c59",
+      "bytes": 12170
+    },
+    {
+      "path": "QoE/MoQ_Shared_vs_Unicast.pdf",
+      "sha256": "da58fbad53a3ac81803894d3351fd8a599abe36b10d0022aba20badb20040562",
+      "bytes": 11966
+    },
+    {
+      "path": "QoE/QoE_By_Content_DeltaU.pdf",
+      "sha256": "9a7a6a73a002ccb3b1d750aeedd893eca272cbdd94feba9e27d5a90453fc0493",
+      "bytes": 12085
+    },
+    {
+      "path": "QoE/QoE_By_Network.pdf",
+      "sha256": "88922c3fe70ec06cf50bdfe592c76ade08448f8c30818f8b5c72b64a14f9126a",
+      "bytes": 14108
+    },
+    {
+      "path": "QoE/QoE_By_Strategy.pdf",
+      "sha256": "b56173b2e98614233af80c3f7ff9c34071267d3447ca0d267d46e6e9f0872afd",
+      "bytes": 18082
+    },
+    {
+      "path": "QoE/Weak_User_Rq_Loot.pdf",
+      "sha256": "b067b051f37af9f6b98539cac4aabb623ec48a1c43699a0d3664ccac5d9f1955",
+      "bytes": 15435
+    },
+    {
+      "path": "Buffer Level/Buffer_Level_By_Strategy_scheme1.pdf",
+      "sha256": "ec7410a8f5b7a51bbc0646599e46f168a12ee49e74da000a694945bf94034416",
+      "bytes": 16952
+    },
+    {
+      "path": "Buffer Level/Buffer_Level_By_Users_scheme1.pdf",
+      "sha256": "0a145182ceda3ba32f5a8561d537b99f689b7e4cc8fb4335b776b300ebc4eba5",
+      "bytes": 13400
+    },
+    {
+      "path": "Buffer Level/System_Utility_By_Strategy_scheme1.pdf",
+      "sha256": "ec7410a8f5b7a51bbc0646599e46f168a12ee49e74da000a694945bf94034416",
+      "bytes": 16952
+    },
+    {
+      "path": "Buffer Level/System_Utility_By_Strategy_scheme2.pdf",
+      "sha256": "9fd221c90350bd6c56e956a78e57e1bf6290f72bab2025f6e3c87b4496635404",
+      "bytes": 16952
+    },
+    {
+      "path": "Buffer Level/System_Utility_By_Strategy_scheme3.pdf",
+      "sha256": "9fd221c90350bd6c56e956a78e57e1bf6290f72bab2025f6e3c87b4496635404",
+      "bytes": 16952
+    },
+    {
+      "path": "Buffer Level/System_Utility_By_Strategy_scheme4.pdf",
+      "sha256": "9fd221c90350bd6c56e956a78e57e1bf6290f72bab2025f6e3c87b4496635404",
+      "bytes": 16952
+    },
+    {
+      "path": "Buffer Level/System_Utility_By_Strategy_scheme5.pdf",
+      "sha256": "9fd221c90350bd6c56e956a78e57e1bf6290f72bab2025f6e3c87b4496635404",
+      "bytes": 16952
+    },
+    {
+      "path": "Buffer Level/System_Utility_By_Users_MainDev.pdf",
+      "sha256": "5ca8f3f502d856d4c3e0b7fdb34ec6f1f63a2ccc68ab863a2c17f60f0cdeac71",
+      "bytes": 11902
+    },
+    {
+      "path": "Buffer Level/System_Utility_By_Users_scheme1.pdf",
+      "sha256": "0a145182ceda3ba32f5a8561d537b99f689b7e4cc8fb4335b776b300ebc4eba5",
+      "bytes": 13400
+    },
+    {
+      "path": "Buffer Level/System_Utility_By_Users_scheme2.pdf",
+      "sha256": "0a145182ceda3ba32f5a8561d537b99f689b7e4cc8fb4335b776b300ebc4eba5",
+      "bytes": 13400
+    },
+    {
+      "path": "Buffer Level/System_Utility_By_Users_scheme3.pdf",
+      "sha256": "0a145182ceda3ba32f5a8561d537b99f689b7e4cc8fb4335b776b300ebc4eba5",
+      "bytes": 13400
+    },
+    {
+      "path": "Buffer Level/System_Utility_By_Users_scheme4.pdf",
+      "sha256": "0a145182ceda3ba32f5a8561d537b99f689b7e4cc8fb4335b776b300ebc4eba5",
+      "bytes": 13400
+    },
+    {
+      "path": "Buffer Level/System_Utility_By_Users_scheme5.pdf",
+      "sha256": "0a145182ceda3ba32f5a8561d537b99f689b7e4cc8fb4335b776b300ebc4eba5",
+      "bytes": 13400
+    },
+    {
+      "path": "Throughput/System_Throughput_Bar_4G.pdf",
+      "sha256": "ecae753d601bd3af8b1f467f9fcbd211a58f2829172b3da8d82e160e00b26c93",
+      "bytes": 14215
+    },
+    {
+      "path": "Throughput/System_Throughput_Bar_5G.pdf",
+      "sha256": "087247bc11945808afcc39a9b6ced0d3f17e8de2b060da5f11cb67f29d31c256",
+      "bytes": 14207
+    },
+    {
+      "path": "Throughput/System_Throughput_Bar_5G_Dominant.pdf",
+      "sha256": "726be47d6ed8566b0a6748f071be6efc52203d0e5a2ab09defd5f4dffabfc864",
+      "bytes": 14207
+    },
+    {
+      "path": "Throughput/System_Throughput_Bar_Default_Mix.pdf",
+      "sha256": "5f7618d0311f84bee69a47b3017710d7e6794a27554f4258d581db3a33251005",
+      "bytes": 14215
+    },
+    {
+      "path": "Throughput/System_Throughput_Bar_Fiber_Optic.pdf",
+      "sha256": "d58cc6755500cb643809d9acf3a4843da7e3a0673fe0790a496da28ba973a741",
+      "bytes": 14235
+    },
+    {
+      "path": "Throughput/System_Throughput_Bar_Wifi.pdf",
+      "sha256": "70c4d013bf38b6a7cfbe1a1d7b0a10d623e42e64e5077ebab6f5d54b046644b6",
+      "bytes": 14243
+    },
+    {
+      "path": "Throughput/System_Throughput_Bar_Wifi_Dominant.pdf",
+      "sha256": "8388f23913f12797f2fa2572e37be095355b2b558b660b2ebf113f1250339772",
+      "bytes": 14213
+    },
+    {
+      "path": "User_Experience_Trade-off/H2_Cross_Stack_DASH.pdf",
+      "sha256": "56b8f93a8de65ca1bc47ce2f21c0e36789b154cb0139b885d3dbef91f4bb64de",
+      "bytes": 11739
+    },
+    {
+      "path": "User_Experience_Trade-off/TierB_Rb_vs_U_4G.pdf",
+      "sha256": "1dedc3c2f226233ed3b675dba8da998c7804051c07e5bb62e3cebcab7e92816d",
+      "bytes": 19050
+    },
+    {
+      "path": "User_Experience_Trade-off/TierB_Rb_vs_U_5G.pdf",
+      "sha256": "de3cac7d627571e323f595751a7c0765ec96c07ea7abd8ac0ee881d2672eaefc",
+      "bytes": 18729
+    },
+    {
+      "path": "User_Experience_Trade-off/TierB_Rb_vs_U_Default_Mix.pdf",
+      "sha256": "46ae69a16a108efbda0ad9530b0282ada8d72fe98466bd3465e0fa7c64598957",
+      "bytes": 19157
+    },
+    {
+      "path": "User_Experience_Trade-off/TierB_Rb_vs_U_Fiber_Optic.pdf",
+      "sha256": "702f94e76aca5d4add51304a2e494498ce9a0c2b49e2eab1566bd0e204050021",
+      "bytes": 18750
+    },
+    {
+      "path": "User_Experience_Trade-off/TierB_Rb_vs_U_WiFi.pdf",
+      "sha256": "9eb65991fe20c5d910ace85ea6442f82e698e906fa24698d6a6b6a719d943bab",
+      "bytes": 18704
+    }
+  ],
+  "note": "Scripts may later change for visual/typography only; scientific values must remain numerically identical to frozen pack."
+}

@@ -1,0 +1,40 @@
+{
+  "ts": "2026-08-27T23:44:51.823833+00:00",
+  "terminal": "TON_COMPONENT_MD2G_EXPERIMENTS_COMPLETE_TIER_B",
+  "canary_n": 120,
+  "loot_n": 315,
+  "n_matched": 189,
+  "mean_delta_U": 0.015849039965376982,
+  "reviews": [
+    {
+      "reviewer": "SYSTEMS",
+      "status": "PASS_EVIDENCE_PRESENT",
+      "note": "one executor tmux:command152_orch; nested b0/db1/db2/e1/e2; no mn -c; loot sealed until DEV freeze"
+    },
+    {
+      "reviewer": "NETWORKING_FAIRNESS",
+      "status": "PASS_EVIDENCE_PRESENT",
+      "note": "same-substrate HV3/CLUSTERING/RULE vs MD2G; MOQ_UNICAST is delivery-mode not same-substrate; all launched users stay in denominators"
+    },
+    {
+      "reviewer": "METRICS_STATISTICS",
+      "status": "PASS_EVIDENCE_PRESENT",
+      "note": "U=clip(0.25*Ro_component+0.60*Rq-0.15*Rb,0,1); stall supporting only; delay NOT_IN_FINAL_CLAIM_CONTRACT; Rb is not bandwidth saving"
+    },
+    {
+      "reviewer": "MECHANISM",
+      "status": "PASS_EVIDENCE_PRESENT",
+      "note": "component-aware shared delivery; unfavorable matched blocks remain science; V2 not authorized from U loss; A1\u2013A5/A7 and FoV NA are not mechanism validation"
+    },
+    {
+      "reviewer": "REPRODUCIBILITY",
+      "status": "PASS_EVIDENCE_PRESENT",
+      "note": "epoch C152_RBV1 post-physical-pressure; hashes in COMMAND153_ALL_HASHES.json; pre-Rb 56 DIAGNOSTIC_ONLY"
+    },
+    {
+      "reviewer": "PAPER_CLAIMS",
+      "status": "PASS_EVIDENCE_PRESENT",
+      "note": "map claims to COMMAND153_CLAIM_EVIDENCE_MATRIX; NOT_APPLICABLE is never experimental validation; scaling is 150 logical keys = 90 DEV reuse + 60 new launches; never claim zero stall; never emit TON_SUBMISSION_READY from this packet"
+    }
+  ]
+}

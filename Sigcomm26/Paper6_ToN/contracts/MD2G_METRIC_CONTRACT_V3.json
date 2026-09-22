@@ -1,0 +1,156 @@
+{
+  "SIGCOMM_SUBMISSION_READY": false,
+  "binding_command": "command57.txt",
+  "buffer": {
+    "def": "seconds of playable media buffered",
+    "note": "large buffer is not automatically beneficial"
+  },
+  "contract_sha256": "f61180009e2d6ba26d6d8e46ebf21142a8855aed680d02acc0a25772e7b83baf",
+  "created_ts": "2026-07-26T06:59:49.635563-05:00",
+  "delay": {
+    "controller_latency": {
+      "def": "controller inference + decision publish latency",
+      "units": "ms"
+    },
+    "prohibited_conflation": [
+      "calling delivery interval glass-to-glass",
+      "reporting only completed-client TTFB as CDF without all-attempt note"
+    ],
+    "relay_queue_latency": {
+      "def": "relay queueing delay if instrumented",
+      "units": "ms"
+    },
+    "startup_TTFB": {
+      "def": "subscription/init request \u2192 first media payload byte",
+      "denominator": "all init attempts including failures",
+      "units": "ms or s (report both in tables)"
+    },
+    "steady_state_delivery_interval": {
+      "def": "receiver-side media-object arrival spacing after startup",
+      "not": "glass-to-glass latency",
+      "units": "ms"
+    }
+  },
+  "failure_denominator": {
+    "classes": [
+      "completed",
+      "short_duration",
+      "header_only",
+      "incomplete",
+      "failed_init",
+      "failed_mid_session"
+    ],
+    "report_both": [
+      "all_attempt_stats",
+      "completed_client_stats"
+    ],
+    "rule": "all launched clients remain in denominators"
+  },
+  "formula_sensitivity_required": [
+    "old manuscript R_q/claims",
+    "rebuttal reward_final",
+    "canonical QoE_abs_V2 / U_sys_V3",
+    "rank and effect sensitivity table"
+  ],
+  "name": "MD2G_METRIC_CONTRACT_V3",
+  "objective_qoe": {
+    "canonical_name": "QoE_abs_V2",
+    "constants": {
+      "delay_coef": 0.12,
+      "intended_duration_s": 120.0,
+      "q_min": 0.7,
+      "stall_coef": 0.35,
+      "stall_severe_ratio": 0.05,
+      "ttfb_severe_s": 3.0,
+      "u_sys_w_eff": 0.15,
+      "u_sys_w_qoe": 0.65,
+      "u_sys_w_reuse": 0.2
+    },
+    "forbidden_aliases": [
+      "MOS",
+      "subjective user-perceived quality",
+      "user study MOS"
+    ],
+    "formula": "clip(UQ*(1-delay_coef*D)*(1-stall_coef*S)*C, 0, 1)",
+    "label": "objective_proxy_QoE",
+    "not_mos": true,
+    "quality_ladder_Qs": {
+      "Q1": 0.4,
+      "Q2": 0.6,
+      "Q3": 0.8,
+      "Q4": 1.0
+    },
+    "rep_to_Q": {
+      "1": 3,
+      "2": 2,
+      "3": 1,
+      "4": 4,
+      "5": 4,
+      "6": 2,
+      "7": 3,
+      "8": 1,
+      "9": 1
+    },
+    "source_contract": "contracts/QOE_ABSOLUTE_V2.json"
+  },
+  "prohibited_interpretations": [
+    "objective QoE as MOS",
+    "0.7\u00d7RX as useful-byte efficiency",
+    "high RX as quality",
+    "tie as win",
+    "failure-induced low throughput as efficiency"
+  ],
+  "sensitivity_metrics": {
+    "QoE_abs_V2_components": [
+      "UQ",
+      "D",
+      "S",
+      "C"
+    ],
+    "R_final_Eq7_rebuttal": {
+      "formula": "R_t = \u03bb_o R_o + \u03bb_q R_q \u2212 \u03bb_b R_b (rebuttal reward_final)",
+      "role": "rebuttal sensitivity only; not canonical headline"
+    },
+    "R_q_Eq9": {
+      "alpha": 1.0,
+      "beta": 0.5,
+      "formula": "R_q = \u03b1\u00b7Q_s \u2212 \u03b2\u00b7D_n \u2212 \u03b3\u00b7S_n",
+      "gamma": 0.5,
+      "role": "legacy manuscript sensitivity only"
+    }
+  },
+  "stall": {
+    "def": "cumulative stall time / intended duration; cumulative must be non-decreasing",
+    "denominator": "all launched users"
+  },
+  "system_utility": {
+    "canonical_name": "U_sys_V3",
+    "exclude_until_direct_instrumentation": [
+      "U_reuse",
+      "U_eff",
+      "0.7\u00d7RX useful-byte efficiency"
+    ],
+    "headline_formula": "U_sys_V3 = mean_over_launched_users(QoE_abs_V2)",
+    "legacy_U_sys_V2": {
+      "formula": "clip(0.65*mean(QoE_abs)+0.20*U_reuse+0.15*U_eff, 0, 1)",
+      "role": "sensitivity / historical only; must not headline efficiency terms without direct bytes",
+      "status": "DEMOTED"
+    },
+    "units": "unitless [0,1]",
+    "when_instrumentation_ready": {
+      "may_add": [
+        "useful_rendered_bytes / source_bytes",
+        "duplicate_bytes",
+        "stale_bytes"
+      ],
+      "require": "MD2G_INSTRUMENTATION_V1 validated + overhead PASS"
+    }
+  },
+  "throughput": {
+    "def": "system aggregate Mbps at one agreed boundary per taxonomy",
+    "moq_boundary": "root/leaf agreed counters per instrumentation contract",
+    "prohibited": "treating lower throughput from failures as efficiency",
+    "unicast_boundary": "DASH server egress / per-client HTTP bytes"
+  },
+  "version": "V3"
+}

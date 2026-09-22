@@ -1,0 +1,116 @@
+{
+  "timestamp": "2026-07-24T00:38:44.742237-05:00",
+  "binding": "command43 \u00a72",
+  "frozen": true,
+  "source_manuscript_contract": "./Sigcomm26/Paper6_ToN/contracts/METRIC_DEFINITION_CONTRACT.md",
+  "source_gate": "./Sigcomm26/Paper6_ToN/contracts/METRIC_CONTRACT_GATE.md",
+  "env_required": {
+    "SIGCOMM_QOE_EQ9": "1",
+    "SIGCOMM_REP_LADDER": "1"
+  },
+  "metric_roles": {
+    "rendered_user_quality_term": {
+      "name": "Q_s",
+      "definition": "Table1 map from final executed Rep ID \u2192 {0.4,0.6,0.8,1.0}",
+      "column": "quality_score",
+      "direction": "higher_better"
+    },
+    "eq9_qoe": {
+      "name": "R_q",
+      "definition": "R_q = 1.0*Q_s - 0.5*D_n - 0.5*S_n; D_n=min(delay_ms/200,1); S_n=1-exp(-stall_total_sec/3)",
+      "column": "reward_R_q",
+      "also_accept_column": "qoe",
+      "direction": "higher_better",
+      "role": "CO_PRIMARY_USER_EXPERIENCE"
+    },
+    "full_system_utility": {
+      "name": "R_final",
+      "definition": "R_t = \u03bb_o*R_o + \u03bb_q*R_q - \u03bb_b*R_b (Eq.7)",
+      "column": "reward_final",
+      "direction": "higher_better",
+      "role": "CO_PRIMARY_SYSTEM_UTILITY"
+    },
+    "bandwidth_cost": {
+      "name": "R_b",
+      "column": "reward_R_b",
+      "direction": "lower_penalty_in_R_final"
+    },
+    "multicast_grouping_utility": {
+      "name": "R_o",
+      "column": "reward_R_o",
+      "direction": "higher_better"
+    }
+  },
+  "co_primary_objectives": [
+    {
+      "id": "UX",
+      "metric": "mean_R_q_all_attempt",
+      "aggregation": "mean over launched clients (failures retained in denominator)",
+      "improve_rule": "statistically greater than reference MD2G on paired bootstrap"
+    },
+    {
+      "id": "SYS",
+      "metric": "mean_R_final_all_attempt",
+      "aggregation": "mean over launched clients (failures retained)",
+      "improve_rule": "statistically greater than reference MD2G OR non-inferior within margin"
+    }
+  ],
+  "acceptance": {
+    "must_improve_at_least_one_coprimary": true,
+    "must_be_noninferior_on_other_coprimary": true,
+    "noninferiority_margins": {
+      "R_q_abs": 0.02,
+      "R_final_abs": 0.02,
+      "completion_ratio_abs": 0.05,
+      "stall_sec_abs": 0.5,
+      "ttfb_p95_ms_rel": 0.15,
+      "useful_media_efficiency_rel": 0.1
+    },
+    "constraints_noninferior": [
+      "completion_ratio",
+      "mean_stall_sec",
+      "ttfb_p95_ms",
+      "useful_media_efficiency",
+      "baseline_fairness_contract"
+    ],
+    "statistical_test": {
+      "method": "paired_bootstrap",
+      "n_bootstrap": 5000,
+      "alpha": 0.05,
+      "ci": "percentile_95",
+      "pairing": "matched (network, users, trial)"
+    },
+    "pareto": true,
+    "dashboard_winrate_not_acceptance_gate": true,
+    "forbid_optimize_toward_90pct": true
+  },
+  "useful_media_efficiency": {
+    "definition": "useful_rendered_bytes / max(1, total_rx_bytes)",
+    "useful_rendered_proxy": "bytes attributable to final executed Rep / active subscription layers that match rendered Rep; exclude handshake-only (<50KB), unused prefetch after cancel, and documented duplicate composite when base already covers quality",
+    "direction": "higher_better"
+  },
+  "failure_denominator": {
+    "rule": "all launched clients retained; header-only / failed init count as failures",
+    "frozen": true
+  },
+  "baselines_frozen": {
+    "moq_multicast": [
+      "md2g_reference",
+      "heuristic",
+      "clustering"
+    ],
+    "unicast_references": [
+      "rolling",
+      "groot"
+    ],
+    "no_weaken": true,
+    "no_selective_rerun": true
+  },
+  "reference_design_label": "MD2G_REPAIRED_REFERENCE",
+  "notes": [
+    "mean_qoe_all_attempt currently tracks Eq.9 path when SIGCOMM_QOE_EQ9=1",
+    "Do not redefine QoE after seeing which definition favors MD2G",
+    "Higher RX bytes are NOT an objective"
+  ],
+  "contract_sha256": "c139d84950361e1399a89b3e6289aded5970c141637e287c683190e4916fc6c6"
+}

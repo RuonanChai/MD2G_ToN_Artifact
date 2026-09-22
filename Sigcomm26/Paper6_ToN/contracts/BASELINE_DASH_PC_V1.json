@@ -1,0 +1,10 @@
+{
+  "name": "BASELINE_DASH_PC_V1",
+  "created_ts": "2026-07-26T06:58:55.825442-05:00",
+  "binding": "command57",
+  "retained_in_final_paper": false,
+  "status": "REMOVED",
+  "policy": "Do not run; do not claim; do not rename historical DASH-PC cells as GROOT",
+  "old_paper_mentions": "high (version4 still lists DASH-PC in figures/tables)",
+  "replacement": "GROOT-inspired unicast via DASH authentic path"
+}

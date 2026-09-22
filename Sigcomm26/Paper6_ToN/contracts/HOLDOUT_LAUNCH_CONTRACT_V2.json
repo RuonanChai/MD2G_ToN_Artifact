@@ -1,0 +1,35 @@
+{
+  "name": "HOLDOUT_LAUNCH_CONTRACT_V2",
+  "binding": "command49",
+  "timestamp": "2026-07-25T09:29:37.321776-05:00",
+  "holdout_networks": [
+    "default_mix",
+    "4g",
+    "fiber_optic"
+  ],
+  "required_all": [
+    "MD2G_FINAL_DESIGN_FREEZE.json exists and validates",
+    "QOE_ABSOLUTE_V2_FREEZE.json exists and validates",
+    "holdout_manifest_hash_matches",
+    "candidate_code_model_env_hashes_match_freeze",
+    "HOLDOUT_RELEASE_APPROVED=true",
+    "no_optimization_process_active",
+    "final_design_reviewers_all_PASS",
+    "SIGCOMM_NEXT_CELL_LAUNCH explicitly names approved holdout cell"
+  ],
+  "forbidden": [
+    "global CONTINUE_MATRIX=true bypass",
+    "seal-wait fall-through on missing seal",
+    "use of CONTAMINATED_HOLDOUT_NOT_FOR_FINAL_CLAIMS cells"
+  ],
+  "contaminated_cells": [
+    "default_mix/users_10/md2g/trial_0",
+    "default_mix/users_10/md2g/trial_1",
+    "default_mix/users_10/md2g/trial_2",
+    "default_mix/users_10/heuristic/trial_0",
+    "default_mix/users_10/heuristic/trial_1",
+    "default_mix/users_10/heuristic/trial_2",
+    "default_mix/users_10/clustering/trial_0",
+    "default_mix/users_10/clustering/trial_1"
+  ]
+}

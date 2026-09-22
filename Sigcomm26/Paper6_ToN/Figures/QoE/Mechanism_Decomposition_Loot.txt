@@ -1,0 +1,20 @@
+                                   0.25 ΔRo        −0.15 ΔRb
+                                   0.60 ΔRq        Observed ΔU
+
+
+                        0.1
+Utility contribution
+
+
+
+
+                        0.0
+
+
+                       −0.1
+
+
+
+                              20              60            100
+                              Number of users (Loot holdout)
+

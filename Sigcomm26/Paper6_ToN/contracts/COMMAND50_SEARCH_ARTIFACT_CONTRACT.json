@@ -1,0 +1,15 @@
+{
+  "SEARCH_ART_ROOT": "absolute writable path frozen in state/MD2G_DESIGN_SEARCH_ARTIFACT_ROOT.txt",
+  "required_child_argv": [
+    "--search-art",
+    "<SEARCH_ART_ROOT>"
+  ],
+  "or_env": "SEARCH_ART_ROOT",
+  "nonzero_exit_on": [
+    "missing",
+    "non_absolute",
+    "unwritable",
+    "inside_holdout_root"
+  ],
+  "resume_restores_from": "state/MD2G_DESIGN_SEARCH_ARTIFACT_ROOT.txt"
+}

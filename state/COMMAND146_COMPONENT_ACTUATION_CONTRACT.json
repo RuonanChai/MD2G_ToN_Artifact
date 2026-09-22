@@ -1,0 +1,30 @@
+{
+  "ts": "2026-08-18T07:12:00+00:00",
+  "token": "COMMAND146_COMPONENT_ACTUATION_CONTRACT",
+  "sole_runtime_writer": "ComponentActuationPlan.apply",
+  "pipeline": [
+    "policy proposal",
+    "valid target composition per user/group",
+    "dependency closure",
+    "component-union projection",
+    "ComponentActuationPlan",
+    "subscription apply",
+    "sender component publishers",
+    "physical payload",
+    "client component receipt",
+    "decoded composition state",
+    "canonical accounting"
+  ],
+  "fields": [
+    "decision_seq", "group", "user_target_states", "required_component_set",
+    "currently_active_component_set", "open_components", "close_components",
+    "prerequisite_validation", "marginal_component_bytes", "reason",
+    "capacity_playability_snapshot", "plan_hash"
+  ],
+  "after_plan_forbidden": [
+    "PPO independently open/close components",
+    "heuristic/fallback rewrite of component set"
+  ],
+  "open_reconcile": "intent → subscribe → publisher active → payload bytes >0 → client receipt → accounting",
+  "hold_close_reconcile": "no unauthorized component payload"
+}

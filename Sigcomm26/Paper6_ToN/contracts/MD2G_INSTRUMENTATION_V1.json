@@ -1,0 +1,81 @@
+{
+  "behavior_preserving": true,
+  "binding_command": "command57.txt",
+  "channels": {
+    "cancellation_latency": {
+      "unit": "ms"
+    },
+    "controller_inference_queue_latency": {
+      "unit": "ms"
+    },
+    "cpu_memory": {
+      "unit": "percent / RSS_bytes"
+    },
+    "duplicate_bytes": {
+      "unit": "bytes"
+    },
+    "leaf_relay_ingress_egress": {
+      "unit": "bytes"
+    },
+    "per_user_delivered_bytes": {
+      "unit": "bytes"
+    },
+    "relay_queue_latency": {
+      "unit": "ms"
+    },
+    "rendered_useful_bytes": {
+      "note": "bytes that contribute to final rendered Rep; direct measure required",
+      "unit": "bytes"
+    },
+    "root_relay_ingress_egress": {
+      "unit": "bytes"
+    },
+    "simultaneous_active_representations": {
+      "unit": "count"
+    },
+    "source_publisher_bytes": {
+      "scope": "per representation / broadcast",
+      "unit": "bytes"
+    },
+    "stale_bytes": {
+      "unit": "bytes"
+    },
+    "subscription_start_cancel_ack": {
+      "unit": "ts_mono_ns"
+    },
+    "target_buffer_violations": {
+      "unit": "count/events"
+    },
+    "unused_enhancement_bytes": {
+      "unit": "bytes"
+    }
+  },
+  "clock": "monotonic (time.monotonic_ns / clock_gettime MONOTONIC)",
+  "contract_sha256": "33941783d4de724d1ff5fb98b3a10c4bc2c5275e6df32ee18b932c40747d3a1f",
+  "created_ts": "2026-07-26T06:59:49.635563-05:00",
+  "identity_fields": [
+    "run_id",
+    "cell_id",
+    "user_id",
+    "rep_id",
+    "strategy",
+    "ts_mono_ns"
+  ],
+  "implementation_plan": {
+    "dash_unicast_path": "HTTP server access log bytes + client RX; no MoQ fan-out counters as shared delivery",
+    "hooks_module": "Sigcomm26/Paper6_ToN/instrumentation/md2g_instr_v1.py",
+    "moq_path": "scoped counters at publisher/relay/client without changing admission policy"
+  },
+  "name": "MD2G_INSTRUMENTATION_V1",
+  "overhead_gates": {
+    "action_if_exceeded": "new instrumentation version + rerun affected cells",
+    "pre_registered_negligible_margin_cpu_pct_points": 2.0,
+    "pre_registered_negligible_margin_qoe_abs": 0.01
+  },
+  "status": "CONTRACT_WRITTEN_IMPLEMENTATION_IN_PROGRESS",
+  "validation": {
+    "overhead_report": "analysis/INSTRUMENTATION_OVERHEAD_REPORT.md",
+    "synthetic_test": "tests/test_md2g_instrumentation.py"
+  },
+  "version": "V1"
+}

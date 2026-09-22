@@ -1,0 +1,126 @@
+{
+  "ts": "2026-08-21T01:50:00+00:00",
+  "token": "COMMAND153_PAPER_CLAIM_COMPATIBILITY_NOTE",
+  "frozen_before_further_aggregate_interpretation": true,
+  "readonly_provenance_only": true,
+  "did_not_touch_live_cell": true,
+  "did_not_touch_command152_orch": true,
+  "did_not_modify_running_experiment": true,
+  "invariant": "NOT_APPLICABLE is a controller/contract fact. It is never experimental validation, never a delta, never a figure result, and never a substitute for a live on/off ablation.",
+  "forbidden_presentations": [
+    "reporting NOT_APPLICABLE as a completed ablation or FoV result",
+    "plotting A1-A5/A7 or 20/40/60/80 overlap as measured U/Rq/Ro/Rb",
+    "writing that NA proves a mechanism because the feature is absent",
+    "counting 150 scaling keys as 150 new Mininet executions"
+  ],
+  "scaling": {
+    "logical_matrix_n": 150,
+    "formula": "Red-and-Black x {default_mix, wifi_dominant} x users {10,20,40,60,100} x seeds {151,152,153} x 5 strategies",
+    "arithmetic": "2 x 5 x 3 x 5 = 150 keys",
+    "exact_dev_reuse_n": 90,
+    "reuse_loads": [
+      20,
+      60,
+      100
+    ],
+    "reuse_arithmetic": "2 nets x 3 loads x 3 seeds x 5 strategies = 90",
+    "reuse_twin_key": "c148dev_redandblack_{net}_u{users}_{strategy}_s{seed}",
+    "reuse_requires": [
+      "CELL_DONE.json",
+      "CELL_METRICS.json"
+    ],
+    "newly_launched_n": 60,
+    "new_loads": [
+      10,
+      40
+    ],
+    "new_arithmetic": "2 nets x 2 loads x 3 seeds x 5 strategies = 60",
+    "not": "150 new executions"
+  },
+  "applicable_live_or_reuse": {
+    "A0_full": {
+      "status": "APPLICABLE_REUSE_DEV_MD2G",
+      "manuscript": "KEEP as primary MD2G cells; not a separate 288-cell launch",
+      "other_live_measurement": "command148 main DEV MD2G_COMPONENT matched blocks after 945/945"
+    },
+    "A6_rule_only": {
+      "status": "APPLICABLE_REUSE_DEV_RULE",
+      "manuscript": "KEEP as MD2G vs RULE same-substrate comparison from DEV matched blocks",
+      "other_live_measurement": "DEV MD2G_COMPONENT vs RULE_COMPONENT on identical content/network/users/seed"
+    }
+  },
+  "not_applicable_must_narrow_or_remove": [
+    {
+      "id": "A1_no_fov_group_overlap",
+      "planned_n": 36,
+      "planned_claim": "Removing FoV/group-overlap from MD2G changes U / grouping quality",
+      "planned_figure": "command146 F8 ablations",
+      "action": "REMOVE_OR_NARROW",
+      "other_live_measurement": null,
+      "required_manuscript_action": "Do not claim an overlap-feature ablation. Structural fact only: frozen nested planner has no live FoV overlap knob. Shared-reuse claims must use Ro_component / B_shared vs unicast from live A0/DEV/canary cells, not A1."
+    },
+    {
+      "id": "A2_no_device",
+      "planned_n": 36,
+      "planned_claim": "Device-class feature contributes to U",
+      "planned_figure": "command146 F8 ablations",
+      "action": "REMOVE_OR_NARROW",
+      "other_live_measurement": null,
+      "required_manuscript_action": "Do not claim a device-ablation delta. Device scores remain diagnostic defaults (0.22/0.55/0.88) with no certified live disable flag."
+    },
+    {
+      "id": "A3_no_component_headroom",
+      "planned_n": 36,
+      "planned_claim": "Component-aware headroom / project_down is a separable MD2G contribution",
+      "planned_figure": "command146 F8 ablations",
+      "action": "REMOVE_OR_NARROW",
+      "other_live_measurement": "A0/DEV cells still run the shared project_down physics; that is not an on/off ablation",
+      "required_manuscript_action": "May describe headroom as part of the frozen live controller. Must not report 'A3 vs A0 \u0394U' or treat NA as proof that headroom helps."
+    },
+    {
+      "id": "A4_no_completion_playability",
+      "planned_n": 36,
+      "planned_claim": "Completion/playability gating improves stall or usable coverage",
+      "planned_figure": "command146 F8 ablations",
+      "action": "REMOVE_OR_NARROW",
+      "other_live_measurement": "DECODE_GAP_SECONDS_POST_WARMUP remains a supporting metric on live A0/DEV cells; it is not an A4 delta and is not in U",
+      "required_manuscript_action": "Do not claim a completion-gate ablation. Stall stays supporting-only on live cells."
+    },
+    {
+      "id": "A5_fixed_grouping",
+      "planned_n": 36,
+      "planned_claim": "Learned/dynamic grouping beats fixed grouping",
+      "planned_figure": "command146 F8 ablations",
+      "action": "REMOVE",
+      "other_live_measurement": null,
+      "required_manuscript_action": "Planner already uses a single group g0. A5 would be identity with A0. Remove 'vs fixed grouping' results. May state structurally that grouping is g0-only."
+    },
+    {
+      "id": "A7_naive_cumulative_cost",
+      "planned_n": 36,
+      "planned_claim": "Missing-component marginal cost beats naive cumulative/target-total cost (command146: A7 particularly important)",
+      "planned_figure": "command146 F8 ablations",
+      "action": "REMOVE_DELTA_NARROW_TO_CONTRACT",
+      "other_live_measurement": "All same-substrate live cells already use frozen command149 missing-component cost. That is implementation provenance, not A7 vs A0",
+      "required_manuscript_action": "May state the live cost function is command149 missing-component (contract). Must not report NA as experimental proof that marginal cost wins. No naive-cost live flag exists; do not fabricate A7."
+    },
+    {
+      "id": "FoV_overlap_20_40_60_80",
+      "planned_n": 96,
+      "planned_claim": "MD2G (and strongest same-substrate baseline) robustness as FoV overlap varies 20/40/60/80%",
+      "planned_figure": "command146 F9 FoV overlap sensitivity",
+      "action": "REMOVE_SWEEP_NARROW_REUSE_CLAIMS",
+      "other_live_measurement": "C2-style reuse may use live Ro_component and B_shared vs MOQ_UNICAST on canary/DEV; that is not an overlap-fraction sweep",
+      "required_manuscript_action": "Remove F9-style 20/40/60/80 tables/plots. No live overlap knob. Do not present COMMAND153_FOV_NOT_APPLICABLE as a sensitivity result."
+    }
+  ],
+  "sources": [
+    "state/COMMAND153_ABLATION_MANIFEST.json",
+    "state/COMMAND153_FOV_NOT_APPLICABLE.json",
+    "Sigcomm26/Paper6_ToN/scripts/command153_continue.py scaling_matrix/_reuse_dev",
+    "commands/command146_MD2G_correct_nested_component_full_experiment_plan.txt sections 13-15 and F8/F9",
+    "commands/command148_MD2G_autonomous_complete_all_experiments.txt F-H",
+    "commands/command152_final_autonomous_TON_all_experiments.txt sections 8-10",
+    "commands/command153_anti_regression_autonomous_to_final_evidence.txt J-K"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "name": "QOE_ABSOLUTE_V2",
+  "binding": [
+    "command45",
+    "command46"
+  ],
+  "frozen": true,
+  "timestamp": "2026-07-24T02:26:59.481370-05:00",
+  "constants": {
+    "q_min": 0.7,
+    "ttfb_severe_s": 3.0,
+    "delay_coef": 0.12,
+    "stall_severe_ratio": 0.05,
+    "stall_coef": 0.35,
+    "intended_duration_s": 120.0,
+    "u_sys_w_qoe": 0.65,
+    "u_sys_w_reuse": 0.2,
+    "u_sys_w_eff": 0.15
+  },
+  "formula": {
+    "UQ": "q_min + (1-q_min)*clip((Qs-0.40)/0.60,0,1)",
+    "D": "clip(TTFB_s / ttfb_severe_s, 0, 1)",
+    "S": "clip(stall_ratio / stall_severe_ratio, 0, 1)",
+    "C": "clip(playable_duration / intended_duration, 0, 1)",
+    "QoE_abs": "clip(UQ*(1-delay_coef*D)*(1-stall_coef*S)*C, 0, 1)",
+    "U_sys": "clip(0.65*mean(QoE_abs)+0.20*U_reuse+0.15*U_eff, 0, 1)"
+  },
+  "legacy_preserved": [
+    "R_q_legacy=Eq9",
+    "R_final_legacy=Eq7"
+  ],
+  "selection_rule": "blinded_dev_distribution_and_monotonicity_NOT_md2g_rank",
+  "unit_test_failures": [],
+  "blinded_dev": {
+    "n_scores": 1600,
+    "n_healthy": 1579,
+    "frac_healthy_in_0.60_0.95": 0.8518049398353388,
+    "mean_healthy": 0.6409519272748575,
+    "mean_all": 0.6343541094450729,
+    "by_strat_mean": {
+      "md2g": 0.6377414013395833,
+      "heuristic": 0.6416000650427083,
+      "clustering": 0.6424308533781249,
+      "rolling": 0.6094902416243229,
+      "groot": 0.640507985840625
+    },
+    "pass_distribution": true
+  },
+  "selection_meta": {
+    "score": 11.62032531195061,
+    "n_alts": 81
+  }
+}

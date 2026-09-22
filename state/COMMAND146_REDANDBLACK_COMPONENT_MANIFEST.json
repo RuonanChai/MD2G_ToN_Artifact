@@ -1,0 +1,34 @@
+{
+  "ts": "2026-08-18T08:08:14.535640+00:00",
+  "content": "redandblack",
+  "components": [
+    "b0",
+    "db1",
+    "db2",
+    "e1",
+    "e2"
+  ],
+  "media_manifest": "./media/ton_nested_components_v1/redandblack/media_manifest.json",
+  "partition_manifest": "./media/ton_nested_components_v1/redandblack/partition_manifest.json",
+  "bitrate_bps": {
+    "b0": 33335511,
+    "db1": 25018272,
+    "db2": 29503006,
+    "e1": 17695226,
+    "e2": 17693915
+  },
+  "sha256": {
+    "b0": "005a51ab216f72088d84e36c6620559274dadfddb2d0876368f55036df436c2c",
+    "db1": "f108c54a1b4ca43a5013e4d24c5dc3b5e751bf42154deec480b8f5e3a44826ff",
+    "db2": "a106961b93ca02ba999a98529d772abf4d4ac9d927aeba29fd8f78a0f262507d",
+    "e1": "a2ec7ce6d95e8241ef589a2e54b3a5e503696f73e2049b5a7f4312d62c4a60ec",
+    "e2": "f3aba8b87b4d3e6950ecf47d67ba6326d831c96835dae3716322544a3135eab2"
+  },
+  "decode_ok": {
+    "b0": true,
+    "db1": true,
+    "db2": true,
+    "e1": true,
+    "e2": true
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "ts": "2026-08-18T08:54:05.469851+00:00",
+  "content": "loot",
+  "components": [
+    "b0",
+    "db1",
+    "db2",
+    "e1",
+    "e2"
+  ],
+  "media_manifest": "./media/ton_nested_components_v1/loot/media_manifest.json",
+  "partition_manifest": "./media/ton_nested_components_v1/loot/partition_manifest.json",
+  "bitrate_bps": {
+    "b0": 34841082,
+    "db1": 26098450,
+    "db2": 30818014,
+    "e1": 18541156,
+    "e2": 18548413
+  },
+  "sha256": {
+    "b0": "7d678d620741431baffa59f534a04a9fce45a6604bf5c6466399ab397c8ee8a8",
+    "db1": "341ec2b2c805156d28d6fe9f741236b9ad95c1085b43f7fafadded151ce6183c",
+    "db2": "aa588e504b96d3cc947c28aad6012f00cb59b99fcad26c410eeb400c800eb1f8",
+    "e1": "6fcfd3b3e7007d8a3de3a120c83335982b67593e0dbd32e4f54dcefad8cef3a4",
+    "e2": "62670ff0a086d48d57239b1ea1ff3af885edcb8ad04566417a5b201c0dc29361"
+  },
+  "decode_ok": {
+    "b0": true,
+    "db1": true,
+    "db2": true,
+    "e1": true,
+    "e2": true
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "n_iters": 1000,
+  "note": "Does not replace frozen 60-user breakdown. No Mininet.",
+  "sidecar": "./Sigcomm26/Paper6_ToN/artifacts/command148_maindev/c148dev_redandblack_4g_u60_MD2G_COMPONENT_s153/COMMAND148_STUDENT_INFERENCE.jsonl",
+  "rows": [
+    {
+      "scheduler": "MD2G-Cast student",
+      "users": 20,
+      "mean_ms": 9.29494418296963,
+      "median_ms": 1.1749446857720613,
+      "p95_ms": 53.38091142475605,
+      "p99_ms": 59.595356616191566,
+      "n": 1000
+    },
+    {
+      "scheduler": "MCG greedy",
+      "users": 20,
+      "mean_ms": 0.37075755186378956,
+      "median_ms": 0.36179390735924244,
+      "p95_ms": 0.4126870073378086,
+      "p99_ms": 0.4176420299336314,
+      "n": 1000
+    },
+    {
+      "scheduler": "MD2G-Cast student",
+      "users": 60,
+      "mean_ms": 16.939897431991994,
+      "median_ms": 2.319155726581812,
+      "p95_ms": 59.43111111409962,
+      "p99_ms": 59.539718641899526,
+      "n": 1000
+    },
+    {
+      "scheduler": "MCG greedy",
+      "users": 60,
+      "mean_ms": 0.5354112829081714,
+      "median_ms": 0.5270298570394516,
+      "p95_ms": 0.5857383599504828,
+      "p99_ms": 0.6106330826878548,
+      "n": 1000
+    },
+    {
+      "scheduler": "MD2G-Cast student",
+      "users": 100,
+      "mean_ms": 22.696337951347232,
+      "median_ms": 3.6145932972431183,
+      "p95_ms": 59.34395545627922,
+      "p99_ms": 59.694217112846665,
+      "n": 1000
+    },
+    {
+      "scheduler": "MCG greedy",
+      "users": 100,
+      "mean_ms": 0.6881058025173843,
+      "median_ms": 0.6851076614111662,
+      "p95_ms": 0.7026198785752058,
+      "p99_ms": 0.7480849837884306,
+      "n": 1000
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "CONTRACT_AND_REP_GATE": "PASS",
+  "sub": {
+    "contracts_present": true,
+    "missing_contracts": [],
+    "dashpc_removed": true,
+    "rep_deep": "PASS",
+    "rep_gates": {
+      "REP_FILE_EXISTENCE_GATE": "PASS",
+      "REP_SOURCE_IDENTITY_GATE": "PASS_NAMESPACE_REDANDBLACK",
+      "REP_DECODE_GATE": "PASS",
+      "REP_FRAME_COUNT_GATE": "PASS",
+      "REP_DURATION_GATE": "PASS",
+      "REP_BITRATE_GATE": "PASS",
+      "REP_MAPPING_GATE": "PASS",
+      "REP_RUNTIME_PATH_GATE": "PASS_LEGACY_ABSENT"
+    },
+    "QOE_CONTRACT_GATE": "PASS",
+    "METRIC_CONTRACT_GATE": "PASS"
+  }
+}

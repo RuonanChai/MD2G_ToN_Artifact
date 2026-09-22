@@ -1,0 +1,378 @@
+{
+  "ts": "2026-08-31T09:50:15.741518+00:00",
+  "token": "PAPER_FINALIZATION_FIGURES_READY",
+  "visual_redesign_token": "TON_FINAL_FIGURE_VISUAL_REDESIGN_READY",
+  "visual_redesign_audit": "FIGURE_VISUAL_REDESIGN_AUDIT.md",
+  "visual_redesign_contact_sheet": "FIGURE_VISUAL_REDESIGN_CONTACT_SHEET.pdf",
+  "evidence_authority": "COMMAND153 frozen final + VALID artifacts audit",
+  "style_authority": "paper_figures/Sigcomm",
+  "n_plot_scripts_emitting_pdf": 26,
+  "n_pdfs": 62,
+  "figures": [
+    {
+      "python_source": "Buffer Level/plot_buffer_level_by_strategy.py",
+      "pdfs": [
+        "Buffer Level/Buffer_Level_By_Strategy_scheme1.pdf",
+        "Buffer Level/System_Utility_By_Strategy_scheme1.pdf",
+        "Buffer Level/System_Utility_By_Strategy_scheme2.pdf",
+        "Buffer Level/System_Utility_By_Strategy_scheme3.pdf",
+        "Buffer Level/System_Utility_By_Strategy_scheme4.pdf",
+        "Buffer Level/System_Utility_By_Strategy_scheme5.pdf",
+        "Buffer Level/System_Utility_By_Users_MainDev.pdf",
+        "Buffer Level/System_Utility_By_Users_scheme1.pdf",
+        "Buffer Level/System_Utility_By_Users_scheme2.pdf",
+        "Buffer Level/System_Utility_By_Users_scheme3.pdf",
+        "Buffer Level/System_Utility_By_Users_scheme4.pdf",
+        "Buffer Level/System_Utility_By_Users_scheme5.pdf",
+        "Buffer Level/Buffer_Level_By_Users_scheme1.pdf"
+      ],
+      "sha256_python": "8f4858fcac0c81b00ba56a368f631ff9b2e220ca4cdc875cf2225566d28ce871",
+      "sha256_pdfs": {
+        "Buffer Level/Buffer_Level_By_Strategy_scheme1.pdf": "ec7410a8f5b7a51bbc0646599e46f168a12ee49e74da000a694945bf94034416",
+        "Buffer Level/System_Utility_By_Strategy_scheme1.pdf": "ec7410a8f5b7a51bbc0646599e46f168a12ee49e74da000a694945bf94034416",
+        "Buffer Level/System_Utility_By_Strategy_scheme2.pdf": "9fd221c90350bd6c56e956a78e57e1bf6290f72bab2025f6e3c87b4496635404",
+        "Buffer Level/System_Utility_By_Strategy_scheme3.pdf": "9fd221c90350bd6c56e956a78e57e1bf6290f72bab2025f6e3c87b4496635404",
+        "Buffer Level/System_Utility_By_Strategy_scheme4.pdf": "9fd221c90350bd6c56e956a78e57e1bf6290f72bab2025f6e3c87b4496635404",
+        "Buffer Level/System_Utility_By_Strategy_scheme5.pdf": "9fd221c90350bd6c56e956a78e57e1bf6290f72bab2025f6e3c87b4496635404",
+        "Buffer Level/System_Utility_By_Users_MainDev.pdf": "0e962cc3ff23f238dbf5dc18659484fdfd75ef8b4f7e775bf9e5d05a4f0a2553",
+        "Buffer Level/System_Utility_By_Users_scheme1.pdf": "0366c34d263a2dd78efaaea5b01cb5a964d847ffe1028d21b1c0bd1e07b3508a",
+        "Buffer Level/System_Utility_By_Users_scheme2.pdf": "0366c34d263a2dd78efaaea5b01cb5a964d847ffe1028d21b1c0bd1e07b3508a",
+        "Buffer Level/System_Utility_By_Users_scheme3.pdf": "0366c34d263a2dd78efaaea5b01cb5a964d847ffe1028d21b1c0bd1e07b3508a",
+        "Buffer Level/System_Utility_By_Users_scheme4.pdf": "0366c34d263a2dd78efaaea5b01cb5a964d847ffe1028d21b1c0bd1e07b3508a",
+        "Buffer Level/System_Utility_By_Users_scheme5.pdf": "0366c34d263a2dd78efaaea5b01cb5a964d847ffe1028d21b1c0bd1e07b3508a",
+        "Buffer Level/Buffer_Level_By_Users_scheme1.pdf": "0366c34d263a2dd78efaaea5b01cb5a964d847ffe1028d21b1c0bd1e07b3508a"
+      },
+      "folder": "Buffer Level"
+    },
+    {
+      "python_source": "Buffer Level/plot_buffer_level_by_users.py",
+      "pdfs": [
+        "Buffer Level/Buffer_Level_By_Users_scheme1.pdf",
+        "Buffer Level/System_Utility_By_Users_scheme1.pdf",
+        "Buffer Level/System_Utility_By_Strategy_scheme1.pdf",
+        "Buffer Level/System_Utility_By_Strategy_scheme2.pdf",
+        "Buffer Level/System_Utility_By_Strategy_scheme3.pdf",
+        "Buffer Level/System_Utility_By_Strategy_scheme4.pdf",
+        "Buffer Level/System_Utility_By_Strategy_scheme5.pdf",
+        "Buffer Level/System_Utility_By_Users_MainDev.pdf",
+        "Buffer Level/System_Utility_By_Users_scheme2.pdf",
+        "Buffer Level/System_Utility_By_Users_scheme3.pdf",
+        "Buffer Level/System_Utility_By_Users_scheme4.pdf",
+        "Buffer Level/System_Utility_By_Users_scheme5.pdf",
+        "Buffer Level/Buffer_Level_By_Strategy_scheme1.pdf"
+      ],
+      "sha256_python": "4647232a3055ed169cb8b4abad04d93a969f8757c245085cd736689f1421037a",
+      "sha256_pdfs": {
+        "Buffer Level/Buffer_Level_By_Users_scheme1.pdf": "0366c34d263a2dd78efaaea5b01cb5a964d847ffe1028d21b1c0bd1e07b3508a",
+        "Buffer Level/System_Utility_By_Users_scheme1.pdf": "0366c34d263a2dd78efaaea5b01cb5a964d847ffe1028d21b1c0bd1e07b3508a",
+        "Buffer Level/System_Utility_By_Strategy_scheme1.pdf": "ec7410a8f5b7a51bbc0646599e46f168a12ee49e74da000a694945bf94034416",
+        "Buffer Level/System_Utility_By_Strategy_scheme2.pdf": "9fd221c90350bd6c56e956a78e57e1bf6290f72bab2025f6e3c87b4496635404",
+        "Buffer Level/System_Utility_By_Strategy_scheme3.pdf": "9fd221c90350bd6c56e956a78e57e1bf6290f72bab2025f6e3c87b4496635404",
+        "Buffer Level/System_Utility_By_Strategy_scheme4.pdf": "9fd221c90350bd6c56e956a78e57e1bf6290f72bab2025f6e3c87b4496635404",
+        "Buffer Level/System_Utility_By_Strategy_scheme5.pdf": "9fd221c90350bd6c56e956a78e57e1bf6290f72bab2025f6e3c87b4496635404",
+        "Buffer Level/System_Utility_By_Users_MainDev.pdf": "0e962cc3ff23f238dbf5dc18659484fdfd75ef8b4f7e775bf9e5d05a4f0a2553",
+        "Buffer Level/System_Utility_By_Users_scheme2.pdf": "0366c34d263a2dd78efaaea5b01cb5a964d847ffe1028d21b1c0bd1e07b3508a",
+        "Buffer Level/System_Utility_By_Users_scheme3.pdf": "0366c34d263a2dd78efaaea5b01cb5a964d847ffe1028d21b1c0bd1e07b3508a",
+        "Buffer Level/System_Utility_By_Users_scheme4.pdf": "0366c34d263a2dd78efaaea5b01cb5a964d847ffe1028d21b1c0bd1e07b3508a",
+        "Buffer Level/System_Utility_By_Users_scheme5.pdf": "0366c34d263a2dd78efaaea5b01cb5a964d847ffe1028d21b1c0bd1e07b3508a",
+        "Buffer Level/Buffer_Level_By_Strategy_scheme1.pdf": "ec7410a8f5b7a51bbc0646599e46f168a12ee49e74da000a694945bf94034416"
+      },
+      "folder": "Buffer Level"
+    },
+    {
+      "python_source": "Buffer Level/plot_maindev_utility_by_users.py",
+      "pdfs": [
+        "Buffer Level/System_Utility_By_Users_MainDev.pdf",
+        "Buffer Level/System_Utility_By_Strategy_scheme1.pdf",
+        "Buffer Level/System_Utility_By_Strategy_scheme2.pdf",
+        "Buffer Level/System_Utility_By_Strategy_scheme3.pdf",
+        "Buffer Level/System_Utility_By_Strategy_scheme4.pdf",
+        "Buffer Level/System_Utility_By_Strategy_scheme5.pdf",
+        "Buffer Level/System_Utility_By_Users_scheme1.pdf",
+        "Buffer Level/System_Utility_By_Users_scheme2.pdf",
+        "Buffer Level/System_Utility_By_Users_scheme3.pdf",
+        "Buffer Level/System_Utility_By_Users_scheme4.pdf",
+        "Buffer Level/System_Utility_By_Users_scheme5.pdf",
+        "Buffer Level/Buffer_Level_By_Strategy_scheme1.pdf",
+        "Buffer Level/Buffer_Level_By_Users_scheme1.pdf"
+      ],
+      "sha256_python": "be6ee55a173071999afd6d0d55f0366a2249ae9a98ff031a61f59fc92356b666",
+      "sha256_pdfs": {
+        "Buffer Level/System_Utility_By_Users_MainDev.pdf": "0e962cc3ff23f238dbf5dc18659484fdfd75ef8b4f7e775bf9e5d05a4f0a2553",
+        "Buffer Level/System_Utility_By_Strategy_scheme1.pdf": "ec7410a8f5b7a51bbc0646599e46f168a12ee49e74da000a694945bf94034416",
+        "Buffer Level/System_Utility_By_Strategy_scheme2.pdf": "9fd221c90350bd6c56e956a78e57e1bf6290f72bab2025f6e3c87b4496635404",
+        "Buffer Level/System_Utility_By_Strategy_scheme3.pdf": "9fd221c90350bd6c56e956a78e57e1bf6290f72bab2025f6e3c87b4496635404",
+        "Buffer Level/System_Utility_By_Strategy_scheme4.pdf": "9fd221c90350bd6c56e956a78e57e1bf6290f72bab2025f6e3c87b4496635404",
+        "Buffer Level/System_Utility_By_Strategy_scheme5.pdf": "9fd221c90350bd6c56e956a78e57e1bf6290f72bab2025f6e3c87b4496635404",
+        "Buffer Level/System_Utility_By_Users_scheme1.pdf": "0366c34d263a2dd78efaaea5b01cb5a964d847ffe1028d21b1c0bd1e07b3508a",
+        "Buffer Level/System_Utility_By_Users_scheme2.pdf": "0366c34d263a2dd78efaaea5b01cb5a964d847ffe1028d21b1c0bd1e07b3508a",
+        "Buffer Level/System_Utility_By_Users_scheme3.pdf": "0366c34d263a2dd78efaaea5b01cb5a964d847ffe1028d21b1c0bd1e07b3508a",
+        "Buffer Level/System_Utility_By_Users_scheme4.pdf": "0366c34d263a2dd78efaaea5b01cb5a964d847ffe1028d21b1c0bd1e07b3508a",
+        "Buffer Level/System_Utility_By_Users_scheme5.pdf": "0366c34d263a2dd78efaaea5b01cb5a964d847ffe1028d21b1c0bd1e07b3508a",
+        "Buffer Level/Buffer_Level_By_Strategy_scheme1.pdf": "ec7410a8f5b7a51bbc0646599e46f168a12ee49e74da000a694945bf94034416",
+        "Buffer Level/Buffer_Level_By_Users_scheme1.pdf": "0366c34d263a2dd78efaaea5b01cb5a964d847ffe1028d21b1c0bd1e07b3508a"
+      },
+      "folder": "Buffer Level"
+    },
+    {
+      "python_source": "QoE/plot_loot_holdout_delta_u.py",
+      "pdfs": [
+        "QoE/Loot_Holdout_DeltaU_By_Users.pdf"
+      ],
+      "sha256_python": "391ec0f5df31d0f2d9b9f0ab9ff646f742abb8920a71f6186249cc7680505548",
+      "sha256_pdfs": {
+        "QoE/Loot_Holdout_DeltaU_By_Users.pdf": "72fbe2f7cfcf68e9b8e1dd7610ee1e30c04731f2fe519d7bbdec9f22a38cbe92"
+      },
+      "folder": "QoE"
+    },
+    {
+      "python_source": "QoE/plot_mechanism_decomposition_loot.py",
+      "pdfs": [
+        "QoE/Mechanism_Decomposition_Loot.pdf"
+      ],
+      "sha256_python": "0001eace3e6767d466fbd93f347ea4ca0c499e37595283c871473b3404539cc6",
+      "sha256_pdfs": {
+        "QoE/Mechanism_Decomposition_Loot.pdf": "fb9a68cff3f262a01a3c1ffbfcd5f9d588a6b94e333d59ac24ef700dc25568e2"
+      },
+      "folder": "QoE"
+    },
+    {
+      "python_source": "QoE/plot_moq_shared_vs_unicast.py",
+      "pdfs": [
+        "QoE/MoQ_Shared_vs_Unicast.pdf"
+      ],
+      "sha256_python": "ab4981ba98f42c133898426871f5880a86fcf68bd360a30d80ac767f5eb9582f",
+      "sha256_pdfs": {
+        "QoE/MoQ_Shared_vs_Unicast.pdf": "1213e324874724df86af00b6635893c707fa32e993c202966be22b18260deab3"
+      },
+      "folder": "QoE"
+    },
+    {
+      "python_source": "QoE/plot_qoe_by_content_delta.py",
+      "pdfs": [
+        "QoE/QoE_By_Content_DeltaU.pdf"
+      ],
+      "sha256_python": "3de6a293fbd1ef8f67989e15810a69efb6aade5c7cee6e7e606d55e16047b2a9",
+      "sha256_pdfs": {
+        "QoE/QoE_By_Content_DeltaU.pdf": "c565ec30a4a3252a49f1131e6531b8cbeedc5a9c7927cc5495e830eb3f3ea6de"
+      },
+      "folder": "QoE"
+    },
+    {
+      "python_source": "QoE/plot_qoe_by_network.py",
+      "pdfs": [
+        "QoE/QoE_By_Network.pdf"
+      ],
+      "sha256_python": "c3cc952b968c924a069bbe0c0fcf7707a53ea16b0597dd1ce33dd6853ac194ad",
+      "sha256_pdfs": {
+        "QoE/QoE_By_Network.pdf": "4505a1a6eff8a40fe873c45a846842cb771581ef79b0fe8feece9682e3d843b0"
+      },
+      "folder": "QoE"
+    },
+    {
+      "python_source": "QoE/plot_qoe_by_strategy.py",
+      "pdfs": [
+        "QoE/QoE_By_Strategy.pdf"
+      ],
+      "sha256_python": "00e6b0c31039fb1b9f6614b27a96f799b21e45f0fe2004b43eb93e415c749c92",
+      "sha256_pdfs": {
+        "QoE/QoE_By_Strategy.pdf": "4499d7f1ad0bed0dbc05759d45e1c1ce5a9019eab3ccac1662ce87987ed82f08"
+      },
+      "folder": "QoE"
+    },
+    {
+      "python_source": "QoE/plot_weak_user_rq_loot.py",
+      "pdfs": [
+        "QoE/Weak_User_Rq_Loot.pdf"
+      ],
+      "sha256_python": "e0ef5106467b0c2af6a0cbba76d660e8ded6d4f9be0a94b54202a90cbcf89a09",
+      "sha256_pdfs": {
+        "QoE/Weak_User_Rq_Loot.pdf": "07448b061ec7593cabd46cbe92054dffa0eaa131750cc1104bbeccaa2256c9c8"
+      },
+      "folder": "QoE"
+    },
+    {
+      "python_source": "Stall Time/plot_stall_time_by_network.py",
+      "pdfs": [
+        "Stall Time/Stall_Time_By_Network.pdf"
+      ],
+      "sha256_python": "2478a0b5ddc2da5dbde0d400050f083f0ceb8bb1d6ab2e24e8190c4c3e8191d9",
+      "sha256_pdfs": {
+        "Stall Time/Stall_Time_By_Network.pdf": "aa7c3d3d9f7548571a43885bd5a8910fe16a1201c70ae1c5ad1b9efa7957dbeb"
+      },
+      "folder": "Stall Time"
+    },
+    {
+      "python_source": "Stall Time/plot_stall_time_by_strategy.py",
+      "pdfs": [
+        "Stall Time/Stall_Time_By_Strategy.pdf"
+      ],
+      "sha256_python": "21171103f3f4a5a607895a056ff7d21f600d75af104734fbbe3f2cc6b673a50a",
+      "sha256_pdfs": {
+        "Stall Time/Stall_Time_By_Strategy.pdf": "f3995f41ff778b4d288ed1c85998370b8da839cdb8b789af93953dea42d6a683"
+      },
+      "folder": "Stall Time"
+    },
+    {
+      "python_source": "Stall Time/plot_stall_time_by_users.py",
+      "pdfs": [
+        "Stall Time/Stall_Time_By_Users.pdf"
+      ],
+      "sha256_python": "d6c67de1c93e9685e597c814218a6979e2b7386d2209587d995c486c7aeba200",
+      "sha256_pdfs": {
+        "Stall Time/Stall_Time_By_Users.pdf": "e14ef544cc62a63ae1f00ff0806a7acf1d44be4c90e7f7a3367a15131b33528a"
+      },
+      "folder": "Stall Time"
+    },
+    {
+      "python_source": "Throughput/plot_throughput_4g.py",
+      "pdfs": [
+        "Throughput/System_Throughput_Bar_4G.pdf"
+      ],
+      "sha256_python": "2e338108d1f721a2b95f4371cbd77e02ada6582d9fc0ad8ff22168c55819d153",
+      "sha256_pdfs": {
+        "Throughput/System_Throughput_Bar_4G.pdf": "6509d8788259577f24bdab63e4a749ac29b6cf1b2ba3a2b19f04691efdc41171"
+      },
+      "folder": "Throughput"
+    },
+    {
+      "python_source": "Throughput/plot_throughput_5g.py",
+      "pdfs": [
+        "Throughput/System_Throughput_Bar_5G.pdf"
+      ],
+      "sha256_python": "3958973b80ef50373f72fded9c02f0a73dc9f18c25fa374861980dfb4c1234b0",
+      "sha256_pdfs": {
+        "Throughput/System_Throughput_Bar_5G.pdf": "2ab7264e9dadeda17ff1913de81a2e17203b75037968493032752cd48ec32358"
+      },
+      "folder": "Throughput"
+    },
+    {
+      "python_source": "Throughput/plot_throughput_5g_dominant.py",
+      "pdfs": [
+        "Throughput/System_Throughput_Bar_5G_Dominant.pdf"
+      ],
+      "sha256_python": "53a6280656dd65c861d102c0173733b23b5b35c991cc6ec291f66862858fc9b2",
+      "sha256_pdfs": {
+        "Throughput/System_Throughput_Bar_5G_Dominant.pdf": "a03ede1380a69cd011a3ede5537e44210721bb2e8a8a7d9387026a0555e71195"
+      },
+      "folder": "Throughput"
+    },
+    {
+      "python_source": "Throughput/plot_throughput_default_mix.py",
+      "pdfs": [
+        "Throughput/System_Throughput_Bar_Default_Mix.pdf"
+      ],
+      "sha256_python": "dfdf964f5208e0e606e82d021f0f608e6af623807910a08655374e291887a32f",
+      "sha256_pdfs": {
+        "Throughput/System_Throughput_Bar_Default_Mix.pdf": "7afd050a39adfecea0ab120344e0aace96f470d4ede1ebf8a9c7ad1603490dec"
+      },
+      "folder": "Throughput"
+    },
+    {
+      "python_source": "Throughput/plot_throughput_fiber_optic.py",
+      "pdfs": [
+        "Throughput/System_Throughput_Bar_Fiber_Optic.pdf"
+      ],
+      "sha256_python": "c91bf74bcb8cc9f12755691263305ded2c1c1f1f4e75ee245322dfac20f1071e",
+      "sha256_pdfs": {
+        "Throughput/System_Throughput_Bar_Fiber_Optic.pdf": "2e8dabca66584fdafb6809b2ae0c355da2661dbc45bd0ba1bc201faae2ec175c"
+      },
+      "folder": "Throughput"
+    },
+    {
+      "python_source": "Throughput/plot_throughput_wifi.py",
+      "pdfs": [
+        "Throughput/System_Throughput_Bar_Wifi.pdf"
+      ],
+      "sha256_python": "0274075519c4d9ca49e6660cf9fdc42a1980c2c9580bab3b8347f5d365e32393",
+      "sha256_pdfs": {
+        "Throughput/System_Throughput_Bar_Wifi.pdf": "573277ffb72f8e6edefd9c317ed3c7bf5f8343bcece9e214225b5fc7e30ccb6b"
+      },
+      "folder": "Throughput"
+    },
+    {
+      "python_source": "Throughput/plot_throughput_wifi_dominant.py",
+      "pdfs": [
+        "Throughput/System_Throughput_Bar_Wifi_Dominant.pdf"
+      ],
+      "sha256_python": "51c9247137e21bab906d97e56e48a72faba9aa713698617e2e859e1a010d35b3",
+      "sha256_pdfs": {
+        "Throughput/System_Throughput_Bar_Wifi_Dominant.pdf": "7d8f9c7ee2ac074033292101398453081bb05424e57a141b83c3eaca07108b07"
+      },
+      "folder": "Throughput"
+    },
+    {
+      "python_source": "User_Experience_Trade-off/plot_h2_cross_stack_dash.py",
+      "pdfs": [
+        "User_Experience_Trade-off/H2_Cross_Stack_DASH.pdf"
+      ],
+      "sha256_python": "b8d93ba839813a0165783654618e0f71a5af54212606210d084101ee439dbb4a",
+      "sha256_pdfs": {
+        "User_Experience_Trade-off/H2_Cross_Stack_DASH.pdf": "871b77a5d226e43a97101ff1b7def958949c251733c7f799bfff9a3ba9cc7a15"
+      },
+      "folder": "User_Experience_Trade-off"
+    },
+    {
+      "python_source": "User_Experience_Trade-off/plot_tradeoff_4g.py",
+      "pdfs": [
+        "User_Experience_Trade-off/TierB_Rb_vs_U_4G.pdf"
+      ],
+      "sha256_python": "9a03883c374e4daa270f2b6b888b6fffc7451ebc932a7b2d4d7d0e0aba32b494",
+      "sha256_pdfs": {
+        "User_Experience_Trade-off/TierB_Rb_vs_U_4G.pdf": "bb0e7cad73569ec856ddfd884ed4f5129830beedf7e1d572ea9ca9e61efe5525"
+      },
+      "folder": "User_Experience_Trade-off"
+    },
+    {
+      "python_source": "User_Experience_Trade-off/plot_tradeoff_5g.py",
+      "pdfs": [
+        "User_Experience_Trade-off/TierB_Rb_vs_U_5G.pdf"
+      ],
+      "sha256_python": "00e3cca9d162cee61d94bd0e7e135557ce09074b51db8a8f15ca0c6ff7baf6a8",
+      "sha256_pdfs": {
+        "User_Experience_Trade-off/TierB_Rb_vs_U_5G.pdf": "f8e2ffa1563b3095d0fa42a47aa524987633856023cd4d51882b24b5434b6f2e"
+      },
+      "folder": "User_Experience_Trade-off"
+    },
+    {
+      "python_source": "User_Experience_Trade-off/plot_tradeoff_default_mix.py",
+      "pdfs": [
+        "User_Experience_Trade-off/TierB_Rb_vs_U_Default_Mix.pdf"
+      ],
+      "sha256_python": "dbdd398f5f4c802c95f4183c4f707627e2cd0616068267af870ad0f09bb0b1c6",
+      "sha256_pdfs": {
+        "User_Experience_Trade-off/TierB_Rb_vs_U_Default_Mix.pdf": "49fc9467db6b18c72cff1476fe500243efeffd0827bf453f6f4cf2fd98032282"
+      },
+      "folder": "User_Experience_Trade-off"
+    },
+    {
+      "python_source": "User_Experience_Trade-off/plot_tradeoff_fiber_optic.py",
+      "pdfs": [
+        "User_Experience_Trade-off/TierB_Rb_vs_U_Fiber_Optic.pdf"
+      ],
+      "sha256_python": "830525423bfc87fdac384375012e072966ecd18096c7c448108b497bbd0c2682",
+      "sha256_pdfs": {
+        "User_Experience_Trade-off/TierB_Rb_vs_U_Fiber_Optic.pdf": "ff605cb652790abbadc2a319516be847885d6ae62c223ed8b8c431d50aebc90c"
+      },
+      "folder": "User_Experience_Trade-off"
+    },
+    {
+      "python_source": "User_Experience_Trade-off/plot_tradeoff_wifi.py",
+      "pdfs": [
+        "User_Experience_Trade-off/TierB_Rb_vs_U_WiFi.pdf"
+      ],
+      "sha256_python": "3ba311ea2ef21b2b84b4b7e8d24bfbba94da61b32c00ecf42a7828a99733a5d8",
+      "sha256_pdfs": {
+        "User_Experience_Trade-off/TierB_Rb_vs_U_WiFi.pdf": "80927522e12a07d1e68fb3bbcf6cff20f91f1666a759a947aeb76ffe795ce0f7"
+      },
+      "folder": "User_Experience_Trade-off"
+    }
+  ],
+  "fail_closed_audits": [
+    "TTFB/EVIDENCE_GAP_TTFB.json",
+    "Stall Time/EVIDENCE_GAP_CONTINUITY_TIMESERIES.json",
+    "User_Experience_Trade-off/EVIDENCE_GAP_FIG4_TRADEOFF.json",
+    "Buffer Level/README_METRIC_HONESTY.md"
+  ],
+  "visual_redesign": "TON_FINAL_FIGURE_VISUAL_REDESIGN_READY"
+}

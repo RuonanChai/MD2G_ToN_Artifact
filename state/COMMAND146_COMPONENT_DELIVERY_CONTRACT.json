@@ -1,0 +1,11 @@
+{
+  "ts": "2026-08-18T07:12:00+00:00",
+  "token": "COMMAND146_COMPONENT_DELIVERY_CONTRACT",
+  "user_target": "logical composition state r_u",
+  "physical_requirement": "dependency closure C(r_u)",
+  "group_active_set": "A_g(t) = union_u C(r_u(t))",
+  "marginal_cost": "DeltaB(r'|A_g) = sum_{c in C(r') \\ A_g} cost(c)",
+  "shared_transmission": "component c once per shared branch where U(g,c) nonempty, then fan-out",
+  "authority_for": ["feasibility", "admission", "reward cost", "baseline cost", "accounting", "figures"],
+  "forbid": "per-representation full-stream bitrate as admission cost"
+}

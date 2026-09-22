@@ -1,0 +1,11 @@
+{
+  "ts": "2026-08-21T01:34:04.477537+00:00",
+  "token": "COMMAND153_FOV_NOT_APPLICABLE",
+  "frozen_before_first_fov_result": true,
+  "reason": "no live overlap 20/40/60/80 knob in frozen nested controller; 96-cell FoV matrix would fabricate a mechanism",
+  "do_not_fabricate": true,
+  "loot_sealed": true,
+  "not_experimental_validation": true,
+  "not_a_sensitivity_result": true,
+  "paper_claim_compatibility": "COMMAND153_PAPER_CLAIM_COMPATIBILITY_NOTE"
+}

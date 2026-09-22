@@ -1,0 +1,11 @@
+figure,caption_ref,methods,access,users,duration,interval,trials,metric,plot_script,status
+Fig5,Fluidity-QoE,MD2G|Heuristic|Clustering|Rolling|GROOT,5G|WiFi|default_mix,10-100,120,1.0,3,arrival_interval_vs_qoe,User_Experience_Trade-off/*,AWAIT
+Fig6,TTFB ECDF,MD2G|Heuristic|Clustering|Rolling|GROOT,5G|WiFi|default_mix,100,120,1.0,5,ttfb_cdf,TTFB/plot_ttfb_cdf_1x3.py,AWAIT
+Fig7,Buffer vs users,MD2G|Heuristic|Clustering|Rolling|GROOT,mixed,10-100,120,1.0,3,buffer,Buffer Level/*,AWAIT
+Fig8,Stall+QoE,MD2G|Heuristic|Clustering|Rolling|GROOT,mixed,mixed,120,1.0,3,stall_timeseries|qoe,Stall Time/*|QoE/*,AWAIT
+Fig9,Throughput,MD2G|Heuristic|Clustering|Rolling|GROOT,agg|5G|default_mix,10-100,120,1.0,3,throughput,Throughput/*,AWAIT
+Fig10,CPU,MD2G|Heuristic|Clustering|Rolling|GROOT,homo|hetero,10-100,120,1.0,3,cpu,CPU usage/*,AWAIT
+Fig11,Visual Rep3vs5,media,n/a,n/a,n/a,n/a,n/a,psnr_ssim,visual,AWAIT
+Fig12,Fluidity-QoE 4G/fiber,MD2G|Heuristic|Clustering|Rolling|GROOT,4G|fiber,10-100,120,1.0,3,arrival_interval_vs_qoe,User_Experience_Trade-off/*,AWAIT
+Fig13,TTFB 4G/fiber,MD2G|Heuristic|Clustering|Rolling|GROOT,4G|fiber,100,120,1.0,5,ttfb_cdf,TTFB/*,AWAIT
+Fig14,Throughput 4G/WiFi/fiber,MD2G|Heuristic|Clustering|Rolling|GROOT,4G|WiFi|fiber,10-100,120,1.0,3,throughput,Throughput/*,AWAIT

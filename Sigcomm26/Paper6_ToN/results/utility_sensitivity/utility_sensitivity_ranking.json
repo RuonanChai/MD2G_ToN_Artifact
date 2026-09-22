@@ -1,0 +1,26 @@
+[
+  {
+    "config": "A_quality_dominant",
+    "ranking": "MD2G-Cast=0.7870 > Clustering=0.7025 > Heuristic=0.5829",
+    "md2g_rank": 1,
+    "md2g_best": true
+  },
+  {
+    "config": "B_balanced",
+    "ranking": "MD2G-Cast=0.5715 > Clustering=0.5346 > Heuristic=0.4936",
+    "md2g_rank": 1,
+    "md2g_best": true
+  },
+  {
+    "config": "C_bandwidth_aware",
+    "ranking": "MD2G-Cast=0.6794 > Clustering=0.6513 > Heuristic=0.6199",
+    "md2g_rank": 1,
+    "md2g_best": true
+  },
+  {
+    "config": "frozen_paper",
+    "ranking": "MD2G-Cast=0.7450 > Clustering=0.6731 > Heuristic=0.5740",
+    "md2g_rank": 1,
+    "md2g_best": true
+  }
+]

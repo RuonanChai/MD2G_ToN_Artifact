@@ -1,0 +1,13 @@
+{
+  "ts": "2026-08-18T07:12:00+00:00",
+  "token": "COMMAND146_MD2G_COMPONENT_POLICY_CONTRACT",
+  "controller_identity": "MD2G_COMPONENT_V1",
+  "do_not_use_as_training_targets": ["G2", "H5", "H9", "H10", "native9_fullrep_models"],
+  "action": "grouping plus target logical composition (base-prefix depth + enhancement-prefix depth)",
+  "policy_outputs": "TARGET QUALITY COMPOSITIONS",
+  "projection": "component-union subscriptions from C(r)",
+  "reward": "effect of COMPONENT UNION sharing, not full-representation labels",
+  "version_budget": {"V1": "corrected component-aware policy", "V2": "at most one causally justified major repair"},
+  "mm26_init_allowed": true,
+  "mm26_init_not_final_without_component_retrain": true
+}

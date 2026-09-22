@@ -1,0 +1,38 @@
+{
+  "name": "MD2G_INSTRUMENTATION_V2",
+  "binding": "command60",
+  "timestamp": "2026-07-27T05:15:55.501796-05:00",
+  "required_direct_records": [
+    "source_egress",
+    "root_ingress_egress",
+    "leaf_ingress_egress",
+    "client_payload_bytes",
+    "protocol_control_overhead",
+    "stale_bytes",
+    "duplicate_representation_bytes",
+    "unused_enhancement_bytes",
+    "useful_rendered_bytes",
+    "subscription_cancel_timestamps",
+    "simultaneous_active_reps",
+    "controller_inference_queue_latency",
+    "relay_queue_latency",
+    "cpu_memory"
+  ],
+  "clock": "monotonic",
+  "ids": [
+    "cell",
+    "user",
+    "rep",
+    "epoch"
+  ],
+  "overhead_bound_preregistered": true,
+  "must_not_alter_strategy_ordering_in_canaries": true,
+  "implementation_status": "CODE_WIRED_SYNTHETIC_PASS_PENDING_RUNTIME_VALIDATE",
+  "contract_sha256": "eb3b6adc11ecf8064bc5d79e9ba00d6ade958340a4b0c0ceffc94d18985bf42c",
+  "scientific_status": "INSTRUMENTATION_V2_CONTRACT_SCHEMA_PASS",
+  "final_scientific_freeze": false,
+  "pre_repair_draft": true,
+  "pre_repair_draft_sha256": "ce8159b91b97f9b9646849c580263f9f533c916dc02b60a270e81d95107e3fcf",
+  "reconciliation_ts": "2026-07-27T05:31:42.171272-05:00",
+  "note": "Contract/schema/unit-test PASS only under command60 freeze reconciliation. Not a final scientific freeze. Do not launch scientific cells on this token alone."
+}

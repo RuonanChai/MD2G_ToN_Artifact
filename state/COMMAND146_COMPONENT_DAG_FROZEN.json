@@ -1,0 +1,6 @@
+{
+  "ts": "2026-08-18T07:12:00+00:00",
+  "token": "COMMAND146_COMPONENT_DAG_FROZEN",
+  "contract": "state/COMMAND146_COMPONENT_DAG_CONTRACT.json",
+  "no_controller_before_this_token": true
+}

@@ -1,0 +1,56 @@
+{
+  "name": "MD2G_METRIC_CONTRACT_V4",
+  "binding": "command60",
+  "supersedes": "MD2G_METRIC_CONTRACT_V3",
+  "timestamp": "2026-07-27T05:15:55.286748-05:00",
+  "headline_qoe": {
+    "name": "QoE_V4",
+    "definition": "time_weighted_rendered_quality + true_startup_TTFB + true_stall + true_completion",
+    "denominator": "all_launched_users",
+    "forbid_final_rep_only": true
+  },
+  "headline_u_sys": {
+    "until_direct_instrumentation_valid": "U_sys_V4 = mean_over_all_launched_users(QoE_V4)",
+    "forbid_fixed_strategy_class_credits": true,
+    "forbid_0.7xRX_useful_byte_efficiency": true,
+    "direct_system_cost_reported_separately": true
+  },
+  "buffer": "media_timeline_playable_buffer_not_RX_derived",
+  "stall": "playable_timeline_depletion_after_playback_start_monotonic",
+  "completion": "rendered_playable_media_duration_from_timestamps_not_csv_rows",
+  "ttfb": "subscription_or_init_to_first_media_payload_byte",
+  "steady_state_interval": "receiver_media_object_spacing_after_startup_not_glass_to_glass",
+  "sensitivity_endpoints_only": [
+    "QoE_ABSOLUTE_V2",
+    "legacy_R_q",
+    "legacy_R_final"
+  ],
+  "pareto_after_direct_bytes": [
+    "QoE",
+    "completion",
+    "TTFB_tail_interval",
+    "source_root_shared_link_bytes",
+    "stale_duplicate_bytes",
+    "CPU_controller_latency"
+  ],
+  "contract_sha256": "5ec484d94fb7f74cf7b59c0be62b74113d6a1e32e11c9d148946df8f4b2a8a72",
+  "scientific_status": "METRIC_V4_CONTRACT_SCHEMA_PASS",
+  "final_scientific_freeze": false,
+  "pre_repair_draft": true,
+  "pre_repair_draft_sha256": "cb716c05c9511d80c4cf43f65b33a4c5eefd6b6dec24348d91aa95bd5426fe82",
+  "reconciliation_ts": "2026-07-27T05:31:42.171272-05:00",
+  "note": "Contract/schema/unit-test PASS only under command60 freeze reconciliation. Not a final scientific freeze. Do not launch scientific cells on this token alone.",
+  "qs_table_v4": {
+    "1": 0.2,
+    "2": 0.35,
+    "3": 0.5,
+    "4": 0.65,
+    "5": 0.75,
+    "6": 0.6,
+    "7": 0.7,
+    "8": 0.72,
+    "9": 0.8,
+    "note": "discriminative; qs(rep3)!=qs(rep8); code-wired via md2g_metric_v4_timeline"
+  },
+  "implementation_status": "TIMELINE_CODE_WIRED_SYNTHETIC_PASS_PENDING_CANARY"
+}

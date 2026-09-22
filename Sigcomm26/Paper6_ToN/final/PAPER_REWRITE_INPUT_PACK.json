@@ -1,0 +1,336 @@
+{
+  "document": "PAPER_REWRITE_INPUT_PACK",
+  "purpose": "Read-only paper-facing scientific fact package for first-principles ToN rewrite",
+  "generated_from_frozen_evidence_only": true,
+  "terminal_token": "TON_COMPONENT_MD2G_EXPERIMENTS_COMPLETE_TIER_B",
+  "epoch_id": "C152_RBV1_88cabc20eb5d",
+  "claim_tier": "TIER_B",
+  "not_emitted": [
+    "TON_COMPONENT_MD2G_SUBMISSION_READY",
+    "COMMAND153_CLAIM_LIMITED",
+    "TON_SUBMISSION_READY"
+  ],
+  "aggregation_defaults": {
+    "matched_block_key": ["content", "network", "users", "seed"],
+    "delta_U": "MD2G_U - max(HV3, CLUSTERING, RULE)",
+    "bootstrap": {"unit": "matched_block", "n_boot": 10000, "ci": 0.95, "seed": 153, "pairing_preserved": true},
+    "WTL_noise_abs": 0.03,
+    "WTL_rule": "W if dU>+0.03; L if dU<-0.03; else T"
+  },
+  "primary_sources": [
+    "state/TON_COMPONENT_MD2G_EXPERIMENTS_COMPLETE_TIER_B.json",
+    "state/TON_COMPONENT_MD2G_EVIDENCE_PACKAGE_READY.json",
+    "state/COMMAND152_POST_INSTRUMENTATION_EPOCH_FREEZE.json",
+    "state/COMMAND153_FINAL_DEV_FROZEN.json",
+    "state/COMMAND148_MAINDEV_COMPLETE.json",
+    "state/COMMAND153_LOOT_HOLDOUT_FROZEN.json",
+    "state/COMMAND151_PHYSICAL_PRESSURE_CONTRACT.json",
+    "state/COMMAND146_COMPONENT_DAG_CONTRACT.json",
+    "state/COMMAND147_COMPONENT_QUALITY_CONTRACT.json",
+    "state/COMMAND147_TEMPORAL_BITRATE_CONTRACT.json",
+    "state/COMMAND146_CORRECTED_EPOCH_SPLIT.json",
+    "state/COMMAND153_FINAL_METRIC_CONTRACT_CONFIRM.json",
+    "state/COMMAND153_PAPER_CLAIM_COMPATIBILITY_NOTE.json",
+    "state/COMMAND153_CANARY_SIX_QUESTIONS.json",
+    "Sigcomm26/Paper6_ToN/final/COMMAND153_PRIMARY_STATS.json",
+    "Sigcomm26/Paper6_ToN/final/COMMAND153_MATCHED_BLOCKS.csv",
+    "Sigcomm26/Paper6_ToN/final/COMMAND153_SCALING_STATS.json",
+    "Sigcomm26/Paper6_ToN/final/COMMAND153_HOLDOUT_STATS.json",
+    "Sigcomm26/Paper6_ToN/final/COMMAND153_CROSS_STACK_DASH_STATS.json",
+    "Sigcomm26/Paper6_ToN/final/COMMAND153_OVERHEAD_STATS.json",
+    "Sigcomm26/Paper6_ToN/final/COMMAND153_CLAIM_EVIDENCE_MATRIX.md",
+    "Sigcomm26/Paper6_ToN/final/COMMAND153_LIMITATIONS_AND_UNFAVORABLE_RESULTS.md",
+    "Sigcomm26/Paper6_ToN/Figures/FINAL_LATEX_NUMBERS.tex",
+    "Sigcomm26/Paper6_ToN/Figures/FINAL_FIGURE_AUDIT.md",
+    "Sigcomm26/Paper6_ToN/Figures/SKIPPED_FIGURES.md",
+    "Sigcomm26/Paper6_ToN/Figures/MANUSCRIPT_REVISION_TIERB.md",
+    "Sigcomm26/Paper6/ToN_manuscript/sections/*.tex"
+  ],
+  "A_authority": {
+    "Q1_terminal_tokens": {
+      "TON_COMPONENT_MD2G_EXPERIMENTS_COMPLETE_TIER_B": "Tier-B campaign complete; not SUBMISSION_READY",
+      "TON_COMPONENT_MD2G_EVIDENCE_PACKAGE_READY": "evidence package written; terminal=TIER_B",
+      "COMMAND148_MAINDEV_COMPLETE": "MAINDEV n=945; loot sealed at time",
+      "COMMAND153_FINAL_DEV_FROZEN": "DEV freeze; loot_next=true",
+      "COMMAND153_LOOT_HOLDOUT_FROZEN": "Loot n=315; no post-holdout tuning",
+      "COMMAND152_POST_INSTRUMENTATION_EPOCH_FREEZE": "epoch C152_RBV1_88cabc20eb5d"
+    },
+    "Q2_epoch_controller": {
+      "epoch_id": "C152_RBV1_88cabc20eb5d",
+      "epoch_sha256": "88cabc20eb5dfb3d46e37a24bdb7c92ce712791a19a32c4f0f99049b34d86f0f",
+      "controller_identity": "MD2G_COMPONENT_V1",
+      "teacher_sha256": "74cbf3ac7c87d4b2648b6706feaf2c11f3bca739435d05d974be35481454354c",
+      "student_sha256": "41ed1170cc378b08c24e93d9cd92d6d600f6eedb9a94c4da3570ea972e83e6e1",
+      "architecture": "G2Native9RepController",
+      "live_inference": "student_component_v1.pt"
+    },
+    "Q3_claim_tier": {
+      "tier": "TIER_B",
+      "strongest_defensible_one_sentence": "Under frozen nested-component MoQ and U=clip(0.25*Ro+0.60*Rq-0.15*Rb,0,1), matched DeltaU vs strongest of Heuristic/Clustering/Rule is negative at 20 users and positive with CI excluding zero at 60 and 100 users on MAINDEV and unseen Loot.",
+      "not_supported": "universal same-substrate dominance; zero stall; 3-4x QoE; 99% TTFB; 25-72% bandwidth reduction; nine independent full streams; DASH as same-substrate"
+    }
+  },
+  "B_media": {
+    "physical_components": ["b0", "db1", "db2", "e1", "e2"],
+    "logical_closures": {
+      "Rep1": ["b0"],
+      "Rep2": ["b0", "db1"],
+      "Rep3": ["b0", "db1", "db2"],
+      "Rep4": ["b0", "e1"],
+      "Rep5": ["b0", "e1", "e2"],
+      "Rep6": ["b0", "db1", "e1"],
+      "Rep7": ["b0", "db1", "e1", "e2"],
+      "Rep8": ["b0", "db1", "db2", "e1"],
+      "Rep9": ["b0", "db1", "db2", "e1", "e2"]
+    },
+    "logical_neq_full_stream": true,
+    "rep_id_is_not_quality": true,
+    "bitrates_mbps": {
+      "redandblack": {"b0": 33.335512, "db1": 25.018273, "db2": 29.503006, "e1": 17.695226, "e2": 17.693916},
+      "longdress": {"b0": 38.364247, "db1": 28.693348, "db2": 33.860242, "e1": 20.327970, "e2": 20.331945},
+      "soldier": {"b0": 44.950541, "db1": 33.724341, "db2": 39.829227, "e1": 23.865654, "e2": 23.869837},
+      "loot": {"b0": 34.841083, "db1": 26.098450, "db2": 30.818014, "e1": 18.541156, "e2": 18.548414}
+    },
+    "bitrate_unit": "Mbps",
+    "bitrate_aggregation": "looped_transport_bytes*8/120s UNIQUE_CLIP_LOOPED",
+    "Rq_uses_decoded_not_target": true,
+    "marginal_cost": "DeltaR = sum rates of missing components; margin 1.05",
+    "sources": [
+      "state/COMMAND146_COMPONENT_DAG_CONTRACT.json",
+      "state/COMMAND147_COMPONENT_QUALITY_CONTRACT.json",
+      "state/COMMAND147_TEMPORAL_BITRATE_CONTRACT.json",
+      "lib/command149_marginal_cost.py"
+    ]
+  },
+  "C_md2g_design": {
+    "teacher_latent": 128,
+    "student_latent": 64,
+    "input_dims": {"user": 16, "content": 12, "global": 10},
+    "output_live": "rep_logits size 9",
+    "live_grouping": "g0_only",
+    "fov_live_knob": false,
+    "overhead": {
+      "metric": "student_infer_ms",
+      "n": 56,
+      "mean": 377.84399984437704,
+      "median": 373.41688002925366,
+      "nature": "offline_sidecar_replay_not_live_perturbation",
+      "source": "final/COMMAND153_OVERHEAD_STATS.json",
+      "class": "supporting"
+    }
+  },
+  "D_metrics": {
+    "U": "clip(0.25*Ro_component + 0.60*Rq - 0.15*Rb, 0, 1)",
+    "Ro_component": "clip(1 - B_shared/B_unicast, 0, 1)",
+    "Rq": "mean launched-user Q_norm[decoded_state]; stall/latency excluded",
+    "Rb": "clip(P95(max(0,u_t-0.02)/0.98),0,1) on r0-eth1 TX 1s util",
+    "PRIMARY": ["U", "DeltaU", "Ro_component", "Rq", "Rb"],
+    "SECONDARY": ["weak_user_Rq", "B_shared", "B_unicast", "throughput", "stall_last", "mechanism_deltas"],
+    "NOT_IN_FINAL_CLAIM_CONTRACT": ["TTFB", "delay", "buffer_level_sec", "CPU", "FoV_sweep", "A1-A5_A7_deltas"],
+    "never_claim_zero_stall": true,
+    "source": "state/COMMAND153_FINAL_METRIC_CONTRACT_CONFIRM.json"
+  },
+  "E_setup": {
+    "duration_s": 120,
+    "warmup_s": 30,
+    "measurement_s": 90,
+    "control_interval_s": 1.0,
+    "networks_maindev": ["4g", "5g", "wifi", "fiber_optic", "default_mix", "wifi_dominant", "5g_dominant"],
+    "users_maindev": [20, 60, 100],
+    "users_scaling": [10, 20, 40, 60, 100],
+    "seeds_dev": [151, 152, 153],
+    "seeds_holdout": [91, 92, 93],
+    "train_dev_contents": ["redandblack", "longdress", "soldier"],
+    "holdout_content": ["loot"],
+    "loot_unsealed_after": "COMMAND153_FINAL_DEV_FROZEN",
+    "Rb_iface": "r0-eth1_tx"
+  },
+  "F_baselines": {
+    "same_substrate_primary": ["HV3_COMPONENT", "CLUSTERING_COMPONENT", "RULE_COMPONENT"],
+    "paper_name_for_HV3": "Heuristic",
+    "delivery_mode_only": ["MOQ_UNICAST_COMPONENT"],
+    "cross_stack_secondary": ["groot", "rolling"],
+    "do_not_mix_into_strongest_same_substrate": ["MOQ_UNICAST_COMPONENT", "groot", "rolling"]
+  },
+  "G_maindev": {
+    "evidence_class": "DEV",
+    "source": "final/COMMAND153_PRIMARY_STATS.json + COMMAND153_MATCHED_BLOCKS.csv",
+    "strategy_means": {
+      "MD2G_COMPONENT": {"n": 189, "U": 0.6749871222803718, "Rq": 0.7395039458708437, "Ro_component": 0.972788333484042, "Rb": 0.07941552408763257, "weak_user_Rq": 0.2701057975011453},
+      "CLUSTERING_COMPONENT": {"n": 189, "U": 0.6489353096872866, "Rq": 0.7024311513784826, "Ro_component": 0.9711876856572004, "Rb": 0.10213535036068637, "weak_user_Rq": 0.2215608335562407},
+      "RULE_COMPONENT": {"n": 189, "U": 0.6410518775315349, "Rq": 0.6897936166981146, "Ro_component": 0.9704510638931466, "Rb": 0.10291372307080283, "weak_user_Rq": 0.23716930483039447},
+      "HV3_COMPONENT": {"n": 189, "U": 0.558665660452737, "Rq": 0.5438280412676713, "Ro_component": 0.972444978990684, "Rb": 0.07161606037024495, "weak_user_Rq": 0.21455026400959198},
+      "MOQ_UNICAST_COMPONENT": {"n": 189, "U": 0.18921310067303865, "Rq": 0.41591664318372845, "Ro_component": 0.0, "Rb": 0.4022459015813226, "weak_user_Rq": 0.20965607688859905}
+    },
+    "matched_overall": {
+      "n": 189,
+      "mean_delta_U": 0.015849039965376982,
+      "median_delta_U": 0.082871,
+      "ci95": [-0.001892, 0.033033],
+      "WTL": [125, 0, 64],
+      "ci_excludes_zero": false
+    },
+    "matched_by_users": {
+      "20": {"n": 63, "mean": -0.136772, "median": -0.158686, "ci95": [-0.153064, -0.118250], "WTL": [5, 0, 58], "ci_excludes_zero": true},
+      "60": {"n": 63, "mean": 0.078507, "median": 0.086040, "ci95": [0.065893, 0.088922], "WTL": [60, 0, 3], "ci_excludes_zero": true},
+      "100": {"n": 63, "mean": 0.105812, "median": 0.115436, "ci95": [0.093772, 0.115995], "WTL": [60, 0, 3], "ci_excludes_zero": true}
+    },
+    "matched_by_content": {
+      "redandblack": {"n": 63, "mean": 0.036043, "ci95": [0.005320, 0.064456], "WTL": [47, 0, 16]},
+      "longdress": {"n": 63, "mean": 0.010343, "ci95": [-0.020772, 0.040134], "WTL": [42, 0, 21]},
+      "soldier": {"n": 63, "mean": 0.001161, "ci95": [-0.029877, 0.030692], "WTL": [36, 0, 27]}
+    },
+    "unfavorable_blocks_n": 64,
+    "worst_delta_U_example": {"block": "longdress_wifi_u20_s151", "delta_U": -0.21594059475388838, "vs": "RULE_COMPONENT"},
+    "best_delta_U_example": {"block": "redandblack_fiber_optic_u100_s152", "delta_U": 0.16996676572538605, "vs": "CLUSTERING_COMPONENT"}
+  },
+  "H_scaling": {
+    "evidence_class": "scaling",
+    "logical_n": 150,
+    "exact_dev_reuse_n": 90,
+    "newly_launched_n": 60,
+    "not_150_new_executions": true,
+    "matched_by_users": {
+      "10": {"n": 6, "md2g_U": 0.606214, "strong_U": 0.674792, "delta_U": -0.068578, "ci95": [-0.162812, 0.025657], "WTL": [2, 0, 4]},
+      "20": {"n": 6, "md2g_U": 0.619805, "strong_U": 0.669097, "delta_U": -0.049292, "ci95": [-0.132334, 0.034309], "WTL": [3, 0, 3]},
+      "40": {"n": 6, "md2g_U": 0.694701, "strong_U": 0.676439, "delta_U": 0.018262, "ci95": [-0.070717, 0.104379], "WTL": [4, 0, 2]},
+      "60": {"n": 6, "md2g_U": 0.773474, "strong_U": 0.685039, "delta_U": 0.088435, "ci95": [0.079885, 0.096882], "WTL": [6, 0, 0]},
+      "100": {"n": 6, "md2g_U": 0.772569, "strong_U": 0.657786, "delta_U": 0.114783, "ci95": [0.106551, 0.123046], "WTL": [6, 0, 0]}
+    },
+    "crossover": {
+      "first_positive_mean_load": 40,
+      "measured_fact": "mean DeltaU sign changes between u20 and u40",
+      "interpretation_caution": "u40 CI includes 0; describe as estimated transition near 40"
+    }
+  },
+  "I_loot": {
+    "evidence_class": "holdout",
+    "n_cells": 315,
+    "seeds": [91, 92, 93],
+    "strategy_means_MD2G": {"n": 63, "U": 0.6880304228258247, "Rq": 0.7597526366707154, "Ro_component": 0.9736525249313632, "Rb": 0.07489526939630212},
+    "matched_by_users": {
+      "20": {"n": 21, "mean": -0.160214, "median": -0.176046, "ci95": [-0.175190, -0.142821], "WTL": [0, 0, 21]},
+      "60": {"n": 21, "mean": 0.083108, "median": 0.081707, "ci95": [0.077500, 0.088506], "WTL": [21, 0, 0]},
+      "100": {"n": 21, "mean": 0.111350, "median": 0.112896, "ci95": [0.100969, 0.120536], "WTL": [21, 0, 0]}
+    },
+    "tier_b_generalizes": true,
+    "strengthened": "unseen-content confirmation of concurrency-dependent pattern",
+    "limitation": "u20 systematic losses remain"
+  },
+  "J_mechanism": {
+    "evidence_class": "DEV",
+    "decomp_means": {
+      "u20": {"dRo": 0.002139, "dRq": -0.244940, "dRb": -0.064385, "c_0_25_dRo": 0.000535, "c_0_60_dRq": -0.146964, "c_m0_15_dRb": 0.009658},
+      "u60": {"dRo": 0.001300, "dRq": 0.130529, "dRb": 0.000904, "c_0_25_dRo": 0.000325, "c_0_60_dRq": 0.078317, "c_m0_15_dRb": -0.000136},
+      "u100": {"dRo": 0.000907, "dRq": 0.172190, "dRb": -0.015141, "c_0_25_dRo": 0.000227, "c_0_60_dRq": 0.103314, "c_m0_15_dRb": 0.002271}
+    },
+    "rq_drives_high_concurrency_gain": true,
+    "rb_driven_win": false,
+    "ro_accounting_artifact": false,
+    "target_minus_decoded_mean_n189": 0.089370,
+    "weak_user_delta": {"u20": -0.093254, "u60": 0.055556, "u100": 0.044048},
+    "NOT_APPLICABLE_ablations": ["A1", "A2", "A3", "A4", "A5", "A7", "FoV_20_40_60_80"]
+  },
+  "K_cross_stack": {
+    "moq_unicast_maindev": {
+      "MD2G_U": 0.674987,
+      "UNICAST_U": 0.189213,
+      "claim": "shared vs unicast architecture; not same-substrate controller skill"
+    },
+    "h2_dash": {
+      "evidence_class": "cross-stack",
+      "n": 48,
+      "groot_mean_U": 0.058625,
+      "rolling_mean_U": 0.081451,
+      "md2g_u20_mean_U": 0.514702,
+      "md2g_u60_mean_U": 0.757176,
+      "do_not_use_as_primary_same_substrate": true
+    }
+  },
+  "L_throughput": {
+    "definition": "r0-eth1 protocol-inclusive TX Mbps = tx_bytes*8/(n_intervals*1e6)",
+    "lower_throughput_is_not_efficiency": true,
+    "relationship": "throughput != Ro != Rb != U"
+  },
+  "M_figures": {
+    "manifest": "Sigcomm26/Paper6_ToN/Figures/FINAL_FIGURE_MANIFEST.md",
+    "audit": "Sigcomm26/Paper6_ToN/Figures/FINAL_FIGURE_AUDIT.md",
+    "skipped": "Sigcomm26/Paper6_ToN/Figures/SKIPPED_FIGURES.md",
+    "three_strongest": [
+      "Buffer Level/System_Utility_By_Users_scheme1.pdf",
+      "QoE/Loot_Holdout_DeltaU_By_Users.pdf",
+      "QoE/Mechanism_Decomposition_Loot.pdf"
+    ],
+    "error_bars": "sample standard deviation across cells/blocks in bin (mean_std); not bootstrap CI unless caption says otherwise",
+    "cannot_reproduce": ["TTFB_CDF", "fluidity_delay_QoE", "buffer_occupancy_curves", "continuity_timeseries", "CPU", "FoV_sensitivity"]
+  },
+  "N_manuscript_conflicts": {
+    "manuscript_root": "Sigcomm26/Paper6/ToN_manuscript/sections/",
+    "must_remove_or_rewrite": [
+      "QoE 0.609 / +25.2% Rolling / +27.1% GROOT",
+      "near-zero / near-continuous stall as primary claim",
+      "TTFB CDFs and delay-QoE trade-off figures",
+      "Rq_adj as primary metric",
+      "FoV/device ablation tables as experimental validation",
+      "Rb as bandwidth savings",
+      "nine independent full representations",
+      "Teacher-512/Student-128 (actual latent 128/64)"
+    ]
+  },
+  "O_reviewer": {
+    "strongest_evidence": [
+      "MAINDEV u60/u100 CI excludes 0",
+      "Loot u60/u100 21/21 wins",
+      "Scaling u60/u100 CI excludes 0",
+      "Rq contribution dominates high-concurrency DeltaU",
+      "Shared vs unicast architectural gap"
+    ],
+    "strongest_weaknesses": [
+      "Systematic u20 losses",
+      "Overall MAINDEV mean DeltaU CI includes 0",
+      "Soldier overall DeltaU ~ 0",
+      "4g high-concurrency CI fragile",
+      "No live mechanism ablations"
+    ],
+    "low_concurrency": "measured_operating_regime_boundary",
+    "soldier": "content-level near zero; load-conditioned wins at u60/u100",
+    "high_concurrency_wording": "medium-to-high concurrency (60-100 users); transition near 40 estimated",
+    "ci_excludes_zero": ["MAINDEV_u60", "MAINDEV_u100", "LOOT_u60", "LOOT_u100", "SCALING_u60", "SCALING_u100", "MAINDEV_redandblack_overall"]
+  },
+  "P_rewrite": {
+    "thesis": "MD2G-Cast under nested incremental component MoQ yields concurrency-dependent same-substrate utility gains: underperforms at 20 users, wins at 60-100 on DEV and sealed Loot, driven mainly by decoded Rq; not universal dominance or stall elimination.",
+    "RQs": [
+      "Does nested component sharing improve U vs same-substrate baselines, and under which concurrency?",
+      "Does the concurrency-dependent pattern generalize to unseen Loot without retuning?",
+      "Is the gain explained by decoded quality, reuse, or root pressure?"
+    ],
+    "contributions": [
+      "Nested incremental component media/control contract",
+      "Tier-B concurrency-dependent matched DeltaU with explicit low-concurrency limitation",
+      "Metric discipline separating Ro, Rq, Rb, delivery-mode, and cross-stack"
+    ],
+    "abstract_headline": "Under a nested-component MoQ substrate, MD2G improves matched system utility at 60-100 users—including on unseen Loot—while underperforming at 20 users, yielding a concurrency-dependent rather than universal advantage.",
+    "conclusion_headline": "Frozen evidence supports a Tier-B, concurrency-dependent shared-delivery benefit driven mainly by decoded quality, with an explicit low-concurrency limitation and no zero-stall claim."
+  },
+  "Q_gaps": {
+    "Q98_missing": [
+      "per-network typesetting tables from MATCHED_BLOCKS.csv",
+      "H2 DASH Rb often null in stats rows",
+      "limited live end-to-end control-path latency beyond offline student_infer_ms",
+      "FoV/device ablations absent by contract"
+    ],
+    "Q99_new_experiment_necessary_for_tier_b": false,
+    "Q100_ambiguities": [
+      "Overall MAINDEV mean DeltaU CI includes 0",
+      "Scaling 150 = 90 reuse + 60 new",
+      "Buffer Level folder crossover metric is U not buffer",
+      "Teacher/Student latent 128/64 not 512/128",
+      "WTL noise 0.03",
+      "Live group is g0 despite group head",
+      "content feature collapses non-RB",
+      "ToN_manuscript still has SIGCOMM-era claims"
+    ]
+  },
+  "markdown_path": "Sigcomm26/Paper6_ToN/final/PAPER_REWRITE_INPUT_PACK.md",
+  "terminal_line": "PAPER_REWRITE_INPUT_PACK_READY"
+}

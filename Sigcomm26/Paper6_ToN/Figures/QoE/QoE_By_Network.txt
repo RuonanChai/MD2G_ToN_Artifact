@@ -1,0 +1,15 @@
+           4G
+
+           5G                               0.1
+         Wi-Fi
+
+    Fiber Optic                             0.0
+
+   Default Mix
+
+Wi-Fi Dominant                              −0.1
+
+  5G Dominant
+                  20        60        100
+                       Number of users
+

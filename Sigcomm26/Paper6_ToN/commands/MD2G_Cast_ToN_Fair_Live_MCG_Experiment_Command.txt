@@ -1,0 +1,301 @@
+MD2G-Cast ToN Extension - Fair Mininet Experiment Completion Command
+
+ROLE: You are responsible for producing the final fair experimental
+evidence package for the MD2G-Cast ToN revision.
+
+IMPORTANT CORRECTION: Previous offline MCG analysis is NOT a final
+baseline comparison. A greedy baseline that is not executed under the
+same live Mininet/MoQ environment cannot be claimed as a fair comparison
+against live MD2G-Cast.
+
+Therefore:
+
+-   Offline MCG results may be retained only as supplementary analysis.
+-   The main paper baseline comparison must use the same execution
+    substrate.
+-   MCG must be implemented as a live scheduler integrated into the same
+    framework.
+
+The objective is NOT to redo the whole project. The objective is to
+obtain the minimum number of scientifically valid experiments needed for
+ToN.
+
+============================================================ GLOBAL
+RULES ============================================================
+
+DO NOT:
+
+-   modify frozen MD2G-Cast algorithm;
+-   modify PPO model;
+-   modify reward definition;
+-   modify frozen U weights;
+-   modify existing valid artifacts;
+-   change MoQ implementation;
+-   change baseline semantics;
+-   run unnecessary full-scale matrices.
+
+Reuse existing:
+
+-   Mininet deployment;
+-   COMMAND153 infrastructure;
+-   traces;
+-   content;
+-   metrics pipeline;
+-   validators;
+-   scripts.
+
+Every new live experiment must use:
+
+same: - hardware environment; - network emulator; - content; - users; -
+seeds; - measurement pipeline.
+
+The only changed component should be the scheduler policy.
+
+============================================================ PHASE 0:
+AUDIT EXISTING EVIDENCE
+============================================================
+
+First read:
+
+TON_EXTENSION_EXPERIMENT_REPORT.md
+
+and all generated artifacts.
+
+Keep:
+
+-   completion analysis;
+-   utility sensitivity;
+-   controller latency breakdown;
+-   cross-content analysis.
+
+Do not discard these.
+
+Identify:
+
+1.  existing live experiment launcher;
+2.  baseline scheduler interface;
+3.  metric collection path;
+4.  artifact validation mechanism.
+
+Produce:
+
+TON_EXPERIMENT_AUDIT.md
+
+before implementation.
+
+============================================================ PHASE 1:
+IMPLEMENT LIVE MCG BASELINE
+============================================================
+
+Priority: VERY HIGH
+
+Implement:
+
+MCG: Marginal Completion Greedy Scheduler
+
+Purpose:
+
+Create a fair non-learning baseline under the same live MoQ/Mininet
+environment.
+
+Requirements:
+
+MCG must:
+
+-   run inside the same scheduler framework;
+-   receive the same state information as MD2G-Cast;
+-   output decisions through the same action interface.
+
+Available state:
+
+-   FoV overlap;
+-   bandwidth;
+-   device capability;
+-   component availability;
+-   current component completion state.
+
+Decision rule:
+
+For every candidate component c:
+
+score(c)
+
+estimated marginal decoded completion gain / additional transmission
+resource cost
+
+Use:
+
+greedy admission by highest score.
+
+Maintain:
+
+same: - relay; - client; - telemetry; - experiment duration; -
+content; - metrics.
+
+============================================================ PHASE 2:
+MINIMUM FAIR MCG EXPERIMENT
+============================================================
+
+Do NOT run 630 cells.
+
+Run representative but statistically valid comparison.
+
+Use:
+
+Content: Red and Black
+
+Users: 20 60 100
+
+Networks: 4G WiFi Fiber
+
+Seeds: 3 seeds each
+
+Total:
+
+27 cells
+
+Compare:
+
+MD2G-Cast MCG Heuristic Clustering Rolling
+
+All strategies must use:
+
+same: - Mininet; - MoQ relay; - client implementation; - measurement
+scripts.
+
+Required metrics:
+
+Primary:
+
+-   Utility U
+
+Secondary:
+
+-   decoded completion ratio;
+-   Rq;
+-   Ro;
+-   bandwidth cost;
+-   P99 delay if available in current contract.
+
+Generate:
+
+results/live_mcg_baseline/
+
+Files:
+
+live_mcg_cells.csv
+
+live_mcg_summary.csv
+
+live_mcg_table.tex
+
+live_mcg_utility_vs_users.pdf
+
+provenance.json
+
+============================================================ PHASE 3:
+VERIFY MCG FAIRNESS
+============================================================
+
+Before accepting results verify:
+
+1.  Same run duration.
+2.  Same warmup.
+3.  Same seeds.
+4.  Same content.
+5.  Same network trace.
+6.  Same metric code.
+7.  Same artifact validation.
+
+If any mismatch:
+
+stop and repair.
+
+Do not publish unfair comparison.
+
+============================================================ PHASE 4:
+RETAIN PREVIOUS VALID ANALYSIS
+============================================================
+
+Reuse without rerunning:
+
+A.  Utility sensitivity:
+
+Keep: ranking robustness analysis.
+
+Do not change frozen U.
+
+B.  Controller latency:
+
+Keep: 25.4 ms total mean 23.5 ms student inference
+
+Do not use old torch.load-inclusive 378 ms.
+
+C.  Completion analysis:
+
+Keep:
+
+MD2G completion behavior.
+
+Update if necessary after live MCG.
+
+D.  Four-content generalization:
+
+Keep existing content results.
+
+============================================================ PHASE 5:
+OPTIONAL LOW-COST LATENCY SCALING
+============================================================
+
+Only if easy.
+
+Measure controller latency:
+
+users: 20 60 100
+
+1000 iterations each.
+
+No Mininet.
+
+Purpose:
+
+support scalability of inference overhead.
+
+============================================================ FINAL
+REPORT ============================================================
+
+Generate:
+
+TON_FINAL_EXPERIMENT_STATUS.md
+
+Must include:
+
+1.  Which experiments are live and fair.
+2.  Which experiments are offline analysis only.
+3.  Exact commands.
+4.  Artifact paths.
+5.  Final paper claims supported by evidence.
+6.  Claims that must NOT be made.
+
+============================================================ FINAL
+EXECUTION INSTRUCTION
+============================================================
+
+Read this file completely.
+
+Do not stop at analysis.
+
+Execute autonomously.
+
+Reuse all valid previous evidence.
+
+Implement only the minimum missing live experiment.
+
+The final objective is:
+
+A scientifically fair ToN evidence package where MD2G-Cast, MCG, and all
+baselines are compared under the same live Mininet/MoQ experimental
+conditions.
+
+Do not optimize for prettier numbers. Optimize for reviewer-proof
+correctness.

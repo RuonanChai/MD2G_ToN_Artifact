@@ -1,0 +1,32 @@
+{
+  "timestamp": "2026-07-22T04:29:42.001283-05:00",
+  "interpreter": "/usr/bin/python3.13",
+  "python_version": "3.13.5 (main, Jun 13 2026, 14:18:01) [GCC 14.2.0]",
+  "venv": "./Sigcomm26/.venv_sigcomm",
+  "interpreter_sha256": "7890299302c21138c7677b606fe427c8740f55c1549e5edc689bd70b0f9195d7",
+  "packages": {
+    "numpy": {
+      "version": "2.1.3",
+      "file": "./Sigcomm26/.venv_sigcomm/lib/python3.13/site-packages/numpy/__init__.py"
+    },
+    "pandas": {
+      "version": "2.2.3",
+      "file": "./Sigcomm26/.venv_sigcomm/lib/python3.13/site-packages/pandas/__init__.py"
+    },
+    "sklearn": {
+      "version": "1.5.2",
+      "file": "./Sigcomm26/.venv_sigcomm/lib/python3.13/site-packages/sklearn/__init__.py"
+    },
+    "psutil": {
+      "version": "6.1.1",
+      "file": "./Sigcomm26/.venv_sigcomm/lib/python3.13/site-packages/psutil/__init__.py"
+    },
+    "torch": {
+      "version": "2.5.1+cpu",
+      "file": "./Sigcomm26/.venv_sigcomm/lib/python3.13/site-packages/torch/__init__.py"
+    }
+  },
+  "lock_file": "./Sigcomm26/Paper6_ToN/contracts/SIGCOMM_venv_requirements_lock.txt",
+  "hang": "${SIGCOMM_MOQ_BIN_DIR}",
+  "moq_relay": "${SIGCOMM_MOQ_BIN_DIR}"
+}

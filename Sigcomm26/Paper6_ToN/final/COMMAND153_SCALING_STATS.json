@@ -1,0 +1,33 @@
+{
+  "ts": "2026-08-27T23:44:51.907434+00:00",
+  "n": 150,
+  "logical_n": 150,
+  "exact_dev_reuse_n_planned": 90,
+  "newly_launched_n_planned": 60,
+  "exact_dev_reuse_n": 90,
+  "newly_launched_n": 60,
+  "not_150_new_executions": true,
+  "by_users": {
+    "10": {
+      "n": 30,
+      "U": 0.5776713447682745
+    },
+    "100": {
+      "n": 30,
+      "U": 0.535343520089756
+    },
+    "40": {
+      "n": 30,
+      "U": 0.5508467788130066
+    },
+    "60": {
+      "n": 30,
+      "U": 0.5666631338564848
+    },
+    "20": {
+      "n": 30,
+      "U": 0.5715127976041364
+    }
+  },
+  "note": "150-key logical matrix: 90 exact DEV reuses (u20/60/100) + 60 newly launched (u10/40 only)"
+}

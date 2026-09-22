@@ -1,0 +1,50 @@
+{
+  "authority": "command36.txt §4",
+  "methods": ["rolling", "groot"],
+  "classification": "unicast_or_independent_delivery_system_references",
+  "not_moq_multicast": true,
+  "match_external_conditions": [
+    "source_content_red_and_black",
+    "source_interval",
+    "duration_120s",
+    "active_user_count",
+    "bandwidth_traces",
+    "fov_trajectories",
+    "trial_seeds",
+    "machine_resources",
+    "access_link_conditions",
+    "shared_bottleneck_where_applicable",
+    "startup_definition",
+    "completion_definition",
+    "failure_accounting_including_ttfb_denominator",
+    "measurement_units",
+    "quality_mapping_table1_rep_to_q"
+  ],
+  "forbid_weaken_baselines": [
+    "lower_quality_media",
+    "shorter_buffers",
+    "artificial_sleeps",
+    "serialized_execution_not_required_by_design",
+    "fewer_retries",
+    "different_link_floors",
+    "different_active_user_counts",
+    "excluded_failures",
+    "different_duration",
+    "different_trace_assignment"
+  ],
+  "forbid_strengthen_md2g": [
+    "warm_caches_unavailable_to_baselines",
+    "excluded_initialization",
+    "different_failure_denominators",
+    "extra_capacity",
+    "reused_state",
+    "hidden_preloading"
+  ],
+  "representation_equivalence": {
+    "md2g_moq_ladder": "Rep1-9 redandblack_6 / redandblack_6_live",
+    "groot_native": "binary pull_enhanced mapped onto base+enh via dispatch map_to_rep_id under SIGCOMM_REP_LADDER=1",
+    "rolling_native": "SC-DDQN enhanced_level on same Rep ladder",
+    "rule": "If a method cannot consume Rep1-9 directly, document native ladder and transparent bitrate/quality equivalence; never silently remake DASH-PC numbers as GROOT"
+  },
+  "claim_scope": "system_level_reference_only; controlled attribution via Heuristic/Clustering/same-MoQ ablations"
+}

@@ -1,0 +1,35 @@
+{
+  "ts": "2026-08-28T09:14:08.586546+00:00",
+  "token": "TTFB_FIGURE_FAMILY_FAIL_CLOSED",
+  "target_family": "Sigcomm TTFB CDF (Fig.5-style / plot_ttfb_cdf_*)",
+  "required_fields": [
+    "ttfb_base_ms",
+    "or reconstructable first-byte timing"
+  ],
+  "audit": {
+    "canary_ttfb_base_ms": {
+      "checked_cells_with_perf": 122,
+      "nonzero_cells": 0,
+      "max": 0.0
+    },
+    "canary_delay_ms": {
+      "checked_cells_with_perf": 122,
+      "nonzero_cells": 0,
+      "max": 0.0
+    },
+    "maindev_sample300_ttfb_base_ms": {
+      "checked_cells_with_perf": 263,
+      "nonzero_cells": 0,
+      "max": 0.0
+    },
+    "maindev_sample300_delay_ms": {
+      "checked_cells_with_perf": 263,
+      "nonzero_cells": 0,
+      "max": 0.0
+    }
+  },
+  "receipt_note": "COMPONENT_RECEIPT.jsonl has ts/dump_bytes/stall placeholders but no first-byte TTFB field",
+  "contract_note": "final/COMMAND153_PRIMARY_STATS.json delay=NOT_IN_FINAL_CLAIM_CONTRACT",
+  "decision": "SKIP \u2014 do not emit TTFB CDF PDF",
+  "reason": "perf.csv columns ttfb_* and delay_ms exist but are unimplemented zeros across audited VALID canary (all cells) and MAINDEV sample (300). No truthful CDF can be drawn."
+}

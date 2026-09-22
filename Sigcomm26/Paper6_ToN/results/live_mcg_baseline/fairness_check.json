@@ -1,0 +1,34 @@
+{
+  "n_mcg_valid": 27,
+  "n_mcg_expected": 27,
+  "mcg_count_pass": true,
+  "duration_s": 120,
+  "warmup_live_metrics": "last_receipt_same_as_COMMAND153_not_offline_30s_cut",
+  "offline_warmup_s_supplementary_only": 30.0,
+  "seeds": [
+    151,
+    152,
+    153
+  ],
+  "content": "redandblack",
+  "networks": [
+    "4g",
+    "wifi",
+    "fiber_optic"
+  ],
+  "metric_code": "Sigcomm26/Paper6_ToN/lib/command148_canary_metrics.py::cell_metrics",
+  "validator": "Sigcomm26/Paper6_ToN/lib/command148_canary_audit.py::audit_canary_cell",
+  "launcher": "scripts/command148_canary_cell.py",
+  "cluster": "moq_cluster_Sigcomm.py",
+  "md2g_cast_unmodified": true,
+  "u_weights": [
+    0.25,
+    0.6,
+    0.15
+  ],
+  "rolling_fair": false,
+  "rolling_reason": "DASH/Cast handbook; not same MoQ relay/client",
+  "missing_keys": [],
+  "contract_mismatch_keys": [],
+  "pass": true
+}

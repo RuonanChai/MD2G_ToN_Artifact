@@ -1,0 +1,57 @@
+{
+  "ts": "2026-08-27T23:44:51.908115+00:00",
+  "manifest": {
+    "ts": "2026-08-21T01:34:04.477113+00:00",
+    "token": "COMMAND153_ABLATION_MANIFEST",
+    "frozen_before_first_ablation_result": true,
+    "frozen_before_ablation_complete": true,
+    "variants": {
+      "A0_full": {
+        "status": "APPLICABLE_REUSE_DEV_MD2G",
+        "live": true
+      },
+      "A1_no_fov_group_overlap": {
+        "status": "NOT_APPLICABLE",
+        "reason": "final nested controller has no live FoV overlap knob; do not fabricate"
+      },
+      "A2_no_device": {
+        "status": "NOT_APPLICABLE",
+        "reason": "device scores are diagnostic defaults; no isolated live toggle certified"
+      },
+      "A3_no_component_headroom": {
+        "status": "NOT_APPLICABLE",
+        "reason": "project_down is shared physics, not a separable live ablation flag"
+      },
+      "A4_no_completion_playability": {
+        "status": "NOT_APPLICABLE",
+        "reason": "no live completion-gate disable certified post-freeze"
+      },
+      "A5_fixed_grouping": {
+        "status": "NOT_APPLICABLE",
+        "reason": "planner already uses a single group g0"
+      },
+      "A6_rule_only": {
+        "status": "APPLICABLE_REUSE_DEV_RULE",
+        "live": true
+      },
+      "A7_naive_cumulative_cost": {
+        "status": "NOT_APPLICABLE",
+        "reason": "command149 missing-component cost is frozen; do not rerun wrong-contract cumulative prefix"
+      }
+    },
+    "loot_sealed": true,
+    "do_not_fabricate": true,
+    "n_applicable_live": 2,
+    "n_not_applicable": 6,
+    "no_288_live_matrix": true
+  },
+  "complete": {
+    "a0_reuse_dev_md2g_n": 189,
+    "a6_reuse_dev_rule_n": 189,
+    "no_288_live_matrix": true
+  },
+  "not_experimental_validation_for_na": true,
+  "a1_a5_a7_not_applicable_not_validation": true,
+  "a0_a6_reuse_dev_only": true,
+  "paper_claim_compatibility": "COMMAND153_PAPER_CLAIM_COMPATIBILITY_NOTE"
+}

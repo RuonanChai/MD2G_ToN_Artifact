@@ -1,0 +1,16 @@
+{
+  "ts": "2026-08-26T13:24:31.966905+00:00",
+  "token": "COMMAND153_OVERHEAD_STATS",
+  "method": "COMMAND155_offline_replay_frozen_student_on_sidecar_inputs",
+  "epoch_id": "C152_RBV1_88cabc20eb5d",
+  "student_infer_ms_n": 56,
+  "student_infer_ms_mean": 377.84399984437704,
+  "student_infer_ms_median": 373.41688002925366,
+  "student_infer_ms_n_rbv1": 24,
+  "student_infer_ms_n_maindev": 32,
+  "sidecar_files_rbv1": 24,
+  "sidecar_files_maindev": 166,
+  "pressure_instrumentation": "r0-eth1 1s sampler already in every scientific cell",
+  "not_live_perturbation_cell": true,
+  "loot_sealed": true
+}

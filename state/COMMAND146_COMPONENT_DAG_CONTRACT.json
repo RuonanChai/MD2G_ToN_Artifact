@@ -1,0 +1,82 @@
+{
+  "ts": "2026-08-18T07:12:00+00:00",
+  "token": "COMMAND146_COMPONENT_DAG_FROZEN",
+  "source_truth": {
+    "mm26_generator": "MM26/pointcloud_layer_pipeline.py",
+    "mm26_split": "index_stride Base vs complement Enhanced; CR rho=0.6 is two-level only",
+    "ton_nested_membership": "Sigcomm26/Paper6_ToN/scripts/command135_generate_layered_media.py nested_index_stride B3⊂B2⊂B1 at 0.30/0.50/0.75",
+    "why_not_reuse_nine_tracks": "command135 base1/base2/base3 are full nested composites and re-encode shared points; that violates BYTE NON-DUPLICATION",
+    "correct_physical_objects": "incremental disjoint components of the same nested membership plus one complement of the densest nested base"
+  },
+  "construction_parameters_not_universal_constants": {
+    "nested_density": {"B1_points_frac_of_frame": 0.30, "B2": 0.50, "B3": 0.75},
+    "note": "command135 used names base1=0.75 densest, base3=0.30 sparsest. command146 B1 is lowest prefix (sparsest), B3 is highest nested base (densest).",
+    "enhancement": "split complement of densest nested set (0.75) into e1 then remainder e2"
+  },
+  "components": {
+    "b0": {
+      "component_id": "b0",
+      "prerequisite_set": [],
+      "semantic_role": "lowest nested Base increment (sparsest nested prefix)",
+      "transport_namespace": "base/b0",
+      "decoder_assembly": "points(b0)"
+    },
+    "db1": {
+      "component_id": "db1",
+      "prerequisite_set": ["b0"],
+      "semantic_role": "Base increment B2\\B1",
+      "transport_namespace": "base/db1",
+      "decoder_assembly": "points(b0) ∪ points(db1)"
+    },
+    "db2": {
+      "component_id": "db2",
+      "prerequisite_set": ["b0", "db1"],
+      "semantic_role": "Base increment B3\\B2",
+      "transport_namespace": "base/db2",
+      "decoder_assembly": "points(b0) ∪ points(db1) ∪ points(db2)"
+    },
+    "e1": {
+      "component_id": "e1",
+      "prerequisite_set": ["b0"],
+      "semantic_role": "first enhancement increment on complement of densest nested base",
+      "transport_namespace": "enh/e1",
+      "decoder_assembly": "active_base_prefix ∪ points(e1)"
+    },
+    "e2": {
+      "component_id": "e2",
+      "prerequisite_set": ["b0", "e1"],
+      "semantic_role": "second enhancement increment",
+      "transport_namespace": "enh/e2",
+      "decoder_assembly": "active_base_prefix ∪ points(e1) ∪ points(e2)"
+    }
+  },
+  "base_prefixes": {
+    "B1": ["b0"],
+    "B2": ["b0", "db1"],
+    "B3": ["b0", "db1", "db2"]
+  },
+  "enh_prefixes": {
+    "E0": [],
+    "E1": ["e1"],
+    "E2": ["e1", "e2"]
+  },
+  "logical_states": {
+    "Rep1": {"C": ["b0"], "base": "B1", "enh": "E0"},
+    "Rep2": {"C": ["b0", "db1"], "base": "B2", "enh": "E0"},
+    "Rep3": {"C": ["b0", "db1", "db2"], "base": "B3", "enh": "E0"},
+    "Rep4": {"C": ["b0", "e1"], "base": "B1", "enh": "E1"},
+    "Rep5": {"C": ["b0", "e1", "e2"], "base": "B1", "enh": "E2"},
+    "Rep6": {"C": ["b0", "db1", "e1"], "base": "B2", "enh": "E1"},
+    "Rep7": {"C": ["b0", "db1", "e1", "e2"], "base": "B2", "enh": "E2"},
+    "Rep8": {"C": ["b0", "db1", "db2", "e1"], "base": "B3", "enh": "E1"},
+    "Rep9": {"C": ["b0", "db1", "db2", "e1", "e2"], "base": "B3", "enh": "E2"}
+  },
+  "invariants": [
+    "components pairwise disjoint",
+    "union equals source frame",
+    "B1 ⊂ B2 ⊂ B3 as point sets",
+    "E1 ⊂ E2",
+    "B3 ∩ (E1 ∪ E2) = empty",
+    "Rep identifier is a composition state not a standalone file"
+  ]
+}

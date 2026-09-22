@@ -1,0 +1,34 @@
+{
+  "ts": "2026-08-18T08:40:36.128646+00:00",
+  "content": "soldier",
+  "components": [
+    "b0",
+    "db1",
+    "db2",
+    "e1",
+    "e2"
+  ],
+  "media_manifest": "./media/ton_nested_components_v1/soldier/media_manifest.json",
+  "partition_manifest": "./media/ton_nested_components_v1/soldier/partition_manifest.json",
+  "bitrate_bps": {
+    "b0": 44950540,
+    "db1": 33724341,
+    "db2": 39829227,
+    "e1": 23865653,
+    "e2": 23869836
+  },
+  "sha256": {
+    "b0": "40225479e72970a22021a924f15572fe36bae4914a11c20bcaa73bd432c1e98f",
+    "db1": "d07c5cef403178bdc107659ca695498dd40380a4a2ce8f772e933d40e4724a0a",
+    "db2": "a057dbb623c73e6d281ca45855b5b7e4a412abf0c3262d9ff43c73aa928e436c",
+    "e1": "8e8e01b31fbb475e462df5d652d140a9bf042fcaa525983a54469c477ef5a626",
+    "e2": "ce947fbf7ca57c53b91acce5b352bdd7e01322ee2f1052f639544b14c975d1d2"
+  },
+  "decode_ok": {
+    "b0": true,
+    "db1": true,
+    "db2": true,
+    "e1": true,
+    "e2": true
+  }
+}

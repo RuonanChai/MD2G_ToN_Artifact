@@ -1,0 +1,16 @@
+{
+  "ts": "2026-09-13T09:14:00+00:00",
+  "note": "Recorded before command_eval_figures plotting. These PDFs must be unchanged after.",
+  "files": {
+    "QoE/QoE_By_Strategy.pdf": "4f7d3616560a76df6fd0a2c0b08db4dd14997dbc00ce654b6c04be627f955426",
+    "Buffer Level/System_Utility_By_Users_scheme1.pdf": "033fd1eb88101e75066b0a38cd761a1de9eb3a07bf62f6160337a8e14e3df158",
+    "QoE/QoE_By_Content_DeltaU.pdf": "2f9c5452da3b5224eefa0ccab6c89239b519f4079ea006eefc949647f9969a90",
+    "QoE/QoE_By_Network.pdf": "8fd74135823d1bdfba41fa2a3f8b2d2dc24c266946ef34fa6e57331f9aaf9a6e",
+    "QoE/Loot_Holdout_DeltaU_By_Users.pdf": "2895069ee16679d436f4204e0f99db009f272dd1fed5da69e28a2c681ea1525a",
+    "QoE/Mechanism_Decomposition_Loot.pdf": "c91e3be570920f8cae85f029f3d201188b96a970203b96a7d389145b1e3c00eb",
+    "QoE/MoQ_Shared_vs_Unicast.pdf": "6610c12734da0cd13f68b776857b7d08abd37b5babadbdafac48105fe2f434ce",
+    "QoE/Weak_User_Rq_Loot.pdf": "af9089eddec3e46b757c4a2efa5d76046f6daa17a2775dccaaabe58984444cb0",
+    "User_Experience_Trade-off/H2_Cross_Stack_DASH.pdf": "dc0d4e8452f330436ddc27f45e255c5db97e49c5e70c2b6cada73cd21c281998",
+    "Throughput/System_Throughput_MainText_1x3.pdf": "30c02887cffb46258bb3060c974dbac093d3930002bdccad5fd8c9974f4da461"
+  }
+}

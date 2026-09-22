@@ -1,0 +1,71 @@
+{
+  "ts": "2026-09-13T09:20:08.690133+00:00",
+  "source_files": {
+    "dev.json": "./Sigcomm26/Paper6_ToN/final/COMMAND153_FIGURE_SOURCE_DATA/dev.json",
+    "dev_json_sha256": "fde0b1f438887e2dcb5cf90774bd174c4e4332d3aa1057aa7315b02818840c47",
+    "fairness_check": "./Sigcomm26/Paper6_ToN/results/live_mcg_baseline/fairness_check.json",
+    "fairness_sha256": "193efda1771b32e29c7306470b79026d2988add67f5e7d7bf59c78c3f00c6f6b",
+    "live_art": "./Sigcomm26/Paper6_ToN/artifacts/ton_live_mcg",
+    "generation_script": "./Sigcomm26/Paper6_ToN/scripts/plot_live_mcg_maintext.py"
+  },
+  "strategies_included": [
+    "MD2G-Cast",
+    "MCG",
+    "Heuristic",
+    "Clustering",
+    "Rule"
+  ],
+  "strategies_excluded": [
+    "Rolling",
+    "MoQ Unicast",
+    "offline MCG"
+  ],
+  "users": [
+    20,
+    60,
+    100
+  ],
+  "networks": [
+    "4g",
+    "wifi",
+    "fiber_optic"
+  ],
+  "seeds": [
+    151,
+    152,
+    153
+  ],
+  "content": "redandblack",
+  "aggregation_rule": "mean over 3 networks \u00d7 3 seeds (n=9 matched blocks) per strategy\u00d7users; 95% CI = bootstrap 2000, seed 153",
+  "utility_weights": [
+    0.25,
+    0.6,
+    0.15
+  ],
+  "completion_metric_field": "component_completion_fraction: sum n_complete_dump_gt_64 / sum n_receivers",
+  "generated_pdf": "./Sigcomm26/Paper6_ToN/Figures/QoE/Live_MCG_Fair_Mechanism_1x3.pdf",
+  "generated_pdf_sha256": "212fee7b39487790bd6385e337478762dcecdb613942ea06081ae9df944b52c3",
+  "pdfinfo": {
+    "pages": 1,
+    "width_in": 7.0,
+    "height_in": 2.2,
+    "width_pt": 504.0,
+    "height_pt": 158.4
+  },
+  "font_contract": "figure* width=0.97\\textwidth",
+  "offline_mcg_used": false,
+  "fair_live_same_substrate": true,
+  "n_mcg_valid": 27,
+  "n_frozen_same_slice": 108,
+  "presentation_revision": {
+    "ts": "2026-09-13T10:00:43.232433+00:00",
+    "source_font_min": 9.5,
+    "source_font_max": 9.5,
+    "manuscript_textwidth_pt": null,
+    "inclusion_width": "0.97\\textwidth",
+    "inclusion_scale": null,
+    "effective_font_min": null,
+    "effective_font_max": null,
+    "compiled_pdf": null
+  }
+}

@@ -1,0 +1,23 @@
+                          MD2G        Heur.    Clust.     Rule
+
+                                       Users
+                                 20       60        100
+
+                   0.65
+                                      Better
+System utility U
+
+
+
+
+                   0.60
+
+                   0.55
+
+                   0.50
+
+                   0.45                                 4G
+
+                            0.06       0.08    0.10     0.12
+                                          Rb
+

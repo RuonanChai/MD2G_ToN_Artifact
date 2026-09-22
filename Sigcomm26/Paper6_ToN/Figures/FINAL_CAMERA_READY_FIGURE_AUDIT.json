@@ -1,0 +1,49 @@
+{
+  "terminal_token": "TON_FINAL_CAMERA_READY_FIGURES_PASS",
+  "preview_pdf": "Figures/FINAL_CAMERA_READY_FIGURE_PREVIEW.pdf",
+  "figure_map": "Figures/FINAL_MAIN_TEXT_FIGURE_MAP.md",
+  "science_frozen": true,
+  "blockers": {
+    "1_mechanism_legend": "PASS",
+    "2_unicast_ro0_margin": "PASS",
+    "3_profile_label_placement": "PASS",
+    "4_open_star_overlap": "PASS",
+    "5_better_arrow_quiet": "PASS",
+    "6_throughput_shared_legend_1x3": "PASS"
+  },
+  "auditor_tokens": {
+    "SCIENTIFIC_SEMANTICS_PASS": true,
+    "TOP_CONFERENCE_VISUAL_PASS": true,
+    "COLLISION_FREE_PASS": true,
+    "EFFECTIVE_10PT_PASS": true,
+    "EVIDENCE_CURATION_PASS": true,
+    "CAMERA_READY_FIGURE_CHAIR_PASS": true
+  },
+  "auditor_reports": [
+    "_audit_child_1_scientific_semantics.md",
+    "_audit_child_2_top_conference_visual.md",
+    "_audit_child_3_collision_clipping.md",
+    "_audit_child_4_effective_10pt.md",
+    "_audit_child_5_evidence_curation.md",
+    "_audit_child_6_camera_ready_chair.md"
+  ],
+  "main_text": {
+    "A": ["QoE/QoE_By_Strategy.pdf", "Buffer Level/System_Utility_By_Users_scheme1.pdf"],
+    "B": ["QoE/QoE_By_Content_DeltaU.pdf", "QoE/QoE_By_Network.pdf"],
+    "C": ["QoE/Loot_Holdout_DeltaU_By_Users.pdf", "QoE/Mechanism_Decomposition_Loot.pdf"],
+    "D": ["QoE/MoQ_Shared_vs_Unicast.pdf", "User_Experience_Trade-off/H2_Cross_Stack_DASH.pdf"],
+    "E": ["Throughput/System_Throughput_MainText_1x3.pdf"],
+    "Discussion_optional": ["User_Experience_Trade-off/TierB_Rb_vs_U_Discussion_1x3.pdf"]
+  },
+  "invariants": "SCIENTIFIC_INVARIANT_CHECKS_PASS",
+  "effective_10pt": {
+    "method": "PyMuPDF LiberationSans spans after IEEEtran 10pt twocolumn inclusion",
+    "preview_figure_min_pt": 9.27,
+    "preview_figure_p50_pt": 9.69,
+    "axis_pt": [9.5, 10.5],
+    "legend_tick_pt": [9.0, 10.5],
+    "panel_pt": [9.5, 10.5],
+    "better_pt": 10.0,
+    "hard_floor_important_pt": 9.0
+  }
+}

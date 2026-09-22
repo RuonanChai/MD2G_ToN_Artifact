@@ -1,0 +1,82 @@
+{
+  "name": "MD2G_REPRESENTATION_SEMANTICS_V1",
+  "binding": "command60",
+  "timestamp": "2026-07-27T18:20:00+08:00",
+  "rep_ladder": {
+    "rep1_3": "base_only",
+    "rep4_9": "FULL_INDEPENDENT_REPS",
+    "question": "full_independently_decodable_OR_residual_enhancement_layers",
+    "decode_proof_audit": "Sigcomm26/Paper6_ToN/audits/COMMAND60_REP_SEMANTICS_DECODE_PROOF.md",
+    "decode_proof_date": "2026-07-27"
+  },
+  "map_to_rep_id": {
+    "base_only": {
+      "1": 1,
+      "2": 2,
+      "3": 3
+    },
+    "enh1": {
+      "1": 4,
+      "2": 6,
+      "3": 8
+    },
+    "enh2": {
+      "1": 5,
+      "2": 7,
+      "3": 9
+    }
+  },
+  "qs_blindness_known_issue": {
+    "qs_rep3": 0.4,
+    "qs_rep8": 0.4,
+    "must_fix_for_metric_v4": true
+  },
+  "media_sample_paths_seen": [
+    "video/pointcloud_layers",
+    "video/redandblack",
+    "video/redandblack_6",
+    "video/redandblack_6_live",
+    "video/base.csv",
+    "video/base_fragmented.mp4",
+    "video/dummy_base.bin",
+    "video/dummy_enhanced.bin",
+    "video/enhanced.csv",
+    "video/redandblack_base_init.mp4",
+    "video/redandblack_base_init_fixed.mp4",
+    "video/redandblack_enhanced_init.mp4",
+    "video/redandblack_enhanced_init_fixed.mp4",
+    "video/redandblack_5",
+    "video/pointcloud_layers/base_layer_points.npz",
+    "video/pointcloud_layers/enhanced_layer_points.npz",
+    "video/pointcloud_layers/layer_mapping.json",
+    "video/redandblack/base",
+    "video/redandblack/base_backup",
+    "video/redandblack/enhanced",
+    "video/redandblack/enhanced_backup",
+    "video/redandblack/base.csv",
+    "video/redandblack/enhanced.csv",
+    "video/redandblack_6/dash",
+    "video/redandblack_6/rep1_base1_h264.mp4",
+    "video/redandblack_6/rep2_base2_h264.mp4",
+    "video/redandblack_6/rep3_base3_h264.mp4",
+    "video/redandblack_6/rep4_base1_enhanced1_h264.mp4",
+    "video/redandblack_6/rep5_base1_enhanced1_enhanced2_h264.mp4",
+    "video/redandblack_6/rep6_base2_enhanced1_h264.mp4",
+    "video/redandblack_6/rep7_base2_enhanced1_enhanced2_h264.mp4",
+    "video/redandblack_6/rep8_base3_enhanced1_h264.mp4",
+    "video/redandblack_6/rep9_base3_enhanced1_enhanced2_h264.mp4",
+    "video/redandblack_6_live/dash",
+    "video/redandblack_6_live/rep1_base1_h264.mp4",
+    "video/redandblack_6_live/rep2_base2_h264.mp4",
+    "video/redandblack_6_live/rep3_base3_h264.mp4",
+    "video/redandblack_6_live/rep4_base1_enhanced1_h264.mp4",
+    "video/redandblack_6_live/rep5_base1_enhanced1_enhanced2_h264.mp4",
+    "video/redandblack_6_live/rep6_base2_enhanced1_h264.mp4"
+  ],
+  "status": "FULL_INDEPENDENT_REPS",
+  "evidence_summary": {
+    "verdict": "Rep4-Rep9 deployed MP4s are pre-composited full H.264 representations; ffmpeg independent decode PASS for all 9 reps; measured bitrates match composite totals not residual deltas.",
+    "prior_validation": "Sigcomm26/Paper6_ToN/contracts/REP_DEEP_VALIDATION.json",
+    "caveat": "Source HEVC enhanced_el.265 layers were residual in encoding design but are not on wire; subscriber may still overlap base+composite subscriptions (delivery overlap, not file dependency)."
+  }
+}

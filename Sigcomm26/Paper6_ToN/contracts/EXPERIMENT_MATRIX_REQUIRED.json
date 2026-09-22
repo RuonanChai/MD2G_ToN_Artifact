@@ -1,0 +1,64 @@
+{
+  "paper": "Sigcomm26/MD2G_Sigcomm_submit version4.pdf",
+  "binding_commands": ["command33.txt", "command34.txt", "command36.txt"],
+  "supersedes": ["command35.txt"],
+  "duration_s": 120,
+  "interval_s": 1.0,
+  "trials_ordinary": 3,
+  "trials_sensitive": 5,
+  "users": [10, 20, 50, 70, 100],
+  "strategies": ["md2g", "heuristic", "clustering", "rolling", "groot"],
+  "baseline_taxonomy": {
+    "moq_multicast": ["md2g", "heuristic", "clustering"],
+    "unicast_system_references": ["rolling", "groot"]
+  },
+  "networks": ["4g", "5g", "wifi", "fiber_optic", "default_mix"],
+  "video": "video/redandblack_6_live (Rep1-9 ladder from redandblack)",
+  "runtime_entry": {
+    "cluster": "moq_cluster_Sigcomm.py",
+    "dispatch": "dispatch_strategy_enhanced_unified_Sigcomm.py",
+    "note": "Do not use Sigcomm26/moq_cluster_Sigcomm26.py PC media for this paper campaign"
+  },
+  "no_fixed_enh_admit": true,
+  "forbid_rename_dashpc_as_groot": true,
+  "env": {
+    "SIGCOMM_QOE_EQ9": "1",
+    "SIGCOMM_REP_LADDER": "1",
+    "SIGCOMM_VIDEO_DIR": "<repo>/video",
+    "SIGCOMM_DATASET_DIR": "<repo>/datasets",
+    "SIGCOMM_MOQ_BIN_DIR": "<srv moq release>"
+  },
+  "phase_a_figures": {
+    "fig5": {"networks": ["5g", "wifi", "default_mix"], "metric": "arrival_interval_vs_qoe"},
+    "fig6": {"networks": ["5g", "wifi", "default_mix"], "users": 100, "metric": "ttfb_cdf_all_attempts"},
+    "fig7": {"users": [10, 20, 50, 70, 100], "metric": "avg_buffer_sec"},
+    "fig8": {"metric": ["stall_timeseries_120s", "qoe_by_network"]},
+    "fig9": {"panels": ["aggregate", "5g", "default_mix"], "metric": "system_throughput"},
+    "fig10": {"panels": ["homogeneous", "heterogeneous"], "metric": "cpu"},
+    "fig11": {"reps": [3, 5], "metric": "visual_psnr_ssim"},
+    "fig12": {"networks": ["4g", "fiber_optic"], "metric": "arrival_interval_vs_qoe"},
+    "fig13": {"networks": ["4g", "fiber_optic"], "users": 100, "metric": "ttfb_cdf"},
+    "fig14": {"networks": ["4g", "wifi", "fiber_optic"], "metric": "system_throughput"},
+    "tables": [1, 2, 3, 4]
+  },
+  "phase_b_command36": {
+    "B1_same_moq_ablations": {
+      "variants": ["full_md2g", "fixed_grouping", "randomized_policy", "no_fov", "no_device", "no_bandwidth", "no_device_bandwidth", "tuned_rule_only", "no_hysteresis", "teacher", "student"],
+      "users": [20, 60, 100],
+      "network": "default_mix",
+      "seeds_min_at_60_100": 5
+    },
+    "B2_fov_overlap": {"overlap_pct": [20, 40, 60, 80], "users": [60, 100], "network": "default_mix", "seeds": 5},
+    "B3_control_interval": {"intervals_s": [0.25, 0.5, 1.0, 2.0], "users": [60, 100], "network": "default_mix", "seeds": 5},
+    "B4_teacher_student": {"compare": ["Teacher-512", "Student-128"]},
+    "B5_rep_behavior": {"users": 100, "networks": ["4g", "5g", "wifi", "fiber_optic", "default_mix"]},
+    "B6_light_vs_high_load": {"light_users": 20, "high_users": 100, "seeds_light": 5}
+  },
+  "mm26_rebuttal": {
+    "path": "MM26/rebuttal",
+    "use": "experiment_design_patterns_only",
+    "forbid": "copy_numerical_results"
+  },
+  "plot_script_root": "paper_figures/Sigcomm",
+  "output_root": "Sigcomm26/Paper6_ToN"
+}

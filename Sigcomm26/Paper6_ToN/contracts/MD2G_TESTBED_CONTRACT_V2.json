@@ -1,0 +1,147 @@
+{
+  "name": "MD2G_TESTBED_CONTRACT_V2",
+  "binding": "command60",
+  "supersedes": "MD2G_TESTBED_CONTRACT_V1",
+  "timestamp": "2026-07-27T05:15:55.065897-05:00",
+  "topology_rules": {
+    "fixed_shared_link_capacities": true,
+    "no_capacity_scaling_with_user_count_unless_sensitivity": true,
+    "no_metric_uplift_mode": true,
+    "no_trace_filtering_low_bw_for_headline": true,
+    "identical_trace_fov_device_seed_across_matched_strategies": true,
+    "immutable_manifest_per_matched_cell": true,
+    "rolling_groot_unicast_semantics": true
+  },
+  "hashed_sources": {
+    "moq_cluster_Sigcomm.py": {
+      "sha256": "0182effc7eace7efef88fc689e46de205a3cdbf0a445d91616801a8d934f3471",
+      "size": 211112
+    },
+    "dispatch_strategy_enhanced_unified_Sigcomm.py": {
+      "sha256": "41ef8d6327ac17c5c0f6f2f5d06d0c0fddf48a007cb641a26305b72cb0f2f4d9",
+      "size": 197998
+    },
+    "regional_relay_controller.py": {
+      "sha256": "6956d1ae2bce6b9f58f619ea4ef8c8fd54aaffd90cdd5e2a134a0610476d2fdf",
+      "size": 171084
+    },
+    "strategies/heuristic_controller_v2_refined.py": {
+      "sha256": "9ab0d26c111b2167b20235e5671132e7efbdc5a27bc52f2d8db62222d33ddff7",
+      "size": 28481
+    },
+    "strategies/predictive_controller_v2_refined.py": {
+      "sha256": "8d6b7c9b5fbf906e37184d874fa7487ced357ea1e06c7c9f593019519ddd396d",
+      "size": 29362
+    },
+    "strategies/groot_controller.py": {
+      "sha256": "8c305845cc760b7026e44763797dc40e4b38b6d54a4bfdbde8141782f626a850",
+      "size": 8971
+    },
+    "Sigcomm26/Paper6_ToN/scripts/run_authentic_unicast_baseline_cell.py": {
+      "sha256": "102cc79ea2f7b6579c16a727b3a5ca4a73e5c6c4aa4e4da99e03f30f24deebff",
+      "size": 11963
+    },
+    "Sigcomm26/Paper6_ToN/scripts/command49_run_clean_holdout.py": {
+      "sha256": "9360c30623bdaf668c7731f87e6ffd708a2320236ce5e395258b409ce8ff7493",
+      "size": 16975
+    },
+    "Sigcomm26/Paper6_ToN/scripts/qoe_absolute_v2.py": {
+      "sha256": "f9d641e26f06027a6e4bc69870e20be99e333541321c2b36a7a9f0efdeb9ceee",
+      "size": 3579
+    },
+    "Sigcomm26/Paper6_ToN/scripts/command53_readonly_inventory.py": {
+      "sha256": "b54c1f31774bf34c67c4138599e221e536f1b747ba9b7caea8ee6beadba54c18",
+      "size": 37515
+    },
+    "Sigcomm26/Paper6_ToN/scripts/md2g_dev_paired_effect.py": {
+      "sha256": "01897ff56b7ddc3ada449314ea2abf1d003c4068982a036a4675f2929ec8f2b2",
+      "size": 8740
+    },
+    "Sigcomm26/Paper6_ToN/contracts/SIGCOMM_RUNTIME_ENVIRONMENT.json": {
+      "sha256": "a0edebdb11f6567e2dc2bc1206ef46c7f7ec1ced8dffb436b594c1277446fc1e",
+      "size": 1653
+    },
+    "Sigcomm26/Paper6_ToN/contracts/EXPERIMENT_MATRIX_REQUIRED.json": {
+      "sha256": "533ec96a4ff1ab34d89e917366b16647f8d464c11de06e00e3fda74ae945ada1",
+      "size": 3122
+    },
+    "Sigcomm26/Paper6_ToN/contracts/COMMAND60_DATA_RETENTION_POLICY.json": {
+      "sha256": "c1c42d42479a7b91c035a4e639e2c1ef769d65cfb39e17c7edb3f9a2b6df4b1f",
+      "size": 1530
+    },
+    "Sigcomm26/Paper6_ToN/scripts/md2g_candidate_overlay_hooks.py": {
+      "sha256": "c3b8054b5c1cf07d0021222578917892b0a959e1c204dd643f2de5b79874e880",
+      "size": 1371
+    }
+  },
+  "model_weights": {
+    "trained_models/deploy_student_128/ppo_actor_student_4g.pth": {
+      "sha256": "52e0ce7fae595157d5da298f1fd7c458d2d9e2b2a79e1ffa35f4f6454dc74656",
+      "size": 274623
+    },
+    "trained_models/deploy_student_128/ppo_actor_student_5g.pth": {
+      "sha256": "e2c145b8aa5cba3d01bc42dbc9d9b0e858618a72ed0a5baf936a743598e0052f",
+      "size": 274623
+    },
+    "trained_models/deploy_student_128/ppo_actor_student_optic.pth": {
+      "sha256": "1e3d8edc5befc0a490de1321247288cc2901f99511c44b6499765e2dd434bf3b",
+      "size": 274711
+    },
+    "trained_models/deploy_student_128/ppo_actor_student_wifi.pth": {
+      "sha256": "98e6a556b94f64691265836f7416ab32a014696593eb776e6acb30caea6c6bdf",
+      "size": 430117
+    }
+  },
+  "environment_freeze": {
+    "SIGCOMM_QOE_EQ9": "1",
+    "SIGCOMM_REP_LADDER": "1",
+    "MD2G_BASE_GUARD": "OFF_default",
+    "numpy_seed_policy": "per_cell_manifest_required",
+    "torch_seed_policy": "per_cell_manifest_required",
+    "python_seed_policy": "per_cell_manifest_required",
+    "kmeans_seed_policy": "fixed_in_clustering_controller_or_manifest",
+    "capacity_scaling_with_users": false,
+    "metric_uplift_mode": false,
+    "trace_filter_remove_low_bw_for_headline": false
+  },
+  "runtime_environment": {
+    "timestamp": "2026-07-22T04:29:42.001283-05:00",
+    "interpreter": "/usr/bin/python3.13",
+    "python_version": "3.13.5 (main, Jun 13 2026, 14:18:01) [GCC 14.2.0]",
+    "venv": "./Sigcomm26/.venv_sigcomm",
+    "interpreter_sha256": "7890299302c21138c7677b606fe427c8740f55c1549e5edc689bd70b0f9195d7",
+    "packages": {
+      "numpy": {
+        "version": "2.1.3",
+        "file": "./Sigcomm26/.venv_sigcomm/lib/python3.13/site-packages/numpy/__init__.py"
+      },
+      "pandas": {
+        "version": "2.2.3",
+        "file": "./Sigcomm26/.venv_sigcomm/lib/python3.13/site-packages/pandas/__init__.py"
+      },
+      "sklearn": {
+        "version": "1.5.2",
+        "file": "./Sigcomm26/.venv_sigcomm/lib/python3.13/site-packages/sklearn/__init__.py"
+      },
+      "psutil": {
+        "version": "6.1.1",
+        "file": "./Sigcomm26/.venv_sigcomm/lib/python3.13/site-packages/psutil/__init__.py"
+      },
+      "torch": {
+        "version": "2.5.1+cpu",
+        "file": "./Sigcomm26/.venv_sigcomm/lib/python3.13/site-packages/torch/__init__.py"
+      }
+    },
+    "lock_file": "./Sigcomm26/Paper6_ToN/contracts/SIGCOMM_venv_requirements_lock.txt",
+    "hang": "${SIGCOMM_MOQ_BIN_DIR}",
+    "moq_relay": "${SIGCOMM_MOQ_BIN_DIR}"
+  },
+  "scientific_python_sources_frozen": true,
+  "note": "Contract/schema/unit-test PASS only under command60 freeze reconciliation. Not a final scientific freeze. Do not launch scientific cells on this token alone.",
+  "contract_sha256": "8de0c42333c8430067f104767505e4f88e01ba22bbd209b12b9ae7dfd502af6b",
+  "scientific_status": "TESTBED_V2_CONTRACT_SCHEMA_PASS",
+  "final_scientific_freeze": false,
+  "pre_repair_draft": true,
+  "pre_repair_draft_sha256": "8de0c42333c8430067f104767505e4f88e01ba22bbd209b12b9ae7dfd502af6b",
+  "reconciliation_ts": "2026-07-27T05:31:42.171272-05:00"
+}

@@ -1,0 +1,55 @@
+{
+  "name": "BASELINE_GROOT_V1",
+  "created_ts": "2026-07-26T06:58:55.825442-05:00",
+  "binding": "command57",
+  "original_paper": {
+    "method": "GROOT",
+    "paper_citations": {
+      "target_scenario": "Interactive mobile volumetric streaming to a mobile device (single-user focus); Sec.4 System Overview p.5; Fig.6 architecture p.5",
+      "topology": "Server encodes/adapts PD-Tree stream to client mobile device; Fig.6 p.5; Sec.5 pipeline p.6\u20137",
+      "transport": "Wireless networking to mobile client; not MoQ multicast. Related work mentions DASH-compliant systems (p.12) but GROOT contribution is PD-Tree + parallel decode + view/distance adaptation",
+      "delivery_semantics": "Per-viewer user-adaptive streaming (frustum culling Sec.6.1 p.8; distance LOD Sec.6.2). No cross-user fan-out/coalescing described.",
+      "independent_stream": "Yes \u2014 adaptations driven by that user viewpoint/distance (Sec.6 p.8)",
+      "cross_user_fanout": "Not present in original architecture (single interactive viewer framing)",
+      "shared_representation_decision": "No multi-user shared representation decision in paper",
+      "controller_placement": "Server-side real-time adaptation using PD-Tree independence (Sec.6 p.8)",
+      "adaptation_inputs": "User view frustum, distance, bandwidth constraints (Sec.6)",
+      "content_unit": "PD-Tree nodes / points (OBB/ODB/OCB); Sec.5 p.6\u20137; Fig.9 decoder p.7",
+      "buffering": "Client render/decode pipeline with GPU/CPU hybrid decode (Sec.5.3 p.7)",
+      "quality_bitrate": "Resolution adaptation by distance; culling reduces bitrate (Sec.6)",
+      "prediction_horizon": "Continuous on-demand view adaptation (not Rolling POT window)",
+      "optimization_drl": "Heuristic/system optimizations, not SC-DDQN",
+      "metrics": "Decode fps, compression, mobile performance (Sec.3/8 evaluation framing)",
+      "limitations_vs_our_media": "Original PD-Tree/octree volumetric codec not reproduced on H.264 Rep ladder \u2192 DASH code correctly labels GROOT-inspired"
+    },
+    "authority_verdict_original": "PER_USER_UNICAST_OR_SINGLE_VIEWER_ADAPTIVE (not shared multicast)"
+  },
+  "expected_taxonomy": "per-user unicast volumetric / GROOT-inspired unicast",
+  "campaign_implementation": {
+    "authentic_path": {
+      "runner": "Sigcomm26/Paper6_ToN/scripts/run_authentic_unicast_baseline_cell.py",
+      "code": [
+        "DASH/groot_dash_experiment.py",
+        "DASH/GROOT"
+      ],
+      "transport": "HTTP/DASH",
+      "session_model": "per-user independent HTTP sessions",
+      "pd_tree_reproduced": false,
+      "classification_target": "GROOT_INSPIRED",
+      "rename_required_in_paper": true,
+      "paper_label": "GROOT-inspired unicast"
+    },
+    "invalid_path": {
+      "entry": "moq_cluster_Sigcomm.py --strategy groot / strategies/groot_controller.py on shared MoQ",
+      "classification": "INVALID_SHARED_DELIVERY_IMPLEMENTATION when shared track fan-out present",
+      "quarantine": "state/COMMAND55_ROLLING_GROOT_QUARANTINE.json"
+    }
+  },
+  "dash_pc_policy": "DASH-PC/PCC-DASH removed from active matrices; never rename historical DASH-PC dirs as GROOT",
+  "required_proofs": [
+    "independent_sessions",
+    "upstream_scales_with_N",
+    "no_relay_coalescing",
+    "UNICAST_AUTHENTICITY_PROOF.json"
+  ]
+}

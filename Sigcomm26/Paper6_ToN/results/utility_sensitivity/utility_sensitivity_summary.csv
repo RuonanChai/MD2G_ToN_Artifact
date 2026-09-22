@@ -1,0 +1,13 @@
+config,lambda_Ro,lambda_Rq,lambda_Rb,strategy,U_mean,n
+A_quality_dominant,0.2,0.7,0.1,MD2G-Cast,0.7870322939410684,6
+A_quality_dominant,0.2,0.7,0.1,Heuristic,0.5828874435017216,6
+A_quality_dominant,0.2,0.7,0.1,Clustering,0.702460360960579,6
+B_balanced,0.33,0.33,0.34,MD2G-Cast,0.5714760855651306,6
+B_balanced,0.33,0.33,0.34,Heuristic,0.4936377717771055,6
+B_balanced,0.33,0.33,0.34,Clustering,0.5346287449977765,6
+C_bandwidth_aware,0.5,0.25,0.25,MD2G-Cast,0.6793516159241478,6
+C_bandwidth_aware,0.5,0.25,0.25,Heuristic,0.6199269619334666,6
+C_bandwidth_aware,0.5,0.25,0.25,Clustering,0.6512552828468061,6
+frozen_paper,0.25,0.6,0.15,MD2G-Cast,0.7449577169522571,6
+frozen_paper,0.25,0.6,0.15,Heuristic,0.5740178209005783,6
+frozen_paper,0.25,0.6,0.15,Clustering,0.6731200743063548,6

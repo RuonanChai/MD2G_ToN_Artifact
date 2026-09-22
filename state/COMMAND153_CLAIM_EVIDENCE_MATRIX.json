@@ -1,0 +1,83 @@
+{
+  "ts": "2026-08-27T23:44:51.926452+00:00",
+  "never_claim_zero_stall": true,
+  "delay": "NOT_IN_FINAL_CLAIM_CONTRACT",
+  "rb_is_not_bandwidth_saving": true,
+  "pre_rb_56": "DIAGNOSTIC_ONLY_NOT_FOR_FINAL_CLAIMS",
+  "terminal": "TON_COMPONENT_MD2G_EXPERIMENTS_COMPLETE_TIER_B",
+  "claims": [
+    {
+      "claim": "nested incremental component contract is the scientific media contract",
+      "status": "SUPPORTED",
+      "evidence": [
+        "COMMAND147_COMPONENT_ASSETS_FULLY_SCIENTIFICALLY_CERTIFIED"
+      ],
+      "regimes": "all command148/151/152/153 nested cells",
+      "counterexamples": []
+    },
+    {
+      "claim": "MD2G strictly dominates all same-substrate baselines on every block",
+      "status": "NOT_SUPPORTED",
+      "evidence": [
+        "final/COMMAND153_MATCHED_BLOCKS.csv",
+        "final/COMMAND153_PRIMARY_STATS.json"
+      ],
+      "regimes": "matched five-strategy blocks on DEV/canary",
+      "counterexamples": [
+        "longdress_4g_u20_s151",
+        "longdress_4g_u20_s152",
+        "longdress_4g_u20_s153",
+        "longdress_5g_dominant_u20_s151",
+        "longdress_5g_dominant_u20_s152",
+        "longdress_5g_dominant_u20_s153",
+        "longdress_5g_u20_s151",
+        "longdress_5g_u20_s152",
+        "longdress_5g_u20_s153",
+        "longdress_default_mix_u20_s151",
+        "longdress_default_mix_u20_s152",
+        "longdress_default_mix_u20_s153",
+        "longdress_fiber_optic_u20_s151",
+        "longdress_fiber_optic_u20_s152",
+        "longdress_fiber_optic_u20_s153",
+        "longdress_wifi_dominant_u20_s151",
+        "longdress_wifi_dominant_u20_s152",
+        "longdress_wifi_dominant_u20_s153",
+        "longdress_wifi_u20_s151",
+        "longdress_wifi_u20_s152"
+      ]
+    },
+    {
+      "claim": "component-aware shared delivery and Ro/B_shared/B_unicast accounting are valid",
+      "status": "SUPPORTED",
+      "evidence": [
+        "final/COMMAND153_PRIMARY_STATS.json"
+      ],
+      "regimes": "post-Rb rbv1 and DEV",
+      "counterexamples": []
+    },
+    {
+      "claim": "A1\u2013A5/A7 ablations and FoV 20/40/60/80 experimentally validate those mechanisms",
+      "status": "NOT_APPLICABLE_NOT_VALIDATION",
+      "evidence": [
+        "final/COMMAND153_PAPER_CLAIM_COMPATIBILITY_NOTE.json",
+        "final/COMMAND153_ABLATION_STATS.json",
+        "final/COMMAND153_FOV_STATS.json"
+      ],
+      "regimes": "none; NA is contract/controller fact",
+      "counterexamples": [
+        "do not plot NA as F8/F9 results"
+      ]
+    },
+    {
+      "claim": "scaling executed 150 new Mininet cells",
+      "status": "NOT_SUPPORTED",
+      "evidence": [
+        "final/COMMAND153_SCALING_STATS.json"
+      ],
+      "regimes": "150 logical keys = 90 DEV reuse + 60 new launches",
+      "counterexamples": [
+        "not_150_new_executions"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "md2g_cast_unmodified": true,
+  "ppo_not_retrained": true,
+  "u_weights_frozen": [
+    0.25,
+    0.6,
+    0.15
+  ],
+  "mcg_strategy": "MCG_COMPONENT",
+  "mcg_score": "sum_user_DeltaQ / shared_component_rate",
+  "physics": "missing_component_DeltaR * 1.05 via project_down",
+  "fov_used": false,
+  "n_mcg_valid": 27,
+  "n_frozen_same_slice": 81,
+  "rolling": "CAST_HANDBOOK_NOT_SAME_SUBSTRATE",
+  "offline_mcg_kept": "./Sigcomm26/Paper6_ToN/results/mcg_baseline",
+  "dev_json": "./Sigcomm26/Paper6_ToN/final/COMMAND153_FIGURE_SOURCE_DATA/dev.json",
+  "art": "./Sigcomm26/Paper6_ToN/artifacts/ton_live_mcg",
+  "fairness_pass": true,
+  "pdf_sha256": "c5b6459d1c98a1a47d79c6dfa46de71814a8e474270a3578603b69ede41804ae",
+  "duration_s": 120,
+  "seeds": [
+    151,
+    152,
+    153
+  ],
+  "content": "redandblack",
+  "networks": [
+    "4g",
+    "wifi",
+    "fiber_optic"
+  ]
+}
