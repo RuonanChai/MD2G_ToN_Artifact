@@ -152,7 +152,6 @@ def test_projector_does_not_mutate_metrics():
 
 
 def test_rep_bitrate_accounting_suite():
-    # moq_cluster_Sigcomm imports distro mininet — use /usr/bin/python3
     r = subprocess.run(
         ["/usr/bin/python3", str(TON / "tests" / "test_rep_bitrate_accounting.py")],
         cwd=str(TON),

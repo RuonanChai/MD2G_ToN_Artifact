@@ -304,11 +304,11 @@ def main() -> int:
     fig, ax = plt.subplots(figsize=(7.0, 2.35))
     xs = np.array(USERS, dtype=float)
     styles = {
-        "MD2G-Cast": ("#2171B5", "-", "o"),
-        "MCG": ("#8C2D04", "--", "D"),
-        "Heuristic": ("#D94801", ":", "s"),
-        "Clustering": ("#238B45", "-.", "^"),
-        "Rolling": ("#6A51A3", "--", "v"),
+        "MD2G-Cast": ("
+        "MCG": ("
+        "Heuristic": ("
+        "Clustering": ("
+        "Rolling": ("
     }
     for strat, (c, ls, mk) in styles.items():
         ys = [by.get((strat, u), float("nan")) for u in USERS]

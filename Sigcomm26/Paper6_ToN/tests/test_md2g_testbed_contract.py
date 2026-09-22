@@ -48,7 +48,6 @@ def main() -> int:
     body = {k: v for k, v in contract.items() if k not in {
         "contract_sha256", "runtime_fingerprint", "runtime_fingerprint_sha256"
     }}
-    # Contract was hashed before runtime_fingerprint was added — verify freeze hash matches file field
     if stored != frozen.get("contract_sha256"):
         fail("freeze contract_sha256 mismatch vs contract file")
     if (STATE / "MD2G_TESTBED_CONTRACT_SHA256.txt").read_text().strip() != stored:

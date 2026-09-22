@@ -78,7 +78,6 @@ def test_d_multi_rep_once():
     shared = 0.87 + 1.43
     assert r["n_shared_streams"] == 2
     assert nearly(r["Ro_native9"], 1.0 - shared / uni, 1e-9)
-    # counting per-recipient would give shared=uni and Ro=0 — forbidden
     assert r["Ro_native9"] > 0.5
 
 

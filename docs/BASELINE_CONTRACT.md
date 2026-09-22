@@ -36,7 +36,6 @@ Implementation: `mcg_select()` in `command148_mcg.py`.
 - Admission: repeatedly admit the highest-scoring component whose prerequisites are already admitted and that has \(\Delta Q>0\) for at least one feasible user
 - Undecoded users have \(Q=0\) (not \(Q(\mathrm{Rep1})\))
 - FoV is unused
-- Does **not** load the student
 - Feasibility: same missing-set \(\Delta R \times 1.05\) projector after greedy selection
 - Tie-break: highest score; first component in `(b0, db1, db2, e1, e2)` order if scores tie
 - Learning: no

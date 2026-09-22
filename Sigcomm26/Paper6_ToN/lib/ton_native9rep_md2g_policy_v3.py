@@ -227,7 +227,6 @@ def apply_native9rep_policy_v3(decisions: dict, *, content: str | None = None, u
     if not _env_on("TON_NATIVE9REP_MD2G"):
         return {"applied": False, "version": "V3"}
     n = max(1, len(decisions))
-    # group sizes by md2g_group_id / grouping / base (slow layer A — do not regroup here)
     gcounts: dict[Any, int] = {}
     for d in decisions.values():
         if not isinstance(d, dict):

@@ -24,7 +24,6 @@ def cell_state_dir() -> Path:
         p = Path(f"/tmp/{tmp}client_state")
         p.mkdir(parents=True, exist_ok=True)
         return p
-    # Legacy fallback (diagnostic only) — still preferred over bare /tmp scatter
     p = Path("/tmp/mininet_shared")
     p.mkdir(parents=True, exist_ok=True)
     return p

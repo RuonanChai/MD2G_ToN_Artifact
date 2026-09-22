@@ -42,7 +42,6 @@ class DeepSetsEncoder(nn.Module):
         )
 
     def forward(self, x: torch.Tensor, mask: Optional[torch.Tensor] = None) -> torch.Tensor:
-        # x: [B, N, D]
         h = self.phi(x)
         if mask is not None:
             h = h * mask.unsqueeze(-1)
@@ -98,13 +97,13 @@ class C29Controller(nn.Module):
         u_set = self.user_enc(user_feats, user_mask)
         c = self.content_enc(content_feats)
         g = self.global_enc(global_feats)
-        shared = self.shared(torch.cat([u_set, c, g], dim=-1))  # [B,L]
+        shared = self.shared(torch.cat([u_set, c, g], dim=-1))
         # per-user
-        ure = self.user_res(user_feats)  # [B,N,L]
+        ure = self.user_res(user_feats)
         shared_exp = shared.unsqueeze(1).expand(-1, user_feats.size(1), -1)
         u_cat = torch.cat([shared_exp, ure], dim=-1)
-        group_logits = self.head_group(u_cat)  # [B,N,K]
-        upgrade_logit = self.head_upgrade(u_cat).squeeze(-1)  # [B,N]
+        group_logits = self.head_group(u_cat)
+        upgrade_logit = self.head_upgrade(u_cat).squeeze(-1)
         base_rep = self.head_base_rep(shared).view(-1, self.cfg.n_groups, 3)
         price = torch.sigmoid(self.head_price(shared))  # [B,2] -> margin, price scale
         return {

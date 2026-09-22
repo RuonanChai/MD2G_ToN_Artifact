@@ -40,7 +40,7 @@ class TestE020TeardownValidityGap(unittest.TestCase):
                 json.dumps({"audit": {"reasons": ["cluster_CELL_VALIDITY.valid!=true"]}}) + "\n"
             )
             (cell / "cell_stdout.log").write_text(
-                "运行实验 120 秒（等待数据流传输和perf.csv记录）...\n"
+                " 120 perf.csv ...\n"
                 "[COMPONENT-PLAN] seq=0 open=['b0']\n"
                 "Traceback (most recent call last):\n"
                 "    r0_log = r0.cmd(f\"cat /tmp/{TMP_PREFIX}r0.log 2>&1\")\n"

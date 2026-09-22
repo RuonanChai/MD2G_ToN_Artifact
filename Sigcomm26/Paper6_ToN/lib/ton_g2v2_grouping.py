@@ -189,7 +189,6 @@ def group_by_reuse_preserving_fov(device_scores, bandwidths, fov_scores, num_gro
         "low_ov_strikes": strikes,
         "merge_strikes": merge_strikes,
         "tick": int(st.get("tick", 0)) + 1,
-        # device/bw recorded only for provenance — not used
         "ignored_device_std": float(np.std(np.asarray(device_scores, dtype=float))) if device_scores is not None else 0.0,
         "ignored_bw_std": float(np.std(np.asarray(bandwidths, dtype=float))) if bandwidths is not None else 0.0,
     }

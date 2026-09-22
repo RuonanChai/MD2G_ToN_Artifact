@@ -35,11 +35,11 @@ Sigcomm26/Paper6_ToN/
   lib/                         # MD2G, MCG, feasibility, metrics
   controllers/                 # student/teacher network
   models/command148_component/ # frozen student weights
-  scripts/                     # cell launchers, live MCG
+  scripts/                     # cell launchers and evaluation
   tests/
   contracts/
   final/COMMAND153_FIGURE_SOURCE_DATA/
-  results/                     # live MCG summary + extension analyses
+  results/                     # same-substrate evaluation summaries
 docs/
 ```
 
@@ -121,12 +121,13 @@ Authoritative completed-matrix numbers are already in `final/COMMAND153_FIGURE_S
 
 ## 9. Same-substrate controller study
 
-Contract (Red-and-Black × {4G, Wi-Fi, fiber} × {20, 60, 100} × seeds {151, 152, 153}):
+The same-substrate MoQ controllers are MD2G-Cast, MCG, Heuristic, Clustering, and Rule. All five share the launcher, metrics, validators, and `project_down` projector.
 
-- 27 matched workload blocks
-- 5 strategies × 27 = 135 strategy-specific runs
-- MD2G / Heuristic / Clustering / Rule: frozen `dev.json` slice
-- MCG: live cells summarized in `results/live_mcg_baseline/`
+Matched slice (Red-and-Black × {4G, Wi-Fi, fiber} × {20, 60, 100} × seeds {151, 152, 153}):
+
+- 27 workload blocks
+- 5 controllers × 27 = 135 strategy-specific runs
+- summaries in `final/COMMAND153_FIGURE_SOURCE_DATA/dev.json` and `results/live_mcg_baseline/`
 
 ## 10. Paper figures
 
@@ -153,7 +154,6 @@ U=\mathrm{clip}(0.25 R_o+0.60 R_q-0.15 R_b,0,1)
 
 - One scientific Mininet executor at a time
 - Loot network evaluation stays sealed until the published controller freeze
-- Offline MCG sidecar replay is supplementary, not a live baseline
 - Rolling/GROOT are cross-stack DASH/HTTP, not same-substrate MoQ
 
 ## 14. Data provenance

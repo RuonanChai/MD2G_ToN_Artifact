@@ -9,10 +9,7 @@ for _c in [_r.parent, *_r.parents]:
         break
 from artifact_paths import artifact_root, ton_root  # portable artifact root
 
-"""Shared paths and frozen loaders for the MD2G-Cast ToN extension evidence pack.
-
-Does not modify MD2G-Cast, frozen metrics, or existing artifacts.
-"""
+"""Shared paths and frozen loaders for same-substrate controller evaluation."""
 import csv
 import json
 import math

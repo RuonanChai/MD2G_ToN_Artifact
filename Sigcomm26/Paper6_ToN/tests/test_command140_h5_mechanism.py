@@ -98,7 +98,7 @@ class TestH5Mechanism(unittest.TestCase):
                 rb=0.40, rq=0.685, ro=0.864, rx_end=11_000_000, enh="1", stall=1.5, ttfb_e1=40.0,
             )
             (h5 / "client_h1_gst_enh1.log").write_text(
-                "INFO moq_sub: 开始订阅 broadcast=base3_enh1_only track=video0\n"
+                "INFO moq_sub:   broadcast=base3_enh1_only track=video0\n"
                 "INFO moq_lite::lite::subscriber: subscribe started id=1 broadcast=base3_enh1_only track=video0\n"
             )
             u_can = paper_u(0.85, 0.69, 0.57)

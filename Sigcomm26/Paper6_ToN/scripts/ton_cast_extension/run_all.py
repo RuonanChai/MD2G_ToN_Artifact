@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run ToN-extension evidence tasks 1–5 in order. Task 6 is skipped (see report)."""
+"""Run same-substrate analysis scripts in order."""
 from __future__ import annotations
 
 import subprocess

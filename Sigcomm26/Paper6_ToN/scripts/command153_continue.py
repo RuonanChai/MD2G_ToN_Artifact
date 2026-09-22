@@ -66,7 +66,6 @@ def _live() -> bool:
 
 
 def _launch(spec: dict, art: Path, qname: str, n: int) -> int:
-    # Cell-boundary disk gate only — never interrupt a live cell for yellow disk.
     disk = launch_free_space_ok(REPO)
     if disk.get("pause_next_launch"):
         phase1 = TON / "scripts" / "command155_phase1_disk_reclaim.py"

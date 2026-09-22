@@ -118,7 +118,7 @@ def _write_echo_set(cell, req, *, profile=None, b3=None, sha=None, stdout_ok=Tru
         )
         + "\n"
     )
-    text = f"COMMAND137_RUN_CONTRACT sha={sha} profile={profile} b3={b3}\n" if stdout_ok else "检查实验结果\n"
+    text = f"COMMAND137_RUN_CONTRACT sha={sha} profile={profile} b3={b3}\n" if stdout_ok else " \n"
     (cell / "cell_stdout.log").write_text(text)
 
 

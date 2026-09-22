@@ -17,7 +17,6 @@ from command96_cross_transport_metric import (  # noqa: E402
 
 
 def test_u_eval_frozen_weights():
-    # 0.25*1 + 0.60*1 - 0.15*0 = 0.85
     assert abs(u_eval(1.0, 1.0, 0.0) - 0.85) < 1e-9
     assert u_eval(0.0, 0.0, 1.0) == 0.0
 
@@ -50,7 +49,7 @@ def test_missing_quality_is_nan_not_zero():
 def test_saturated_delay_uses_ttfb_proxy():
     row = {
         "rep_id": "4",
-        "delay_ms": "500.0",  # clamp — must not zero R_q alone
+        "delay_ms": "500.0",
         "ttfb_base_ms": "26.0",
         "stall_count_inc": "0",
         "buffer_level_sec": "5.0",

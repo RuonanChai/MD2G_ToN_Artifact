@@ -226,7 +226,6 @@ def main() -> int:
         )
         print(json.dumps({"pass": False, "reason": "h2_loot_key_before_final_dev_frozen", "key": pending["key"]}))
         return 3
-    # Cell-boundary disk gate only — never interrupt live for yellow disk.
     disk = launch_free_space_ok(REPO)
     if disk.get("pause_next_launch"):
         dump_dual(

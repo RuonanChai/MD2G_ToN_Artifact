@@ -193,7 +193,7 @@ def classify_cell(key: str, cell: Path) -> dict:
     missing_validity = not (cell / "CELL_VALIDITY.json").is_file()
     audit_gap = any("cluster_CELL_VALIDITY.valid!=true" in str(x) for x in reasons)
     waiting_assert = "AssertionError" in txt and "self.shell and not self.waiting" in txt
-    ran_window = "运行实验 120 秒" in txt or "[COMPONENT-PLAN]" in txt
+    ran_window = "  120  " in txt or "[COMPONENT-PLAN]" in txt
     if (missing_validity or audit_gap) and waiting_assert and ran_window:
         L = match_lesson("E020_TEARDOWN_R0_CMD_WAITING_SKIPS_CELL_VALIDITY") or {}
         return {

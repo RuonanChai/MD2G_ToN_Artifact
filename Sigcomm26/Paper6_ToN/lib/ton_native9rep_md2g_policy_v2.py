@@ -103,7 +103,6 @@ def upgrade_score(
     dq = qmap[cand]["q"] - qmap[anchor]["q"]
     dbytes = max(0.0, br_c - br_a)
     if dbytes <= 1e-6:
-        # same or lower bitrate with higher/equal quality — strongly preferred
         dbytes = 0.05 * max(br_c, 0.2)
     cross = qmap[cand]["base"] != qmap[anchor]["base"]
     switch = _env_float("TON_MD2G_V2_SWITCH_SAME", 0.12) if not cross else _env_float("TON_MD2G_V2_SWITCH_CROSS", 0.40)

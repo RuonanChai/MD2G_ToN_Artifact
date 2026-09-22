@@ -9,11 +9,7 @@ for _c in [_r.parent, *_r.parents]:
         break
 from artifact_paths import artifact_root, ton_root  # portable artifact root
 
-"""27-cell live MCG harness. One Mininet. Reuses command148_canary_cell inject path.
-
-Does not modify MD2G-Cast / PPO / U. Does not touch COMMAND153 MAINDEV/loot queues.
-SSH-safe: run under tmux:ton_live_mcg.
-"""
+"""Same-substrate MCG evaluation harness. One Mininet. Shared command148 cell path."""
 import json
 import os
 import subprocess

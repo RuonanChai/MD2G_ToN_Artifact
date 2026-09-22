@@ -43,7 +43,6 @@ def main():
     assert r.returncode != 0
     assert "DENIED" in (r.stderr + r.stdout)
 
-    # Unsafe: CONTINUE_MATRIX alone is not enough — guard ignores CONTINUE
     old_c = (STATE / "CONTINUE_MATRIX").read_text() if (STATE / "CONTINUE_MATRIX").exists() else "false\n"
     (STATE / "CONTINUE_MATRIX").write_text("true\n")
     try:

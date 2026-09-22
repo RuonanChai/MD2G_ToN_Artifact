@@ -358,7 +358,6 @@ def _user_feats(d: dict, *, cap: float, delivered: float, cur: int, qmap: dict, 
 
 
 def _content_feats(content: str | None, rates: dict, qmap: dict) -> list[float]:
-    # ladder summary — not a single ordinal rep_id
     qs = [float(qmap[i]["q"]) for i in range(1, 10)]
     brs = [float(rates.get(i, 1.0)) for i in range(1, 10)]
     cid = {"redandblack": 0.0, "longdress": 1.0}.get(str(content or "").lower(), 0.5)
@@ -463,7 +462,6 @@ def score_g2(
         return None, "HYSTERESIS"
     switch = _env_float("TON_G2_SWITCH_SAME", 0.10) if not cross else _env_float("TON_G2_SWITCH_CROSS", 0.32)
     completion = _env_float("TON_G2_COMPLETION", 0.45) * min(1.0, max(0.0, residual) / max(br_c, 0.5))
-    # delivered is health cue only — never capacity
     health = min(1.0, max(0.0, delivered) / max(0.5, rates.get(anchor, 0.8)))
     completion *= 0.5 + 0.5 * health
     cong = _env_float("TON_G2_CONGESTION", 0.50) * util * (mbytes / 4.0)

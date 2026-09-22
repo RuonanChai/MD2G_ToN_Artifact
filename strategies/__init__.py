@@ -1,11 +1,5 @@
 # strategies/__init__.py
-"""
-策略模块
-包含统一策略系统和增强版策略
-
-注意：本包在 Sigcomm26 的 GROOT/Heuristic 等路径上可能在 *无 PyTorch* 的环境中被导入。
-因此禁用在 import 时强制加载依赖 torch 的子模块；改为按需延迟导入。
-"""
+"""Strategy package. Lazy-import torch-dependent submodules."""
 
 from __future__ import annotations
 

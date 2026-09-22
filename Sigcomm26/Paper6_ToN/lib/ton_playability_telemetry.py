@@ -101,7 +101,6 @@ class ProbeAdmission:
     ) -> bool:
         # Slot stagger belongs to the scheduler. Once probe_active is set,
         # the burst tick (command120 interval=1.0s) must not re-filter the
-        # 0.50s slot — that rotates +2 and starves every live probe.
         if require_slot and not probe_slot_ok(client_id, now_s):
             return False
         now = float(now_s)

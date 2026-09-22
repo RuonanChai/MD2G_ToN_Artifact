@@ -99,7 +99,6 @@ def main() -> int:
         if spec["key"] in done:
             continue
         twin = canary_twin(spec)
-        # E027: never reuse a retention sentinel when the twin has no dump_*.bin —
         # otherwise MAINDEV completes with SENTINEL_KEEP but zero recoverable raw dumps.
         if twin is not None and spec["key"] in sentinel_keys() and not list(twin.glob("dump_*.bin")):
             twin = None

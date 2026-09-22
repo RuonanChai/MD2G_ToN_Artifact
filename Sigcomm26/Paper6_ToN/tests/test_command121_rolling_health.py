@@ -233,7 +233,7 @@ def test_true_simultaneous_overlap_still_counts():
     rec = l3_true_overlap_fraction(events, 0.0, 100.0, hold_s=0.50)
     assert rec["max_concurrent"] == 2
     assert rec["overlap_fraction"] > 0.0
-    assert rec["overlap_fraction"] < 0.10  # 0.40s / 100s
+    assert rec["overlap_fraction"] < 0.10
     from command121_three_level import render_hourly, rational_analysis
     body = {
         "ts": "t",

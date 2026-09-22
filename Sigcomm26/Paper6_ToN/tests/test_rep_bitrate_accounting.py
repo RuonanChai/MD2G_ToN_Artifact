@@ -52,18 +52,17 @@ def test_source_rejects_base_plus_composite_total():
     assert "total_bitrate = base_bitrate + enh_bitrate" not in src, (
         "DOUBLE-COUNT unrepaired: TOTAL = base + composite still present"
     )
-    assert "Base+Enhanced组合流" not in src or "非 Base+组合流相加" in src
-    assert "max(选中Rep" in src or "peak selected" in src.lower() or "单用户峰值码率" in src
+    assert "Base+Enhanced " not in src or "  Base+ " in src
+    assert "max( Rep" in src or "peak selected" in src.lower() or " " in src
 
 
 def test_worst_case_banner_not_base_plus_enhanced():
     src = MOQ.read_text(encoding="utf-8")
-    assert "所有用户Base+Enhanced" not in src
-    assert "峰值Rep" in src or "peak" in src.lower()
+    assert " Base+Enhanced" not in src
+    assert " Rep" in src or "peak" in src.lower()
 
 
 def test_init_video_bitrates_total_is_peak_not_sum():
-    # Import after PATH set; Mininet may be absent — function only needs ffprobe + files.
     import moq_cluster_Sigcomm as m
 
     base, enh, total = m.init_video_bitrates()
@@ -98,7 +97,6 @@ def test_rep_ladder_required_bitrates():
                 f"Rep{rid} {key}: meas={br:.3f} vs table={TABLE1[rid]}"
             )
         else:
-            # File missing in this workspace layout — still enforce table contract presence
             assert TABLE1[rid] > 0
 
 
@@ -135,7 +133,6 @@ def test_calculate_regional_uses_peak_not_double():
     # Must not size as if peak were 7.61
     inflated = int(users_per * (TABLE1[1] + TABLE1[4]) * 1.2)
     # With peak=6.42 the returned bw should be closer to expected_floor than inflated
-    # (both may hit the max(100,...) floor for small N — check unicast term via source)
     src = MOQ.read_text(encoding="utf-8")
     assert "users_per_relay * MAX_BITRATE_MBPS" in src
     assert "base_bitrate + enh_bitrate" not in src

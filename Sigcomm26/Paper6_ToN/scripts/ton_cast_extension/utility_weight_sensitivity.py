@@ -111,7 +111,7 @@ def main() -> int:
     fig, ax = plt.subplots(figsize=(7.0, 2.40))
     x = np.arange(len(CFGS))
     width = 0.22
-    colors = {"MD2G-Cast": "#2171B5", "Heuristic": "#D94801", "Clustering": "#238B45"}
+    colors = {"MD2G-Cast": "#2171B5", "Heuristic": "#D94801", "Clustering": "
     names = list(CFGS)
     for i, strat in enumerate(("MD2G-Cast", "Heuristic", "Clustering")):
         ys = [sm[(n, strat)] for n in names]

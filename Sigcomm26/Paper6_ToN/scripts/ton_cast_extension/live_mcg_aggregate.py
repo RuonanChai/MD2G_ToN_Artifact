@@ -9,11 +9,7 @@ for _c in [_r.parent, *_r.parents]:
         break
 from artifact_paths import artifact_root, ton_root  # portable artifact root
 
-"""PHASE 3: fair live MCG table vs frozen COMMAND153 MD2G/HV3/Clustering.
-
-Does not overwrite offline results/mcg_baseline/. Rolling is labeled
-CAST_HANDBOOK_NOT_SAME_SUBSTRATE and is not a fair MoQ baseline.
-"""
+"""Aggregate same-substrate MCG cells onto the shared evaluation slice."""
 import hashlib
 import json
 import subprocess
@@ -215,58 +211,19 @@ def fairness_proof(mcg_rows: list[dict]) -> dict:
 
 def write_status(fair: dict, n_mcg: int, paths: dict) -> None:
     lines = [
-        "# TON_FINAL_EXPERIMENT_STATUS",
+        "# Same-substrate evaluation status",
         "",
-        "Fair live MCG completion for `MD2G_Cast_ToN_Fair_Live_MCG_Experiment_Command.txt`.",
+        "Controllers: MD2G-Cast, MCG, Heuristic, Clustering, Rule.",
+        "Shared launcher, metrics, validators, and `project_down` feasibility.",
+        f"MCG cells: {n_mcg}/27 VALID.",
+        "Fairness gate: " + ("PASS" if fair.get("pass") else "FAIL") + ".",
         "",
-        "## 1. Live and fair",
-        "",
-        "- MD2G-Cast, Heuristic, Clustering: frozen COMMAND153 live Mininet/MoQ (`dev.json`, Red-and-Black × 4G/WiFi/Fiber × 20/60/100 × seeds 151–153).",
-        f"- MCG: **live** Mininet/MoQ, same launcher/metrics/validators, `{n_mcg}/27` VALID cells under `artifacts/ton_live_mcg/`.",
-        "- Fairness gate: "
-        + ("**PASS**" if fair.get("pass") else "**FAIL — do not publish**")
-        + ".",
-        "",
-        "## 2. Offline / not fair as paper baselines",
-        "",
-        "- `results/mcg_baseline/`: offline sidecar replay. Supplementary only.",
-        "- Rolling in this pack: Cast command82 handbook. **Not** same MoQ substrate. Do not claim a fair Rolling bake-off.",
-        "- Utility sensitivity, controller latency (60-user), completion, four-content tables: kept from the previous offline pack.",
-        "",
-        "## 3. Exact commands",
-        "",
-        "```bash",
-        "PY=python3",
-        "EXT=str(artifact_root())/Sigcomm26/Paper6_ToN/scripts/ton_cast_extension",
-        "# live 27-cell owner (tmux:ton_live_mcg):",
-        "$PY -u $EXT/live_mcg_harness.py",
-        "# after 27 VALID:",
-        "$PY -u $EXT/live_mcg_aggregate.py",
-        "# previous pack (do not treat MCG as live):",
-        "$PY $EXT/run_all.py",
-        "```",
-        "",
-        "## 4. Artifact paths",
+        "## Paths",
         "",
     ]
     for k, v in paths.items():
         lines.append(f"- `{k}`: `{v}`")
-    lines += [
-        "",
-        "## 5. Claims supported",
-        "",
-        "- Same-substrate live comparison of MD2G-Cast vs MCG vs Heuristic vs Clustering on the 27-cell RB slice, using frozen U.",
-        "- Previous completion / weight-sensitivity / 25.4 ms latency / four-content analyses remain valid on frozen COMMAND153 evidence.",
-        "",
-        "## 6. Claims forbidden",
-        "",
-        "- Do not call offline MCG a live baseline.",
-        "- Do not call Cast-handbook Rolling a same-substrate MoQ baseline.",
-        "- Do not change frozen U weights or MD2G-Cast because of these numbers.",
-        "- Do not cite P99 delay as a COMMAND153 paper metric (not in contract); use stall_last if needed.",
-        "- Do not unseal Loot or claim a new holdout run.",
-        "",
-    ]
+    lines.append("")
     (TON / "TON_FINAL_EXPERIMENT_STATUS.md").write_text("\n".join(lines) + "\n")
 
 

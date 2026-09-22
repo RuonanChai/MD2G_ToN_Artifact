@@ -8,17 +8,11 @@ for _c in [_r.parent, *_r.parents]:
         break
 from artifact_paths import artifact_root, ton_root  # portable artifact root
 
-"""Marginal Completion Greedy (MCG) core. Same nested components as live MD2G.
+"""Marginal Completion Greedy (MCG) same-substrate baseline.
 
-Does not load or modify the student. Frozen Q + ΔR×1.05.
-score(c) = Σ_u ΔQ / extra shared rate(c). Greedy admit highest score.
-
-Undecoded users have Q=0 (not Q(Rep1)). The offline sidecar replay labeled
-empty decoded as Rep1, which zeroed ΔQ(b0) and admitted nothing; that pack
-remains supplementary. Live MCG uses the same Rq=0-if-undecoded rule as
-command148_canary_metrics.
-
-FoV is unused (frozen student features also omit FoV).
+Same nested components, quality map, and feasibility projector as the other
+MoQ controllers. score(c) = Σ_u ΔQ / extra shared rate(c). Greedy admit the
+highest-scoring component. Undecoded users have Q=0 (not Q(Rep1)). FoV unused.
 """
 import json
 from pathlib import Path

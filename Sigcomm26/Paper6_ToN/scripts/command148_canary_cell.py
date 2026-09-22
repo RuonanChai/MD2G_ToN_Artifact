@@ -411,7 +411,7 @@ def _run_canary_cell(
         from command153_raw_dump_retention import reclaim_valid_dumps_if_allowed  # noqa: PLC0415
 
         reclaim_valid_dumps_if_allowed(cell, cell_key=spec["key"], epoch_id=rec.get("epoch_id"))
-    except Exception as exc:  # noqa: BLE001 — fail-closed: keep dumps if gate errors
+    except Exception as exc:
         (cell / "RAW_DUMP_RETENTION_ERROR.json").write_text(
             json.dumps({"pass": False, "error": str(exc), "kept_dumps": True}, indent=2) + "\n"
         )

@@ -79,7 +79,6 @@ class InstrumentationV2:
         self._record_counts: Dict[str, int] = {k: 0 for k in REQUIRED_DIRECT_RECORDS}
         self._overhead_ns_acc = 0
 
-    # --- env ---
 
     @classmethod
     def enabled(cls) -> bool:

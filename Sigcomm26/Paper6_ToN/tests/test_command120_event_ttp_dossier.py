@@ -135,7 +135,7 @@ def test_dossier_has_eight_sections_and_insufficient_event_ttp():
         "## 2. COMMAND120_CAUSAL_PROBE_TABLE.md",
         "## 3. NORMAL",
         "## 4. STRESS",
-        "## 5. 四臂绝对值",
+        "#
         "## 6. treatment-strength",
         "## 7. event-TTP sanity",
         "## 8. release-check",
