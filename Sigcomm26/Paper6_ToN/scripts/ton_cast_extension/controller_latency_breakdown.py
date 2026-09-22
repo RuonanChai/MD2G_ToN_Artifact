@@ -188,7 +188,7 @@ def main() -> int:
     fig, ax = plt.subplots(figsize=(7.0, 2.45))
     names = [r["stage"] for r in rows if r["stage"] != "total_pipeline"]
     means = [next(r["mean_ms"] for r in rows if r["stage"] == n) for n in names]
-    ax.barh(range(len(names)), means, color="
+    ax.barh(range(len(names)), means, color="#2171B5")
     ax.set_yticks(range(len(names)))
     ax.set_yticklabels(["State collection", "Feature prep", "Student inference", "Grouping", "Action gen", "Relay update"])
     ax.invert_yaxis()

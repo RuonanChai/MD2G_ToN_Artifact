@@ -112,10 +112,10 @@ def main() -> int:
         return ys
 
     styles = {
-        "MD2G-Cast": ("
-        "Heuristic": ("
-        "Clustering": ("
-        "MoQ Unicast": ("
+        "MD2G-Cast": ("#2171B5", "-", "o"),
+        "Heuristic": ("#D94801", ":", "s"),
+        "Clustering": ("#238B45", "-.", "^"),
+        "MoQ Unicast": ("#6A51A3", "--", "v"),
     }
     fig, ax = plt.subplots(figsize=(7.0, 2.35))
     for strat, (c, ls, mk) in styles.items():

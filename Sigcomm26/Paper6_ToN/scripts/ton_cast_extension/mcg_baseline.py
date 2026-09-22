@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""TASK 1: Marginal Completion Greedy (MCG) — offline replay on frozen sidecars.
+"""MCG same-substrate controller replay on frozen decision traces.
 
 Does not modify MD2G-Cast / PPO. Does not launch Mininet.
 Uses the same access/device traces the frozen student saw, plus frozen Q and
@@ -304,11 +304,11 @@ def main() -> int:
     fig, ax = plt.subplots(figsize=(7.0, 2.35))
     xs = np.array(USERS, dtype=float)
     styles = {
-        "MD2G-Cast": ("
-        "MCG": ("
-        "Heuristic": ("
-        "Clustering": ("
-        "Rolling": ("
+        "MD2G-Cast": ("#2171B5", "-", "o"),
+        "MCG": ("#8C2D04", "--", "D"),
+        "Heuristic": ("#D94801", ":", "s"),
+        "Clustering": ("#238B45", "-.", "^"),
+        "Rolling": ("#6A51A3", "--", "v"),
     }
     for strat, (c, ls, mk) in styles.items():
         ys = [by.get((strat, u), float("nan")) for u in USERS]

@@ -33,7 +33,7 @@ def test_no_local_import_sys_in_rolling_region():
         # Strip comments before checking for a real local import
         code_only = "\n".join(
             ln for ln in region.splitlines()
-            if not ln.lstrip().startswith("
+            if not ln.lstrip().startswith("#")
         )
         assert not re.search(r"^\s*import\s+sys\b", code_only, re.M), (
             f"local import sys still in Rolling region of {path}"

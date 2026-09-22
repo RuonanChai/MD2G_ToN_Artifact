@@ -141,6 +141,7 @@ def main() -> int:
                 "samples": a["samples"],
                 "rep_id_is_not_quality": True,
             }
+        # Observed order vs Rep ID — do not rewrite.
         order = sorted(per_state, key=lambda s: per_state[s]["Q_raw"])
         id_order = [f"Rep{i}" for i in range(1, 10)]
         monotonic_vs_rep_id = order == id_order
@@ -184,7 +185,7 @@ def main() -> int:
         "",
     ]
     for cid, body in raw["contents"].items():
-        md.append(f"#
+        md.append(f"## {cid}")
         md.append("")
         md.append("| state | C(r) | Q_raw | Q_norm | decode |")
         md.append("|---|---|---|---|---|")
