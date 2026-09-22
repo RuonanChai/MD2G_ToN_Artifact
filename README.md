@@ -10,8 +10,8 @@ This repository contains the **current ToN 9-logical-state** implementation:
 - five **physical** media components: `b0`, `db1`, `db2`, `e1`, `e2`
 - nine **logical** service states `Rep1`–`Rep9` (decoded unions, not nine standalone videos)
 - same-substrate controllers: MD2G-Cast, MCG, Heuristic, Clustering, Rule
-- frozen evaluation JSON used to reproduce paper tables and figures
-- launchers and figure scripts
+- frozen evaluation JSON used to reproduce paper tables
+- launchers and controller/runtime scripts
 
 It does **not** contain:
 
@@ -35,12 +35,11 @@ Sigcomm26/Paper6_ToN/
   lib/                         # MD2G, MCG, feasibility, metrics
   controllers/                 # student/teacher network
   models/command148_component/ # frozen student weights
-  scripts/                     # cell launchers, live MCG, figures
+  scripts/                     # cell launchers, live MCG
   tests/
   contracts/
   final/COMMAND153_FIGURE_SOURCE_DATA/
   results/                     # live MCG summary + extension analyses
-  Figures/                     # figure scripts and paper PDFs
 docs/
 ```
 
@@ -129,13 +128,9 @@ Contract (Red-and-Black × {4G, Wi-Fi, fiber} × {20, 60, 100} × seeds {151, 15
 - MD2G / Heuristic / Clustering / Rule: frozen `dev.json` slice
 - MCG: live cells summarized in `results/live_mcg_baseline/`
 
-## 10. Reproducing paper figures
+## 10. Paper figures
 
-```bash
-export ARTIFACT_ROOT="$PWD"
-python3 Sigcomm26/Paper6_ToN/scripts/plot_live_mcg_maintext.py
-# other figures: Sigcomm26/Paper6_ToN/Figures/generate_paper_artifacts.py
-```
+Figure PDFs and plotting scripts are **not** in this repository. They stay in the local working tree. Frozen numerical sources for tables remain under `final/COMMAND153_FIGURE_SOURCE_DATA/`.
 
 ## 11. Metric definitions
 
@@ -152,8 +147,7 @@ U=\mathrm{clip}(0.25 R_o+0.60 R_q-0.15 R_b,0,1)
 ## 12. Expected outputs
 
 - `results/live_mcg_maintext/live_mcg_maintext_summary.csv`
-- `Figures/QoE/Live_MCG_Fair_Mechanism_1x3.pdf`
-- development/holdout figure PDFs under `Figures/`
+- frozen JSON under `final/COMMAND153_FIGURE_SOURCE_DATA/`
 
 ## 13. Runtime notes
 
@@ -171,5 +165,6 @@ Evaluation contents: Red-and-Black, Longdress (development), Soldier (unseen in 
 ## 15. Known limitations
 
 - Live reruns need external MoQ binaries and ~11 GB media
-- This artifact is sufficient to audit controllers, contracts, metrics, and to regenerate figures from frozen JSON
+- This artifact is sufficient to audit controllers, contracts, and metrics
+- Paper figure PDFs and `plot_*.py` scripts are kept only in the local working tree
 - It is not a bit-identical dump of every Mininet packet capture
